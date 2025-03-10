@@ -1,49 +1,106 @@
 {
-  "name": "sigma-vue",
-  "version": "0.0.0",
-  "private": true,
-  "type": "module",
-  "scripts": {
-    "dev": "vite",
-    "build": "run-p type-check \"build-only {@}\" --",
-    "preview": "vite preview",
-    "test:unit": "vitest",
-    "test:e2e": "start-server-and-test preview http://localhost:4173 'cypress run --e2e'",
-    "test:e2e:dev": "start-server-and-test 'vite dev --port 4173' http://localhost:4173 'cypress open --e2e'",
-    "build-only": "vite build",
-    "type-check": "vue-tsc --build",
-    "lint": "eslint . --fix",
-    "format": "prettier --write src/"
-  },
-  "dependencies": {
-    "pinia": "^2.3.1",
-    "vue": "^3.5.13",
-    "vue-router": "^4.5.0"
-  },
-  "devDependencies": {
-    "@tsconfig/node22": "^22.0.0",
-    "@types/jsdom": "^21.1.7",
-    "@types/node": "^22.10.7",
-    "@vitejs/plugin-vue": "^5.2.1",
-    "@vitejs/plugin-vue-jsx": "^4.1.1",
-    "@vitest/eslint-plugin": "1.1.25",
-    "@vue/eslint-config-prettier": "^10.1.0",
-    "@vue/eslint-config-typescript": "^14.3.0",
-    "@vue/test-utils": "^2.4.6",
-    "@vue/tsconfig": "^0.7.0",
-    "cypress": "^14.0.0",
-    "eslint": "^9.18.0",
-    "eslint-plugin-cypress": "^4.1.0",
-    "eslint-plugin-vue": "^9.32.0",
-    "jiti": "^2.4.2",
-    "jsdom": "^26.0.0",
-    "npm-run-all2": "^7.0.2",
-    "prettier": "^3.4.2",
-    "start-server-and-test": "^2.0.10",
-    "typescript": "~5.7.3",
-    "vite": "^6.0.11",
-    "vite-plugin-vue-devtools": "^7.7.0",
-    "vitest": "^3.0.2",
-    "vue-tsc": "^2.2.0"
-  }
+	"name": "sigma-vue",
+	"version": "0.0.1",
+	"private": false,
+	"homepage": "https://goggle.com",
+	"description": "A UI Library for Modern Web Apps, powered by Vue & Tailwind CSS.",
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/nuxt/ui.git"
+	},
+	"type": "module",
+	"author": {
+		"name": "Moshkin Denis",
+		"email": "denis.moshkin.007@yandex.ru"
+	},
+	"keywords": [
+		"sigma-vue",
+		"vue3",
+		"tailwindcss",
+		"component library",
+		"vue",
+		"vuejs",
+		"vue.js",
+		"typescript",
+		"vue-components",
+		"ui",
+		"tailwind",
+		"framework",
+		"ui-framework"
+	],
+	"exports": {
+		".": {
+			"import": "./dist/sigma-vue.es.js",
+			"require": "./dist/sigma-vue.umd.js"
+		}
+	},
+	"scripts": {
+		"dev": "vite",
+		"build": "vite build",
+		"play": "vite dev --base ./playground",
+		"preview": "vite preview",
+		"test:unit": "vitest",
+		"test:e2e": "start-server-and-test preview http://localhost:4173 'cypress run --e2e'",
+		"test:e2e:dev": "start-server-and-test 'vite dev --port 4173' http://localhost:4173 'cypress open --e2e'",
+		"type-check": "vue-tsc --build",
+		"lint": "eslint . --fix",
+		"format": "prettier --write src/",
+		"buildfddf": "run-p type-check \"build-only {@}\" --",
+		"storybook": "storybook dev --no-open -p 6006",
+		"build-storybook": "storybook build"
+	},
+	"dependencies": {
+		"@tailwindcss/vite": "^4.0.3",
+		"@vue/shared": "^3.5.13",
+		"pinia": "^2.3.1",
+		"tailwind-variants": "^0.3.1",
+		"tailwindcss": "^4.0.3",
+		"type-fest": "^4.33.0",
+		"vue": "^3.5.13",
+		"vue-router": "^4.5.0"
+	},
+	"devDependencies": {
+		"@chromatic-com/storybook": "3.2.5",
+		"@iconify/vue": "^4.3.0",
+		"@storybook/addon-essentials": "8.6.4",
+		"@storybook/addon-interactions": "8.6.4",
+		"@storybook/addon-onboarding": "8.6.4",
+		"@storybook/blocks": "8.6.4",
+		"@storybook/test": "8.6.4",
+		"@storybook/vue3": "8.6.4",
+		"@storybook/vue3-vite": "8.6.4",
+		"@tsconfig/node22": "^22.0.0",
+		"@types/jsdom": "^21.1.7",
+		"@types/node": "^22.10.7",
+		"@vitejs/plugin-vue": "^5.2.1",
+		"@vitejs/plugin-vue-jsx": "^4.1.1",
+		"@vitest/eslint-plugin": "1.1.25",
+		"@vue/eslint-config-prettier": "^10.1.0",
+		"@vue/eslint-config-typescript": "^14.3.0",
+		"@vue/test-utils": "^2.4.6",
+		"@vue/tsconfig": "^0.7.0",
+		"cypress": "^14.0.0",
+		"eslint": "^9.18.0",
+		"eslint-plugin-cypress": "^4.1.0",
+		"eslint-plugin-storybook": "^0.11.4",
+		"eslint-plugin-vue": "^9.32.0",
+		"jiti": "^2.4.2",
+		"jsdom": "^26.0.0",
+		"npm-run-all2": "^7.0.2",
+		"prettier": "^3.4.2",
+		"start-server-and-test": "^2.0.10",
+		"storybook": "8.6.4",
+		"typescript": "5.8.0-dev.20250204",
+		"vite": "^6.0.11",
+		"vite-plugin-dts": "^4.5.0",
+		"vite-plugin-vue-devtools": "^7.7.0",
+		"vitest": "^3.0.2",
+		"vue-tsc": "^2.2.0"
+	},
+	"license": "MIT",
+	"eslintConfig": {
+		"extends": [
+			"plugin:storybook/recommended"
+		]
+	}
 }
