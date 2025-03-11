@@ -1,5 +1,5 @@
 import type {App} from 'vue'
-import {INSTALLED_KEY} from './constants/key'
+//import {INSTALLED_KEY} from './constants/key'
 //import Icon from './components'
 //import {UiAlert} from './components/alert'
 import {loadingDirective} from './directives/loading'
@@ -10,11 +10,11 @@ const directives = {
 }
 
 function install(app: App) {
-	if (app[INSTALLED_KEY]) {
-		return
-	} else {
-		app[INSTALLED_KEY] = true
-	}
+	// if (app[INSTALLED_KEY]) {
+	// 	return
+	// } else {
+	// 	app[INSTALLED_KEY] = true
+	// }
 
 	//components.forEach((c) => app.component(c.name, c))
 

@@ -8,7 +8,7 @@
 	import {defineComponent, type PropType} from 'vue'
 
 	type sizes = 20 | 30 | 40
-	type Icon = 'iconoir:cancel' | 'svg-spinners:90-ring-with-bg'
+	type Icon = 'iconoir:cancel' | 'svg-spinners:90-ring-with-bg' | 'mdi:alert' | 'mdi:information' | 'mdi:error' | 'mdi:success-circle'
 
 	export default defineComponent<IconProps & {size: sizes; icon: Icon}>({
 		name: ComponentNames.Icon,

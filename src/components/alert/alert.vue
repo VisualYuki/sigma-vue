@@ -1,25 +1,36 @@
 <template>
 	<UiCollapseTransition>
 		<div v-if="modelValue" class="transition-collapse-target">
-			<div :class="ui.root({class: $props.overrideUi?.root})">
+			<div :class="[ui.root({class: $props.overrideUi?.root}), ns.e('root'), ns.m($props.color as string)]">
 				<div :class="ui.wrapper({class: $props.overrideUi?.wrapper})">
-					<div v-if="$props.title || $slots.title" :class="ui.title({class: $props.overrideUi?.title})">
-						<slot name="title">
-							{{ $props.title }}
-						</slot>
-					</div>
-					<div v-if="$props.description || $slots.description" :class="ui.description({class: $props.overrideUi?.description})">
-						<slot name="description">
-							{{ $props.description }}
-						</slot>
+					<Icon
+						v-if="$props.withIcon && colorIcon"
+						:class="[ui.withIcon({class: $props.overrideUi?.withIcon}), ns.e('with-icon')]"
+						:size="20"
+						:icon="colorIcon"
+					></Icon>
+					<div :class="ui.content({class: $props.overrideUi?.content})">
+						<div v-if="$props.title || $slots.title" :class="[ui.title({class: $props.overrideUi?.title}), ns.e('title')]">
+							<slot name="title">
+								{{ $props.title }}
+							</slot>
+						</div>
+						<div
+							v-if="$props.description || $slots.description"
+							:class="[ui.description({class: $props.overrideUi?.description}), ns.e('description')]"
+						>
+							<slot name="description">
+								{{ $props.description }}
+							</slot>
+						</div>
 					</div>
 
 					<Icon
 						v-if="$props.closable"
-						@click="handleClose"
-						:class="ui.close({class: $props.overrideUi?.close})"
+						:class="[ui.close({class: $props.overrideUi?.close}), ns.e('close')]"
 						:size="20"
 						icon="iconoir:cancel"
+						@click="handleClose"
 					></Icon>
 				</div>
 			</div>
@@ -34,11 +45,11 @@
 	import theme from './theme'
 	import Icon from '../icon/Icon.vue'
 	import {UiCollapseTransition} from '../transition'
+	import {useNamespace} from '@/utils/use-namespace'
 
 	export default defineComponent({
 		name: ComponentNames.Alert,
 		components: {Icon, UiCollapseTransition},
-		emits: ['update:modelValue'],
 		props: {
 			variant: {
 				type: String as PropType<keyof (typeof theme)['variants']['variant']>,
@@ -71,24 +82,53 @@
 			modelValue: {
 				type: Boolean,
 				default: true
+			},
+			center: {
+				type: Boolean,
+				default: false
+			},
+			withIcon: {
+				type: Boolean,
+				default: false
 			}
 		},
+		emits: ['update:modelValue', 'close'],
 		setup(props) {
-			const ui = computed(() => tv({...theme})({color: props.color, variant: props.variant}))
+			const ui = computed(() => tv({...theme})({color: props.color, variant: props.variant, center: props.center}))
+			const ns = useNamespace('alert')
 
-			//const model = defineModel({default: false, type: Boolean})
+			return {ui, ns}
+		},
+		computed: {
+			colorIcon() {
+				let result: 'mdi:error' | 'mdi:information' | 'mdi:alert' | 'mdi:success-circle' | '' = ''
 
-			return {ui}
+				switch (this.color) {
+					case 'error':
+						result = 'mdi:error'
+						break
+					case 'info':
+						result = 'mdi:information'
+						break
+					case 'warning':
+						result = 'mdi:alert'
+						break
+					case 'success':
+						result = 'mdi:success-circle'
+						break
+				}
+
+				return result
+			}
+			// multiline() {
+			// 	return !!this.title && !!this.description
+			// }
 		},
 		methods: {
 			handleClose() {
 				this.$emit('update:modelValue', false)
+				this.$emit('close')
 			}
-		},
-		computed: {
-			// multiline() {
-			// 	return !!this.title && !!this.description
-			// }
 		}
 	})
 </script>

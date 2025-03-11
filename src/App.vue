@@ -3,11 +3,13 @@
 		<UiAlert
 			v-model="alertModel"
 			:override-ui="{root: 'override-root'}"
-			color="warning"
+			color="error"
 			variant="subtle"
 			title="title1"
 			description="description1"
 			:closable="true"
+			:with-icon="true"
+			:center="true"
 		/>
 		<div v-loading="{value: isLoading, text: 'custom loading text...', background: color}">
 			hello

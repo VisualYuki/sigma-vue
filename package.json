@@ -37,6 +37,7 @@
 	"scripts": {
 		"dev": "vite",
 		"build": "vite build",
+		"check": "npm run format && npm run type-check && npm run test:unit && npm run lint",
 		"play": "vite dev --base ./playground",
 		"preview": "vite preview",
 		"test:unit": "vitest",
@@ -47,7 +48,8 @@
 		"format": "prettier --write src/",
 		"buildfddf": "run-p type-check \"build-only {@}\" --",
 		"storybook": "storybook dev --no-open -p 6006",
-		"build-storybook": "storybook build"
+		"build-storybook": "storybook build",
+		"prepare": "husky"
 	},
 	"dependencies": {
 		"@tailwindcss/vite": "^4.0.3",
@@ -84,6 +86,7 @@
 		"eslint-plugin-cypress": "^4.1.0",
 		"eslint-plugin-storybook": "^0.11.4",
 		"eslint-plugin-vue": "^9.32.0",
+		"husky": "^9.1.7",
 		"jiti": "^2.4.2",
 		"jsdom": "^26.0.0",
 		"npm-run-all2": "^7.0.2",

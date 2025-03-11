@@ -1,5 +1,5 @@
 <template>
-	<Transition v-on="on" ref="col-ref">
+	<Transition ref="col-ref" v-on="on">
 		<slot></slot>
 	</Transition>
 </template>

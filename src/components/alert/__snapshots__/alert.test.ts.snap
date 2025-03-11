@@ -3,10 +3,13 @@
 exports[`closable prop 1`] = `
 "<transition-stub appear="false" persisted="false" css="true">
   <div class="transition-collapse-target">
-    <div class="relative overflow-hidden w-full rounded-(--ui-radius) p-4 flex gap-2.5 items-center bg-[var(--ui-primary)] text-[var(--ui-bg)]">
-      <div class="min-w-0 flex-1 flex flex-col gap-1">
+    <div class="relative overflow-hidden w-full rounded-(--ui-radius) p-4 items-center bg-[var(--ui-primary)] text-[var(--ui-bg)] ui-alert__root ui-alert_primary">
+      <div class="flex items-center">
         <!--v-if-->
-        <!--v-if--><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" role="img" size="20" class="absolute top-3 right-3 cursor-pointer" style="font-size: 20px;" width="1em" height="1em" viewBox="0 0 16 16"></svg>
+        <div class="flex flex-col gap-1">
+          <!--v-if-->
+          <!--v-if-->
+        </div><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" role="img" size="20" class="absolute top-3 right-3 cursor-pointer ui-alert__close" style="font-size: 20px;" width="1em" height="1em" viewBox="0 0 16 16"></svg>
       </div>
     </div>
   </div>
@@ -16,10 +19,13 @@ exports[`closable prop 1`] = `
 exports[`color: error 1`] = `
 "<transition-stub appear="false" persisted="false" css="true">
   <div class="transition-collapse-target">
-    <div class="relative overflow-hidden w-full rounded-(--ui-radius) p-4 flex gap-2.5 items-center bg-[var(--ui-error)] text-[var(--ui-bg)]">
-      <div class="min-w-0 flex-1 flex flex-col gap-1">
-        <div class="text-sm font-medium pe-6">custom title</div>
+    <div class="relative overflow-hidden w-full rounded-(--ui-radius) p-4 items-center bg-[var(--ui-error)] text-[var(--ui-bg)] ui-alert__root ui-alert_error">
+      <div class="flex items-center">
         <!--v-if-->
+        <div class="flex flex-col gap-1">
+          <div class="text-sm font-medium pe-6 ui-alert__title">custom title</div>
+          <!--v-if-->
+        </div>
         <!--v-if-->
       </div>
     </div>
@@ -30,10 +36,13 @@ exports[`color: error 1`] = `
 exports[`color: info 1`] = `
 "<transition-stub appear="false" persisted="false" css="true">
   <div class="transition-collapse-target">
-    <div class="relative overflow-hidden w-full rounded-(--ui-radius) p-4 flex gap-2.5 items-center bg-[var(--ui-info)] text-[var(--ui-bg)]">
-      <div class="min-w-0 flex-1 flex flex-col gap-1">
-        <div class="text-sm font-medium pe-6">custom title</div>
+    <div class="relative overflow-hidden w-full rounded-(--ui-radius) p-4 items-center bg-[var(--ui-info)] text-[var(--ui-bg)] ui-alert__root ui-alert_info">
+      <div class="flex items-center">
         <!--v-if-->
+        <div class="flex flex-col gap-1">
+          <div class="text-sm font-medium pe-6 ui-alert__title">custom title</div>
+          <!--v-if-->
+        </div>
         <!--v-if-->
       </div>
     </div>
@@ -44,10 +53,13 @@ exports[`color: info 1`] = `
 exports[`color: primary 1`] = `
 "<transition-stub appear="false" persisted="false" css="true">
   <div class="transition-collapse-target">
-    <div class="relative overflow-hidden w-full rounded-(--ui-radius) p-4 flex gap-2.5 items-center bg-[var(--ui-primary)] text-[var(--ui-bg)]">
-      <div class="min-w-0 flex-1 flex flex-col gap-1">
-        <div class="text-sm font-medium pe-6">custom title</div>
+    <div class="relative overflow-hidden w-full rounded-(--ui-radius) p-4 items-center bg-[var(--ui-primary)] text-[var(--ui-bg)] ui-alert__root ui-alert_primary">
+      <div class="flex items-center">
         <!--v-if-->
+        <div class="flex flex-col gap-1">
+          <div class="text-sm font-medium pe-6 ui-alert__title">custom title</div>
+          <!--v-if-->
+        </div>
         <!--v-if-->
       </div>
     </div>
@@ -58,10 +70,13 @@ exports[`color: primary 1`] = `
 exports[`color: secondary 1`] = `
 "<transition-stub appear="false" persisted="false" css="true">
   <div class="transition-collapse-target">
-    <div class="relative overflow-hidden w-full rounded-(--ui-radius) p-4 flex gap-2.5 items-center bg-[var(--ui-secondary)] text-[var(--ui-bg)]">
-      <div class="min-w-0 flex-1 flex flex-col gap-1">
-        <div class="text-sm font-medium pe-6">custom title</div>
+    <div class="relative overflow-hidden w-full rounded-(--ui-radius) p-4 items-center bg-[var(--ui-secondary)] text-[var(--ui-bg)] ui-alert__root ui-alert_secondary">
+      <div class="flex items-center">
         <!--v-if-->
+        <div class="flex flex-col gap-1">
+          <div class="text-sm font-medium pe-6 ui-alert__title">custom title</div>
+          <!--v-if-->
+        </div>
         <!--v-if-->
       </div>
     </div>
@@ -72,10 +87,13 @@ exports[`color: secondary 1`] = `
 exports[`color: success 1`] = `
 "<transition-stub appear="false" persisted="false" css="true">
   <div class="transition-collapse-target">
-    <div class="relative overflow-hidden w-full rounded-(--ui-radius) p-4 flex gap-2.5 items-center bg-[var(--ui-success)] text-[var(--ui-bg)]">
-      <div class="min-w-0 flex-1 flex flex-col gap-1">
-        <div class="text-sm font-medium pe-6">custom title</div>
+    <div class="relative overflow-hidden w-full rounded-(--ui-radius) p-4 items-center bg-[var(--ui-success)] text-[var(--ui-bg)] ui-alert__root ui-alert_success">
+      <div class="flex items-center">
         <!--v-if-->
+        <div class="flex flex-col gap-1">
+          <div class="text-sm font-medium pe-6 ui-alert__title">custom title</div>
+          <!--v-if-->
+        </div>
         <!--v-if-->
       </div>
     </div>
@@ -86,10 +104,13 @@ exports[`color: success 1`] = `
 exports[`color: warning 1`] = `
 "<transition-stub appear="false" persisted="false" css="true">
   <div class="transition-collapse-target">
-    <div class="relative overflow-hidden w-full rounded-(--ui-radius) p-4 flex gap-2.5 items-center bg-[var(--ui-warning)] text-[var(--ui-bg)]">
-      <div class="min-w-0 flex-1 flex flex-col gap-1">
-        <div class="text-sm font-medium pe-6">custom title</div>
+    <div class="relative overflow-hidden w-full rounded-(--ui-radius) p-4 items-center bg-[var(--ui-warning)] text-[var(--ui-bg)] ui-alert__root ui-alert_warning">
+      <div class="flex items-center">
         <!--v-if-->
+        <div class="flex flex-col gap-1">
+          <div class="text-sm font-medium pe-6 ui-alert__title">custom title</div>
+          <!--v-if-->
+        </div>
         <!--v-if-->
       </div>
     </div>
@@ -100,10 +121,13 @@ exports[`color: warning 1`] = `
 exports[`overrideUi prop 1`] = `
 "<transition-stub appear="false" persisted="false" css="true">
   <div class="transition-collapse-target">
-    <div class="relative overflow-hidden w-full rounded-(--ui-radius) p-4 flex gap-2.5 items-center bg-[var(--ui-primary)] text-[var(--ui-bg)] override-root">
-      <div class="min-w-0 flex-1 flex flex-col gap-1 override-wrapper">
-        <div class="text-sm font-medium pe-6 override-title">custom title</div>
+    <div class="relative overflow-hidden w-full rounded-(--ui-radius) p-4 items-center bg-[var(--ui-primary)] text-[var(--ui-bg)] override-root ui-alert__root ui-alert_primary">
+      <div class="flex items-center override-wrapper">
         <!--v-if-->
+        <div class="flex flex-col gap-1">
+          <div class="text-sm font-medium pe-6 override-title ui-alert__title">custom title</div>
+          <!--v-if-->
+        </div>
         <!--v-if-->
       </div>
     </div>
@@ -114,10 +138,13 @@ exports[`overrideUi prop 1`] = `
 exports[`variant: outline 1`] = `
 "<transition-stub appear="false" persisted="false" css="true">
   <div class="transition-collapse-target">
-    <div class="relative overflow-hidden w-full rounded-(--ui-radius) p-4 flex gap-2.5 items-center text-[var(--ui-primary)] ring ring-inset ring-[var(--ui-primary)]/25">
-      <div class="min-w-0 flex-1 flex flex-col gap-1">
-        <div class="text-sm font-medium pe-6">custom title</div>
+    <div class="relative overflow-hidden w-full rounded-(--ui-radius) p-4 items-center text-[var(--ui-primary)] ring ring-inset ring-[var(--ui-primary)]/25 ui-alert__root ui-alert_primary">
+      <div class="flex items-center">
         <!--v-if-->
+        <div class="flex flex-col gap-1">
+          <div class="text-sm font-medium pe-6 ui-alert__title">custom title</div>
+          <!--v-if-->
+        </div>
         <!--v-if-->
       </div>
     </div>
@@ -128,10 +155,13 @@ exports[`variant: outline 1`] = `
 exports[`variant: soft 1`] = `
 "<transition-stub appear="false" persisted="false" css="true">
   <div class="transition-collapse-target">
-    <div class="relative overflow-hidden w-full rounded-(--ui-radius) p-4 flex gap-2.5 items-center bg-[var(--ui-primary)]/10 text-[var(--ui-primary)]">
-      <div class="min-w-0 flex-1 flex flex-col gap-1">
-        <div class="text-sm font-medium pe-6">custom title</div>
+    <div class="relative overflow-hidden w-full rounded-(--ui-radius) p-4 items-center bg-[var(--ui-primary)]/10 text-[var(--ui-primary)] ui-alert__root ui-alert_primary">
+      <div class="flex items-center">
         <!--v-if-->
+        <div class="flex flex-col gap-1">
+          <div class="text-sm font-medium pe-6 ui-alert__title">custom title</div>
+          <!--v-if-->
+        </div>
         <!--v-if-->
       </div>
     </div>
@@ -142,10 +172,13 @@ exports[`variant: soft 1`] = `
 exports[`variant: solid 1`] = `
 "<transition-stub appear="false" persisted="false" css="true">
   <div class="transition-collapse-target">
-    <div class="relative overflow-hidden w-full rounded-(--ui-radius) p-4 flex gap-2.5 items-center bg-[var(--ui-primary)] text-[var(--ui-bg)]">
-      <div class="min-w-0 flex-1 flex flex-col gap-1">
-        <div class="text-sm font-medium pe-6">custom title</div>
+    <div class="relative overflow-hidden w-full rounded-(--ui-radius) p-4 items-center bg-[var(--ui-primary)] text-[var(--ui-bg)] ui-alert__root ui-alert_primary">
+      <div class="flex items-center">
         <!--v-if-->
+        <div class="flex flex-col gap-1">
+          <div class="text-sm font-medium pe-6 ui-alert__title">custom title</div>
+          <!--v-if-->
+        </div>
         <!--v-if-->
       </div>
     </div>
@@ -156,10 +189,13 @@ exports[`variant: solid 1`] = `
 exports[`variant: subtle 1`] = `
 "<transition-stub appear="false" persisted="false" css="true">
   <div class="transition-collapse-target">
-    <div class="relative overflow-hidden w-full rounded-(--ui-radius) p-4 flex gap-2.5 items-center bg-[var(--ui-primary)]/10 text-[var(--ui-primary)] ring ring-inset ring-[var(--ui-primary)]/25">
-      <div class="min-w-0 flex-1 flex flex-col gap-1">
-        <div class="text-sm font-medium pe-6">custom title</div>
+    <div class="relative overflow-hidden w-full rounded-(--ui-radius) p-4 items-center bg-[var(--ui-primary)]/10 text-[var(--ui-primary)] ring ring-inset ring-[var(--ui-primary)]/25 ui-alert__root ui-alert_primary">
+      <div class="flex items-center">
         <!--v-if-->
+        <div class="flex flex-col gap-1">
+          <div class="text-sm font-medium pe-6 ui-alert__title">custom title</div>
+          <!--v-if-->
+        </div>
         <!--v-if-->
       </div>
     </div>
@@ -170,10 +206,13 @@ exports[`variant: subtle 1`] = `
 exports[`with description 1`] = `
 "<transition-stub appear="false" persisted="false" css="true">
   <div class="transition-collapse-target">
-    <div class="relative overflow-hidden w-full rounded-(--ui-radius) p-4 flex gap-2.5 items-center bg-[var(--ui-primary)] text-[var(--ui-bg)]">
-      <div class="min-w-0 flex-1 flex flex-col gap-1">
-        <div class="text-sm font-medium pe-6">custom title</div>
-        <div class="text-sm opacity-90">custom description</div>
+    <div class="relative overflow-hidden w-full rounded-(--ui-radius) p-4 items-center bg-[var(--ui-primary)] text-[var(--ui-bg)] ui-alert__root ui-alert_primary">
+      <div class="flex items-center">
+        <!--v-if-->
+        <div class="flex flex-col gap-1">
+          <div class="text-sm font-medium pe-6 ui-alert__title">custom title</div>
+          <div class="text-sm opacity-90 ui-alert__description">custom description</div>
+        </div>
         <!--v-if-->
       </div>
     </div>
@@ -184,10 +223,13 @@ exports[`with description 1`] = `
 exports[`with title 1`] = `
 "<transition-stub appear="false" persisted="false" css="true">
   <div class="transition-collapse-target">
-    <div class="relative overflow-hidden w-full rounded-(--ui-radius) p-4 flex gap-2.5 items-center bg-[var(--ui-primary)] text-[var(--ui-bg)]">
-      <div class="min-w-0 flex-1 flex flex-col gap-1">
-        <div class="text-sm font-medium pe-6">custom title</div>
+    <div class="relative overflow-hidden w-full rounded-(--ui-radius) p-4 items-center bg-[var(--ui-primary)] text-[var(--ui-bg)] ui-alert__root ui-alert_primary">
+      <div class="flex items-center">
         <!--v-if-->
+        <div class="flex flex-col gap-1">
+          <div class="text-sm font-medium pe-6 ui-alert__title">custom title</div>
+          <!--v-if-->
+        </div>
         <!--v-if-->
       </div>
     </div>

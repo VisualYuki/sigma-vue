@@ -1,9 +1,11 @@
 import {describe, expect, it} from 'vitest'
 import {UiAlert} from './'
 import {mount} from '@vue/test-utils'
-
 import {colors} from '@/types/configuration'
 import {alertVariants} from '@/components/alert/theme'
+import {useNamespace} from '@/utils/use-namespace'
+
+const ns = useNamespace('alert', true)
 
 describe('', () => {
 	const props = {title: 'custom title'}
@@ -29,30 +31,34 @@ describe('', () => {
 		expect(wrapper.html()).toMatchSnapshot()
 	})
 
-	// it('prop type', async () => {
-	// 	const wrapper = mount(UiAlert, {
-	// 		props: {
-	// 			type: 'danger'
-	// 		}
-	// 	})
+	it('closable prop', async () => {
+		const wrapper = mount(UiAlert, {props: {closable: true}})
 
-	// 	expect(wrapper.find('.' + ns.b()).classes()).toContain(ns.m('danger'))
+		await wrapper.find(ns.e('close')).trigger('click')
 
-	// 	await wrapper.setProps({
-	// 		type: 'success'
-	// 	})
-	// 	expect(wrapper.find('.' + ns.b()).classes()).toContain(ns.m('success'))
+		expect(wrapper.emitted()).toHaveProperty('close')
+		expect(wrapper.emitted()).toHaveProperty('update:modelValue')
+	})
 
-	// 	await wrapper.setProps({
-	// 		type: 'primary'
-	// 	})
-	// 	expect(wrapper.find('.' + ns.b()).classes()).toContain(ns.m('primary'))
+	it('v-model', async () => {
+		const wrapper = mount(UiAlert, {
+			props: {
+				modelValue: true,
+				'onUpdate:modelValue': (e) => wrapper.setProps({modelValue: e}),
+				closable: true
+			}
+		})
 
-	// 	await wrapper.setProps({
-	// 		type: 'warning'
-	// 	})
-	// 	expect(wrapper.find('.' + ns.b()).classes()).toContain(ns.m('warning'))
-	// })
+		expect(wrapper.props('modelValue')).toBe(true)
+
+		await wrapper.find(ns.e('close')).trigger('click')
+		expect(wrapper.props('modelValue')).toBe(false)
+
+		await wrapper.setProps({
+			modelValue: false
+		})
+		expect(wrapper.props('modelValue')).toBe(false)
+	})
 
 	// it('title prop & description prop', async () => {
 	// 	const wrapper = mount(UiAlert, {
@@ -73,44 +79,6 @@ describe('', () => {
 	// 	expect(wrapper.find('.' + ns.e('description')).exists()).toBe(true)
 	// })
 
-	// it('closable prop', async () => {
-	// 	const wrapper = mount(UiAlert, {})
-
-	// 	await wrapper.find('.' + ns.e('close')).trigger('click')
-
-	// 	expect(wrapper.emitted()).toHaveProperty('close')
-	// 	expect(wrapper.emitted()).toHaveProperty('update:modelValue')
-	// })
-
-	// it('v-model', async () => {
-	// 	const wrapper = mount(UiAlert, {
-	// 		props: {
-	// 			modelValue: true,
-	// 			'onUpdate:modelValue': (e) => wrapper.setProps({modelValue: e})
-	// 		}
-	// 	})
-
-	// 	expect(wrapper.props('modelValue')).toBe(true)
-
-	// 	await wrapper.find('.' + ns.e('close')).trigger('click')
-	// 	expect(wrapper.props('modelValue')).toBe(false)
-
-	// 	await wrapper.setProps({
-	// 		modelValue: false
-	// 	})
-	// 	expect(wrapper.props('modelValue')).toBe(false)
-	// })
-
-	// it('center prop', async () => {
-	// 	const wrapper = mount(UiAlert, {
-	// 		props: {
-	// 			center: true
-	// 		}
-	// 	})
-
-	// 	wrapper.find('.' + ns.e('center'))
-	// })
-
 	// it('showIcon prop', async () => {
 	// 	const wrapper = mount(UiAlert, {
 	// 		props: {
@@ -119,17 +87,5 @@ describe('', () => {
 	// 	})
 
 	// 	wrapper.find('.' + ns.e('center'))
-	// })
-
-	// it('test', async () => {
-	// 	const wrapper = mount(UiAlert, {
-	// 		props: {
-	// 			center: true
-	// 		}
-	// 	})
-
-	// 	const test = wrapper.findComponent({ref: 'col-ref'})
-
-	// 	debugger
 	// })
 })

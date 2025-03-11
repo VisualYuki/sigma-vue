@@ -4,8 +4,10 @@ type VariantType = (typeof alertVariants)[number]
 
 export default {
 	slots: {
-		root: 'relative overflow-hidden w-full rounded-(--ui-radius) p-4 flex gap-2.5',
-		wrapper: 'min-w-0 flex-1 flex flex-col gap-1',
+		root: 'relative overflow-hidden w-full rounded-(--ui-radius) p-4',
+		wrapper: 'flex items-center',
+		content: 'flex flex-col gap-1',
+		withIcon: 'me-4',
 		title: 'text-sm font-medium pe-6',
 		description: 'text-sm opacity-90',
 		close: 'absolute top-3 right-3 cursor-pointer'
@@ -33,6 +35,11 @@ export default {
 			false: {
 				root: 'items-center',
 				actions: 'items-center'
+			}
+		},
+		center: {
+			true: {
+				wrapper: 'justify-center'
 			}
 		}
 	},

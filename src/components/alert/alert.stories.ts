@@ -30,6 +30,15 @@ export const Default: Story = {
 		},
 		closable: {
 			control: 'boolean'
+		},
+		withIcon: {
+			control: 'boolean'
+		},
+		center: {
+			control: 'boolean'
+		},
+		modelValue: {
+			control: 'boolean'
 		}
 	},
 	args: {
@@ -37,7 +46,10 @@ export const Default: Story = {
 		description: 'alert description',
 		color: 'primary',
 		variant: 'solid',
-		closable: true
+		closable: true,
+		withIcon: false,
+		center: false,
+		modelValue: true
 	},
 	render: (args) => ({
 		components: {
@@ -47,7 +59,7 @@ export const Default: Story = {
 			return {args}
 		},
 		template: `
-			<UiAlert :color='args.color' :variant='args.variant' :closable='args.closable'>
+			<UiAlert :color='args.color' :variant='args.variant' :closable='args.closable' :with-icon='args.withIcon' v-model='args.modelValue'>
 				<template #title> {{args.title}} </template>
 				<template #description> {{args.description}} </template>
 			</UiAlert>

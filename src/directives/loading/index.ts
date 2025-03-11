@@ -22,6 +22,9 @@ function createInstance(el: LoadingElement, binding: DirectiveBinding<loadingOpt
 
 	const app = createApp(
 		defineComponent({
+			setup() {
+				return () => h(Loading, {loadingText: binding.value.text})
+			},
 			// data() {
 			// 	return {
 			// 		visible: visible
@@ -29,9 +32,6 @@ function createInstance(el: LoadingElement, binding: DirectiveBinding<loadingOpt
 			// },
 			methods: {
 				test() {}
-			},
-			setup() {
-				return () => h(Loading, {loadingText: binding.value.text})
 			}
 		})
 	)
