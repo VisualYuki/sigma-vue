@@ -5,6 +5,12 @@ on:
       branches:
          - 'main'
 
+permissions:
+   contents: read
+   pages: write
+   id-token: write
+
+# List of jobs
 jobs:
    deploy:
       environment:
