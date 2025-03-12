@@ -39,10 +39,9 @@
 </template>
 
 <script lang="ts">
-	import {tv} from 'tailwind-variants'
 	import {ComponentNames} from '@/types/configuration'
 	import {computed, defineComponent, type PropType} from 'vue'
-	import theme from './theme'
+	import {tvInstance} from './theme'
 	import Icon from '../icon/Icon.vue'
 	import {UiCollapseTransition} from '../transition'
 	import {useNamespace} from '@/utils/use-namespace'
@@ -52,15 +51,15 @@
 		components: {Icon, UiCollapseTransition},
 		props: {
 			variant: {
-				type: String as PropType<keyof (typeof theme)['variants']['variant']>,
+				type: String as PropType<keyof (typeof tvInstance)['variants']['variant']>,
 				default: 'solid'
 			},
 			color: {
-				type: String as PropType<keyof (typeof theme)['variants']['color']>,
+				type: String as PropType<keyof (typeof tvInstance)['variants']['color']>,
 				default: 'primary'
 			},
 			overrideUi: {
-				type: Object as PropType<Partial<(typeof theme)['slots']>>,
+				type: Object as PropType<Partial<(typeof tvInstance)['slots']>>,
 				default: () => ({})
 			},
 			title: {
@@ -94,7 +93,7 @@
 		},
 		emits: ['update:modelValue', 'close'],
 		setup(props) {
-			const ui = computed(() => tv({...theme})({color: props.color, variant: props.variant, center: props.center}))
+			const ui = computed(() => tvInstance({color: props.color, variant: props.variant, center: props.center}))
 			const ns = useNamespace('alert')
 
 			return {ui, ns}

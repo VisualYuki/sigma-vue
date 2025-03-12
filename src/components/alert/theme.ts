@@ -1,8 +1,9 @@
-import type {ColorType} from '@/types/configuration'
+//import type {ColorType} from '@/types/configuration'
+import {tv} from 'tailwind-variants'
 export const alertVariants = ['solid', 'outline', 'soft', 'subtle'] as const
-type VariantType = (typeof alertVariants)[number]
+//type VariantType = (typeof alertVariants)[number]
 
-export default {
+export const tvInstance = tv({
 	slots: {
 		root: 'relative overflow-hidden w-full rounded-(--ui-radius) p-4',
 		wrapper: 'flex items-center',
@@ -45,176 +46,177 @@ export default {
 	},
 	compoundVariants: [
 		{
-			color: 'primary' as ColorType,
-			variant: 'solid' as VariantType,
+			color: 'primary',
+			variant: 'solid',
 			class: {
-				root: 'bg-[var(--ui-primary)] text-[var(--ui-bg)]'
+				root: 'bg-(--ui-primary) text-(--ui-text-contrast)'
+			}
+		},
+
+		{
+			color: 'secondary',
+			variant: 'solid',
+			class: {
+				root: 'bg-(--ui-secondary) text-(--ui-text-contrast)'
 			}
 		},
 		{
-			color: 'secondary' as ColorType,
-			variant: 'solid' as VariantType,
+			color: 'success',
+			variant: 'solid',
 			class: {
-				root: 'bg-[var(--ui-secondary)] text-[var(--ui-bg)]'
+				root: 'bg-(--ui-success) text-(--ui-text-contrast)'
 			}
 		},
 		{
-			color: 'success' as ColorType,
-			variant: 'solid' as VariantType,
+			color: 'info',
+			variant: 'solid',
 			class: {
-				root: 'bg-[var(--ui-success)] text-[var(--ui-bg)]'
+				root: 'bg-(--ui-info) text-(--ui-text-contrast)'
 			}
 		},
 		{
-			color: 'info' as ColorType,
-			variant: 'solid' as VariantType,
+			color: 'warning',
+			variant: 'solid',
 			class: {
-				root: 'bg-[var(--ui-info)] text-[var(--ui-bg)]'
+				root: 'bg-(--ui-warning) text-(--ui-text-contrast)'
 			}
 		},
 		{
-			color: 'warning' as ColorType,
-			variant: 'solid' as VariantType,
+			color: 'error',
+			variant: 'solid',
 			class: {
-				root: 'bg-[var(--ui-warning)] text-[var(--ui-bg)]'
+				root: 'bg-(--ui-error) text-(--ui-text-contrast)'
 			}
 		},
 		{
-			color: 'error' as ColorType,
-			variant: 'solid' as VariantType,
+			color: 'primary',
+			variant: 'outline',
 			class: {
-				root: 'bg-[var(--ui-error)] text-[var(--ui-bg)]'
+				root: 'text-(--ui-primary) ring ring-inset ring-(--ui-primary)/25'
 			}
 		},
 		{
-			color: 'primary' as ColorType,
-			variant: 'outline' as VariantType,
+			color: 'secondary',
+			variant: 'outline',
 			class: {
-				root: 'text-[var(--ui-primary)] ring ring-inset ring-[var(--ui-primary)]/25'
+				root: 'text-(--ui-secondary) ring ring-inset ring-(--ui-secondary)/25'
 			}
 		},
 		{
-			color: 'secondary' as ColorType,
-			variant: 'outline' as VariantType,
+			color: 'success',
+			variant: 'outline',
 			class: {
-				root: 'text-[var(--ui-secondary)] ring ring-inset ring-[var(--ui-secondary)]/25'
+				root: 'text-(--ui-success) ring ring-inset ring-(--ui-success)/25'
 			}
 		},
 		{
-			color: 'success' as ColorType,
-			variant: 'outline' as VariantType,
+			color: 'info',
+			variant: 'outline',
 			class: {
-				root: 'text-[var(--ui-success)] ring ring-inset ring-[var(--ui-success)]/25'
+				root: 'text-(--ui-info) ring ring-inset ring-(--ui-info)/25'
 			}
 		},
 		{
-			color: 'info' as ColorType,
-			variant: 'outline' as VariantType,
+			color: 'warning',
+			variant: 'outline',
 			class: {
-				root: 'text-[var(--ui-info)] ring ring-inset ring-[var(--ui-info)]/25'
+				root: 'text-(--ui-warning) ring ring-inset ring-(--ui-warning)/25'
 			}
 		},
 		{
-			color: 'warning' as ColorType,
-			variant: 'outline' as VariantType,
+			color: 'error',
+			variant: 'outline',
 			class: {
-				root: 'text-[var(--ui-warning)] ring ring-inset ring-[var(--ui-warning)]/25'
+				root: 'text-(--ui-error) ring ring-inset ring-(--ui-error)/25'
 			}
 		},
 		{
-			color: 'error' as ColorType,
-			variant: 'outline' as VariantType,
+			color: 'primary',
+			variant: 'soft',
 			class: {
-				root: 'text-[var(--ui-error)] ring ring-inset ring-[var(--ui-error)]/25'
+				root: 'bg-(--ui-primary)/10 text-(--ui-primary)'
 			}
 		},
 		{
-			color: 'primary' as ColorType,
-			variant: 'soft' as VariantType,
+			color: 'secondary',
+			variant: 'soft',
 			class: {
-				root: 'bg-[var(--ui-primary)]/10 text-[var(--ui-primary)]'
+				root: 'bg-(--ui-secondary)/10 text-(--ui-secondary)'
 			}
 		},
 		{
-			color: 'secondary' as ColorType,
-			variant: 'soft' as VariantType,
+			color: 'success',
+			variant: 'soft',
 			class: {
-				root: 'bg-[var(--ui-secondary)]/10 text-[var(--ui-secondary)]'
+				root: 'bg-(--ui-success)/10 text-(--ui-success)'
 			}
 		},
 		{
-			color: 'success' as ColorType,
-			variant: 'soft' as VariantType,
+			color: 'info',
+			variant: 'soft',
 			class: {
-				root: 'bg-[var(--ui-success)]/10 text-[var(--ui-success)]'
+				root: 'bg-(--ui-info)/10 text-(--ui-info)'
 			}
 		},
 		{
-			color: 'info' as ColorType,
-			variant: 'soft' as VariantType,
+			color: 'warning',
+			variant: 'soft',
 			class: {
-				root: 'bg-[var(--ui-info)]/10 text-[var(--ui-info)]'
+				root: 'bg-(--ui-warning)/10 text-(--ui-warning)'
 			}
 		},
 		{
-			color: 'warning' as ColorType,
-			variant: 'soft' as VariantType,
+			color: 'error',
+			variant: 'soft',
 			class: {
-				root: 'bg-[var(--ui-warning)]/10 text-[var(--ui-warning)]'
+				root: 'bg-(--ui-error)/10 text-(--ui-error)'
 			}
 		},
 		{
-			color: 'error' as ColorType,
-			variant: 'soft' as VariantType,
+			color: 'primary',
+			variant: 'subtle',
 			class: {
-				root: 'bg-[var(--ui-error)]/10 text-[var(--ui-error)]'
+				root: 'bg-(--ui-primary)/10 text-(--ui-primary) ring ring-inset ring-(--ui-primary)/25'
 			}
 		},
 		{
-			color: 'primary' as ColorType,
-			variant: 'subtle' as VariantType,
+			color: 'secondary',
+			variant: 'subtle',
 			class: {
-				root: 'bg-[var(--ui-primary)]/10 text-[var(--ui-primary)] ring ring-inset ring-[var(--ui-primary)]/25'
+				root: 'bg-(--ui-secondary)/10 text-(--ui-secondary) ring ring-inset ring-(--ui-secondary)/25'
 			}
 		},
 		{
-			color: 'secondary' as ColorType,
-			variant: 'subtle' as VariantType,
+			color: 'success',
+			variant: 'subtle',
 			class: {
-				root: 'bg-[var(--ui-secondary)]/10 text-[var(--ui-secondary)] ring ring-inset ring-[var(--ui-secondary)]/25'
+				root: 'bg-(--ui-success)/10 text-(--ui-success) ring ring-inset ring-(--ui-success)/25'
 			}
 		},
 		{
-			color: 'success' as ColorType,
-			variant: 'subtle' as VariantType,
+			color: 'info',
+			variant: 'subtle',
 			class: {
-				root: 'bg-[var(--ui-success)]/10 text-[var(--ui-success)] ring ring-inset ring-[var(--ui-success)]/25'
+				root: 'bg-(--ui-info)/10 text-(--ui-info) ring ring-inset ring-(--ui-info)/25'
 			}
 		},
 		{
-			color: 'info' as ColorType,
-			variant: 'subtle' as VariantType,
+			color: 'warning',
+			variant: 'subtle',
 			class: {
-				root: 'bg-[var(--ui-info)]/10 text-[var(--ui-info)] ring ring-inset ring-[var(--ui-info)]/25'
+				root: 'bg-(--ui-warning)/10 text-(--ui-warning) ring ring-inset ring-(--ui-warning)/25'
 			}
 		},
 		{
-			color: 'warning' as ColorType,
-			variant: 'subtle' as VariantType,
+			color: 'error',
+			variant: 'subtle',
 			class: {
-				root: 'bg-[var(--ui-warning)]/10 text-[var(--ui-warning)] ring ring-inset ring-[var(--ui-warning)]/25'
-			}
-		},
-		{
-			color: 'error' as ColorType,
-			variant: 'subtle' as VariantType,
-			class: {
-				root: 'bg-[var(--ui-error)]/10 text-[var(--ui-error)] ring ring-inset ring-[var(--ui-error)]/25'
+				root: 'bg-(--ui-error)/10 text-(--ui-error) ring ring-inset ring-(--ui-error)/25'
 			}
 		}
 	],
 	defaultVariants: {
-		color: 'primary' as ColorType,
-		variant: 'solid' as VariantType
+		color: 'primary',
+		variant: 'solid'
 	}
-}
+})

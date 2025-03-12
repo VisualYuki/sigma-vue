@@ -1,6 +1,7 @@
 export enum ComponentNames {
 	Alert = 'UiAlert',
-	Icon = 'UiIcon'
+	Icon = 'UiIcon',
+	Skeleton = 'UiSkeleton'
 }
 
 export const colors = ['primary', 'secondary', 'success', 'error', 'warning', 'info'] as const

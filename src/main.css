@@ -1,7 +1,7 @@
 @import 'tailwindcss';
 
-@variant light (&:where(.light, .light *));
-@variant dark (&:where(.dark, .dark *));
+/* @variant light (&:where(.light, .light *)); */
+/* @variant dark (&:where(.dark, .dark *)); */
 
 body {
 	padding: 10px;
@@ -32,9 +32,11 @@ body {
 
 		--ui-radius: var(--radius-md);
 		--ui-bg: var(--color-white);
+		--ui-bg-elevated: var(--ui-color-neutral-100);
+		--ui-text-contrast: var(--color-white);
 	}
 
-	.dark {
+	/* .dark {
 		--ui-text-dimmed: var(--ui-color-neutral-500);
 		--ui-text-muted: var(--ui-color-neutral-400);
 		--ui-text-toned: var(--ui-color-neutral-300);
@@ -51,7 +53,7 @@ body {
 		--ui-border-muted: var(--ui-color-neutral-700);
 		--ui-border-accented: var(--ui-color-neutral-700);
 		--ui-border-inverted: var(--color-white);
-	}
+	} */
 }
 
 /* --ui-text-dimmed: var(--ui-color-neutral-400);
