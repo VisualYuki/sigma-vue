@@ -2,7 +2,7 @@
 	<div :class="[ui.root({class: $props.overrideUi?.root})]">
 		<slot name="default">
 			<template v-if="$props.type === 'image'">
-				<Icon icon="ph:image-duotone" color="var(--color-neutral-400)" :size="40"></Icon>
+				<Icon icon="ph:image-duotone" color="var(--color-neutral-400)" size="40"></Icon>
 			</template>
 		</slot>
 	</div>

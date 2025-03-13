@@ -7,7 +7,7 @@
 	import {Icon as IconifyIcon, type IconProps} from '@iconify/vue'
 	import {defineComponent, type PropType} from 'vue'
 
-	type sizes = 10 | 15 | 20 | 30 | 40 | 50
+	type sizes = '10' | '15' | '20' | '30' | '40' | '50' | ''
 	type Icon =
 		| 'iconoir:cancel'
 		| 'svg-spinners:90-ring-with-bg'
@@ -16,14 +16,15 @@
 		| 'mdi:error'
 		| 'mdi:success-circle'
 		| 'ph:image-duotone'
+		| 'mdi:check'
 
-	export default defineComponent<IconProps & {size: sizes; icon: Icon}>({
+	export default defineComponent<IconProps & {size?: sizes; icon: Icon}>({
 		name: ComponentNames.Icon,
 		components: {IconifyIcon},
 		props: {
 			size: {
-				type: Number as PropType<sizes>,
-				required: true
+				type: String as PropType<sizes>,
+				default: '10'
 			},
 			icon: {
 				type: String as PropType<Icon>,

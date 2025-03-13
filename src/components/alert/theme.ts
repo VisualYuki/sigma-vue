@@ -1,4 +1,5 @@
 //import type {ColorType} from '@/types/configuration'
+import {colors, type TColorTheme} from '@/types/configuration'
 import {tv} from 'tailwind-variants'
 export const alertVariants = ['solid', 'outline', 'soft', 'subtle'] as const
 //type VariantType = (typeof alertVariants)[number]
@@ -14,28 +15,23 @@ export const tvInstance = tv({
 		close: 'absolute top-3 right-3 cursor-pointer'
 	},
 	variants: {
-		color: {
-			primary: '',
-			secondary: '',
-			success: '',
-			info: '',
-			warning: '',
-			error: ''
-		},
+		color: Object.fromEntries(
+			colors.map((colorName) => {
+				return [colorName, '']
+			})
+		) as TColorTheme,
 		variant: {
 			solid: '',
 			outline: '',
 			soft: '',
 			subtle: ''
-		},
+		} satisfies {[prop in (typeof alertVariants)[number]]: ''},
 		multiline: {
 			true: {
-				root: 'items-start',
-				actions: 'items-start mt-1'
+				root: 'items-start'
 			},
 			false: {
-				root: 'items-center',
-				actions: 'items-center'
+				root: 'items-center'
 			}
 		},
 		center: {

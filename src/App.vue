@@ -19,6 +19,8 @@
 		<button @click="isLoading = !isLoading">change</button>
 	</div>
 
+	<UiButton>hello</UiButton>
+
 	<button @click="alertModel = true">click</button>
 
 	<!-- <SiIcon ></SiIcon> -->
@@ -27,6 +29,7 @@
 <script lang="ts" setup>
 	import {ref} from 'vue'
 	import {UiAlert} from './components/alert'
+	import {UiButton} from './components/button'
 
 	const color = ref('red')
 

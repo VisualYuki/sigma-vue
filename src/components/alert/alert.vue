@@ -5,19 +5,32 @@
 				<div :class="ui.wrapper({class: $props.overrideUi?.wrapper})">
 					<Icon
 						v-if="$props.withIcon && colorIcon"
-						:class="[ui.withIcon({class: $props.overrideUi?.withIcon}), ns.e('with-icon')]"
-						:size="20"
+						:class="[
+							ui.withIcon({
+								class: $props.overrideUi?.withIcon
+							}),
+							ns.e('with-icon')
+						]"
+						size="20"
 						:icon="colorIcon"
 					></Icon>
 					<div :class="ui.content({class: $props.overrideUi?.content})">
-						<div v-if="$props.title || $slots.title" :class="[ui.title({class: $props.overrideUi?.title}), ns.e('title')]">
+						<div
+							v-if="$props.title || $slots.title"
+							:class="[ui.title({class: $props.overrideUi?.title}), ns.e('title')]"
+						>
 							<slot name="title">
 								{{ $props.title }}
 							</slot>
 						</div>
 						<div
 							v-if="$props.description || $slots.description"
-							:class="[ui.description({class: $props.overrideUi?.description}), ns.e('description')]"
+							:class="[
+								ui.description({
+									class: $props.overrideUi?.description
+								}),
+								ns.e('description')
+							]"
 						>
 							<slot name="description">
 								{{ $props.description }}
@@ -28,7 +41,7 @@
 					<Icon
 						v-if="$props.closable"
 						:class="[ui.close({class: $props.overrideUi?.close}), ns.e('close')]"
-						:size="20"
+						size="20"
 						icon="iconoir:cancel"
 						@click="handleClose"
 					></Icon>
@@ -93,7 +106,13 @@
 		},
 		emits: ['update:modelValue', 'close'],
 		setup(props) {
-			const ui = computed(() => tvInstance({color: props.color, variant: props.variant, center: props.center}))
+			const ui = computed(() =>
+				tvInstance({
+					color: props.color,
+					variant: props.variant,
+					center: props.center
+				})
+			)
 			const ns = useNamespace('alert')
 
 			return {ui, ns}

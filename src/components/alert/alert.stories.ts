@@ -59,7 +59,7 @@ export const Default: Story = {
 			return {args}
 		},
 		template: `
-			<UiAlert :color='args.color' :variant='args.variant' :closable='args.closable' :with-icon='args.withIcon' v-model='args.modelValue'>
+			<UiAlert :color='args.color' :center='args.center' :variant='args.variant' :closable='args.closable' :with-icon='args.withIcon' v-model='args.modelValue'>
 				<template #title> {{args.title}} </template>
 				<template #description> {{args.description}} </template>
 			</UiAlert>

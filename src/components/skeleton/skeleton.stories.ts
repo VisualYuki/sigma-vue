@@ -23,7 +23,7 @@ export const Default: Story = {
 		}
 	},
 	args: {
-		type: 'text',
+		type: 'image',
 		animated: true
 	},
 	render: (args) => ({
