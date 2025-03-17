@@ -15,10 +15,7 @@
 						:icon="colorIcon"
 					></Icon>
 					<div :class="ui.content({class: $props.overrideUi?.content})">
-						<div
-							v-if="$props.title || $slots.title"
-							:class="[ui.title({class: $props.overrideUi?.title}), ns.e('title')]"
-						>
+						<div v-if="$props.title || $slots.title" :class="[ui.title({class: $props.overrideUi?.title}), ns.e('title')]">
 							<slot name="title">
 								{{ $props.title }}
 							</slot>
@@ -38,13 +35,13 @@
 						</div>
 					</div>
 
-					<Icon
+					<UiIcon
 						v-if="$props.closable"
 						:class="[ui.close({class: $props.overrideUi?.close}), ns.e('close')]"
 						size="20"
 						icon="iconoir:cancel"
 						@click="handleClose"
-					></Icon>
+					></UiIcon>
 				</div>
 			</div>
 		</div>
@@ -55,13 +52,13 @@
 	import {ComponentNames} from '@/types/configuration'
 	import {computed, defineComponent, type PropType} from 'vue'
 	import {tvInstance} from './theme'
-	import Icon from '../icon/Icon.vue'
+	import {UiIcon} from '../icon/'
 	import {UiCollapseTransition} from '../transition'
 	import {useNamespace} from '@/utils/use-namespace'
 
 	export default defineComponent({
 		name: ComponentNames.Alert,
-		components: {Icon, UiCollapseTransition},
+		components: {UiIcon, UiCollapseTransition},
 		props: {
 			variant: {
 				type: String as PropType<keyof (typeof tvInstance)['variants']['variant']>,

@@ -15,7 +15,17 @@ describe('', () => {
 		['with description', {props: {...props, description: 'custom description'}}],
 		[
 			'overrideUi prop',
-			{props: {...props, overrideUi: {root: 'override-root', title: 'override-title', wrapper: 'override-wrapper', close: 'override-close'}}}
+			{
+				props: {
+					...props,
+					overrideUi: {
+						root: 'override-root',
+						title: 'override-title',
+						wrapper: 'override-wrapper',
+						close: 'override-close'
+					}
+				}
+			}
 		],
 		...colors.map((color: string) => {
 			return [`color: ${color}`, {props: {...props, color: color}}]

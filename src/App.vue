@@ -1,48 +1,34 @@
 <template>
-	<div class="font-sans">
-		<UiAlert
-			v-model="alertModel"
-			:override-ui="{root: 'override-root'}"
-			color="error"
-			variant="subtle"
-			title="title1"
-			description="description1"
-			:closable="true"
-			:with-icon="true"
-			:center="true"
-		/>
-		<div v-loading="{value: isLoading, text: 'custom loading text...', background: color}">
-			hello
-			<br />
-			hellow
-		</div>
-		<button @click="isLoading = !isLoading">change</button>
-	</div>
+	<UiAccordion :accordion="true">
+		<UiAccordionItem name="1">
+			<template #trigger>trigger 1</template>
+			fg
+			<template #content>content 1</template>
+		</UiAccordionItem>
+		<UiAccordionItem name="2">
+			<template #trigger>trigger 2</template>
 
-	<UiButton>hello</UiButton>
+			<template #content>content 2</template>
+		</UiAccordionItem>
 
-	<button @click="alertModel = true">click</button>
+		<UiAccordionItem name="3">
+			<template #trigger>trigger 3</template>
 
-	<!-- <SiIcon ></SiIcon> -->
+			<template #content>content 3</template>
+		</UiAccordionItem>
+	</UiAccordion>
 </template>
 
 <script lang="ts" setup>
-	import {ref} from 'vue'
-	import {UiAlert} from './components/alert'
-	import {UiButton} from './components/button'
+	//import {ref} from 'vue'
+	import {UiAccordion, UiAccordionItem} from './components/accordion'
+	//import {UiCollapseContent, UiCollapseRoot, UiCollapseTrigger} from './components/collapse'
 
-	const color = ref('red')
+	//const accordionValue = ref([])
 
-	const alertModel = ref(true)
-
-	//const loadingDir = ref('v-loading')
-
-	setTimeout(() => {
-		color.value = 'green'
-		isLoading.value = false
-	}, 5000)
-
-	const isLoading = ref(true)
+	// setTimeout(() => {
+	// 	accordionValue.value = ['1', '2']
+	// }, 2000)
 </script>
 
 <style lang="scss" scoped></style>

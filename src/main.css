@@ -17,9 +17,9 @@ body {
 }
 
 @layer base {
-	/* body {
-		@apply antialiased text-[var(--ui-text)] bg-[var(--ui-bg)] scheme-light dark:scheme-dark;
-	} */
+	body {
+		@apply antialiased text-(--ui-text) bg-(--ui-bg) scheme-light dark:scheme-dark;
+	}
 
 	:root,
 	.light {
@@ -34,6 +34,13 @@ body {
 		--ui-bg: var(--color-white);
 		--ui-bg-elevated: var(--ui-color-neutral-100);
 		--ui-text-contrast: var(--color-white);
+		--ui-border: var(--color-neutral-200);
+
+		--ui-text-dimmed: var(--color-neutral-400);
+		--ui-text-muted: var(--color-neutral-500);
+		--ui-text-toned: var(--color-neutral-600);
+		--ui-text: var(--color-neutral-700);
+		--ui-text-highlighted: var(--color-neutral-900);
 	}
 
 	/* .dark {

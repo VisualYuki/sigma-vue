@@ -17,6 +17,7 @@
 		| 'mdi:success-circle'
 		| 'ph:image-duotone'
 		| 'mdi:check'
+		| 'line-md:chevron-down'
 
 	export default defineComponent<IconProps & {size?: sizes; icon: Icon}>({
 		name: ComponentNames.Icon,

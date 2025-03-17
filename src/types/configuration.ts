@@ -3,7 +3,8 @@ export enum ComponentNames {
 	Icon = 'UiIcon',
 	Skeleton = 'UiSkeleton',
 	Checkbox = 'UiCheckbox',
-	Button = 'UiButton'
+	Button = 'UiButton',
+	Accordion = 'UiAccordion'
 }
 
 export const colors = ['primary', 'secondary', 'success', 'error', 'warning', 'info'] as const

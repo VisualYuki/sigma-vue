@@ -2,7 +2,7 @@
 	<div :class="ui.root({class: $props.overrideUi?.root})" @click="toggleState()">
 		<div :class="ui.checkbox({class: $props.overrideUi?.checkbox})">
 			<template v-if="$props.modelValue">
-				<Icon icon="mdi:check" color="var(--color-white)" size="20"></Icon>
+				<UiIcon icon="mdi:check" color="var(--color-white)" size="20"></UiIcon>
 			</template>
 		</div>
 		<div v-if="$props.label || $slots.label" :class="ui.label({class: $props.overrideUi?.label})">
@@ -15,12 +15,12 @@
 	import {ComponentNames, type TSizes} from '@/types/configuration'
 	import {computed, defineComponent, type PropType} from 'vue'
 	import {tvInstance} from './theme'
-	import Icon from '../icon/Icon.vue'
+	import {UiIcon} from '../icon/'
 
 	export default defineComponent({
 		name: ComponentNames.Checkbox,
 		components: {
-			Icon
+			UiIcon
 		},
 		props: {
 			modelValue: {
