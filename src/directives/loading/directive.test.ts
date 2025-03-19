@@ -6,7 +6,7 @@ import {useNamespace} from '@/utils/use-namespace'
 
 const ns = useNamespace('loading-directive', true)
 
-function createTargetComponent(directives: string[]) {
+function createTargetComponent(directives: string[], props: string = '') {
 	const directiveString = directives.reduce((acc, value) => acc + '.' + value, '')
 
 	return defineComponent({
@@ -19,7 +19,7 @@ function createTargetComponent(directives: string[]) {
 				default: true
 			}
 		},
-		template: `<div v-loading${directiveString}="{value: isLoading, text: 'loadingText'}"> content </div>`
+		template: `<div v-loading${directiveString}="isLoading" ${props}> content </div>`
 	})
 }
 
@@ -32,11 +32,13 @@ describe('loading directive', async () => {
 		expect(document.body.lastElementChild?.classList.contains(ns.b().replace('.', ''))).toBe(true)
 	})
 
-	test('text prop', () => {
-		const targetComponent = createTargetComponent([])
+	test('text prop, customClass prop, background prop', () => {
+		const targetComponent = createTargetComponent([], 'ui-text="loadingText" ui-background="red" ui-custom-class="custom-class"')
 		const wrapper = mount(targetComponent)
 
 		expect(wrapper.find(ns.e('text')).text()).toBe('loadingText')
+		expect(wrapper.find(ns.b()).classes()).toContain('custom-class')
+		expect(wrapper.find<HTMLDivElement>(ns.b()).element.style.background).toBe('red')
 	})
 
 	test('condition state', async () => {
@@ -49,6 +51,16 @@ describe('loading directive', async () => {
 			isLoading: false
 		})
 
+		expect(wrapper.find(ns.b()).exists()).toBe(false)
+
+		await wrapper.setProps({
+			isLoading: true
+		})
+		expect(wrapper.find(ns.b()).exists()).toBe(true)
+
+		await wrapper.setProps({
+			isLoading: false
+		})
 		expect(wrapper.find(ns.b()).exists()).toBe(false)
 
 		await wrapper.setProps({

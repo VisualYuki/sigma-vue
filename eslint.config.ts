@@ -18,7 +18,7 @@ export default defineConfigWithVueTs(
 	},
 	{
 		name: 'app/files-to-ignore',
-		ignores: ['**/dist/**', '**/dist-ssr/**', '**/coverage/**', '**/temp/**']
+		ignores: ['**/dist/**', '**/dist-ssr/**', '**/coverage/**', '**/temp/**', '**/src/App.vue']
 	},
 	{
 		name: 'ignore storybook',

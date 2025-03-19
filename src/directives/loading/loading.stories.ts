@@ -2,7 +2,7 @@ import type {StoryObj} from '@storybook/vue3'
 import {loadingDirective} from './index'
 
 const meta = {
-	title: 'Directive/Loading',
+	title: 'Directives/Loading',
 	tags: ['autodocs'],
 	argTypes: {
 		value: {
@@ -26,7 +26,9 @@ export const Default: Story = {
 			loading: loadingDirective
 		},
 		template: `
-			<div v-loading='{value: args.value}'>default content <br> second line</div>
+			<div v-loading='args.value'>
+				default content <br> second line
+			</div>
 		`
 	})
 }
