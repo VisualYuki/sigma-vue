@@ -1,3 +1,2 @@
 - vue-eslint add unrecognized rules.
-- add this project to portfolio
 - add dark mode support
