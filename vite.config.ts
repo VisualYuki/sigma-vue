@@ -4,7 +4,7 @@ import {defineConfig} from 'vite'
 import vue from '@vitejs/plugin-vue'
 import vueJsx from '@vitejs/plugin-vue-jsx'
 import vueDevTools from 'vite-plugin-vue-devtools'
-import path from 'node:path'
+//import path from 'node:path'
 import tailwindcss from '@tailwindcss/vite'
 
 // https://vite.dev/config/
@@ -24,22 +24,23 @@ export default defineConfig({
 		}
 	},
 	build: {
-		lib: {
-			entry: path.resolve(__dirname, 'src/index.ts'),
-			name: 'sigma-vue'
-		},
-		rollupOptions: {
-			// make sure to externalize deps that shouldn't be bundled
-			// into your library
-			external: ['vue'],
-			output: {
-				// Provide global variables to use in the UMD build
-				// for externalized deps
-				globals: {
-					vue: 'Vue'
-				}
-			}
-		}
+		minify: false
+		// lib: {
+		// 	entry: path.resolve(__dirname, 'src/index.ts'),
+		// 	name: 'sigma-vue'
+		// },
+		// rollupOptions: {
+		// 	// make sure to externalize deps that shouldn't be bundled
+		// 	// into your library
+		// 	external: ['vue'],
+		// 	output: {
+		// 		// Provide global variables to use in the UMD build
+		// 		// for externalized deps
+		// 		globals: {
+		// 			vue: 'Vue'
+		// 		}
+		// 	}
+		// }
 	},
 	server: {
 		port: 7949

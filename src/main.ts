@@ -7,6 +7,8 @@ const app = createApp(App)
 
 app.use(install)
 
+app.config.performance = true
+
 //app.directive('loading', loadingDirective)
 
 app.mount('#app')
