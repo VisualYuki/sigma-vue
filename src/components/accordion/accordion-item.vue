@@ -27,7 +27,7 @@
 	import {ComponentNames} from '@/types/configuration'
 	import {computed, inject, watch} from 'vue'
 	import {tvInstance} from './theme'
-	//import {UiCollapseContent, UiCollapseRoot, UiCollapseTrigger} from '../collapse'
+	import {UiCollapseContent, UiCollapseRoot, UiCollapseTrigger} from '../collapse'
 	import {UiIcon} from '../icon'
 	import {useNamespace} from '@/utils/use-namespace'
 	import {accordionSymbol, type accordionProvideContext} from './utils'

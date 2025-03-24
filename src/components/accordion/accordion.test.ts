@@ -36,11 +36,6 @@ describe('', () => {
 			props: {accordion: true, modelValue: modelValue, 'onUpdate:modelValue': (e) => wrapper.setProps({modelValue: e})},
 			slots: {
 				default: [h(UiAccordionItem, {name: '1'}), h(UiAccordionItem, {name: '2'}), h(UiAccordionItem, {name: '3'})]
-			},
-			global: {
-				stubs: {
-					transition: false
-				}
 			}
 		})
 

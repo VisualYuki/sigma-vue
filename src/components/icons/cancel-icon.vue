@@ -3,6 +3,8 @@
 </template>
 
 <script lang="ts" setup>
+	import {UiIcon} from '../icon'
+
 	defineOptions({
 		name: 'UiCancelIcon'
 	})

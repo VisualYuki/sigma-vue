@@ -45,7 +45,9 @@
 	import {ComponentNames, type TSizes} from '@/types/configuration'
 	import {tvInstance} from './theme'
 	import {UiCancelIcon} from '../icons'
-	//import UiTeleport from '../teleport/teleport.vue'
+	import {UiTeleport} from '../teleport'
+	import {UiOverlay} from '../overlay'
+	import {UiButton} from '../button'
 
 	defineOptions({
 		name: ComponentNames.Modal

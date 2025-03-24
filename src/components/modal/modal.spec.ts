@@ -3,7 +3,6 @@ import {describe, expect, it, vi} from 'vitest'
 import {UiModal} from './index'
 import {useNamespace} from '@/utils/use-namespace'
 import UiOverlay from '../overlay/overlay'
-import {UiButton} from '../button'
 
 const ns = useNamespace('modal', true)
 
@@ -19,12 +18,6 @@ describe('modal', () => {
 			props: {
 				modelValue: true,
 				'onUpdate:modelValue': (e) => wrapper.setProps({modelValue: e})
-			},
-			shallow: true,
-			global: {
-				stubs: {
-					UiOverlay: UiOverlay
-				}
 			}
 		})
 
@@ -47,7 +40,7 @@ describe('modal', () => {
 			},
 			global: {
 				stubs: {
-					UiButton: UiButton
+					teleport: true
 				}
 			}
 		})

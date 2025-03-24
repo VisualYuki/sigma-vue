@@ -1,10 +1,10 @@
 <template>
-	<UiCollapseRoot>
+	<UiCollapseRoot v-model="modelValue">
 		<UiCollapseContent>
 			<div class="transition-collapse-target">
 				<div :class="[ui.root({class: props.overrideUi?.root}), ns.e('root'), ns.m(props.color as string)]">
 					<div :class="ui.wrapper({class: props.overrideUi?.wrapper})">
-						<Icon
+						<UiIcon
 							v-if="props.withIcon && _computed.colorIcon.value"
 							:class="[
 								ui.withIcon({
@@ -14,7 +14,7 @@
 							]"
 							size="20"
 							:icon="_computed.colorIcon.value"
-						></Icon>
+						></UiIcon>
 						<div :class="ui.content({class: props.overrideUi?.content})">
 							<div v-if="props.title || $slots.title" :class="[ui.title({class: props.overrideUi?.title}), ns.e('title')]">
 								<slot name="title">
@@ -37,11 +37,13 @@
 						</div>
 
 						<UiCollapseTrigger>
-							<UiCancelIcon
+							<UiButton
 								v-if="props.closable"
 								:class="[ui.close({class: props.overrideUi?.close}), ns.e('close')]"
 								@click="methods.handleClose"
-							></UiCancelIcon>
+							>
+								<UiCancelIcon></UiCancelIcon>
+							</UiButton>
 						</UiCollapseTrigger>
 					</div>
 				</div>
@@ -56,6 +58,9 @@
 	import {tvInstance} from './theme'
 	import {useNamespace} from '@/utils/use-namespace'
 	import {UiCancelIcon} from '../icons'
+	import {UiCollapseContent, UiCollapseRoot, UiCollapseTrigger} from '../collapse'
+	import {UiIcon} from '../icon'
+	import {UiButton} from '../button'
 
 	defineOptions({
 		name: ComponentNames.Alert
@@ -90,10 +95,7 @@
 			type: Boolean,
 			default: false
 		},
-		modelValue: {
-			type: Boolean,
-			default: true
-		},
+
 		center: {
 			type: Boolean,
 			default: false
@@ -104,7 +106,7 @@
 		}
 	})
 
-	const emit = defineEmits(['update:modelValue', 'close'])
+	const emit = defineEmits(['close'])
 	const ui = computed(() =>
 		tvInstance({
 			color: props.color,
@@ -113,6 +115,7 @@
 		})
 	)
 	const ns = useNamespace('alert')
+	const modelValue = defineModel({default: true, type: Boolean})
 
 	const _computed = {
 		colorIcon: computed(() => {
@@ -139,7 +142,6 @@
 
 	const methods = {
 		handleClose() {
-			emit('update:modelValue', false)
 			emit('close')
 		}
 	}
