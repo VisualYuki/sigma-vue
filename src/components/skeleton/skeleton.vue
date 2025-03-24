@@ -8,36 +8,33 @@
 	</div>
 </template>
 
-<script lang="ts">
+<script lang="ts" setup>
 	import {ComponentNames} from '@/types/configuration'
-	import {computed, defineComponent, type PropType} from 'vue'
+	import {computed, type PropType} from 'vue'
 	import {tvInstance} from './theme'
 	import type {Types} from './utils'
 	import {UiIcon} from '../icon'
 
-	export default defineComponent({
-		name: ComponentNames.Skeleton,
-		components: {UiIcon},
-		props: {
-			type: {
-				type: String as PropType<Types>,
-				default: 'text'
-			},
-			animated: {
-				type: Boolean,
-				default: false
-			},
-			overrideUi: {
-				type: Object as PropType<Partial<(typeof tvInstance)['slots']>>,
-				default: () => ({})
-			}
-		},
-		setup(props) {
-			const ui = computed(() => tvInstance({animated: props.animated, type: props.type}))
+	defineOptions({
+		name: ComponentNames.Skeleton
+	})
 
-			return {ui}
+	const props = defineProps({
+		type: {
+			type: String as PropType<Types>,
+			default: 'text'
+		},
+		animated: {
+			type: Boolean,
+			default: false
+		},
+		overrideUi: {
+			type: Object as PropType<Partial<(typeof tvInstance)['slots']>>,
+			default: () => ({})
 		}
 	})
+
+	const ui = computed(() => tvInstance({animated: props.animated, type: props.type}))
 </script>
 
 <style lang="scss" scoped></style>

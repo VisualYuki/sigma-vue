@@ -28,7 +28,6 @@ export default defineComponent({
 			return h(
 				'div',
 				{
-					// TODO: add tailwindcss class .default-transition
 					class: [ns.b(), 'default-transition', {[ns.m('mask')]: props.mask}, ui.value],
 					style: {
 						zIndex: '2000'

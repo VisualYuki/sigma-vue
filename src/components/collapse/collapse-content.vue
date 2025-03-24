@@ -10,9 +10,10 @@
 	import {inject} from 'vue'
 	import {UiCollapseTransition} from '../transition'
 	import {collapseSymbol, type collapseRootContext} from './utils'
+	import {ComponentNames} from '@/types/configuration'
 
 	defineOptions({
-		name: 'UiCollapseContent'
+		name: ComponentNames.CollapseContent
 	})
 
 	const injected = inject<collapseRootContext>(collapseSymbol)

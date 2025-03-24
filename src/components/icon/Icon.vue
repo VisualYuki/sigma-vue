@@ -1,11 +1,10 @@
 <template>
-	<IconifyIcon v-bind="$props" :style="{'font-size': $props.size + 'px'}"></IconifyIcon>
+	<IconifyIcon v-bind="props" :style="{'font-size': props.size + 'px'}"></IconifyIcon>
 </template>
 
-<script lang="ts">
+<script lang="ts" setup>
 	import {ComponentNames} from '@/types/configuration'
 	import {Icon as IconifyIcon, type IconProps} from '@iconify/vue'
-	import {defineComponent, type PropType} from 'vue'
 
 	type sizes = '10' | '15' | '20' | '30' | '40' | '50' | ''
 	type Icon =
@@ -19,20 +18,11 @@
 		| 'mdi:check'
 		| 'line-md:chevron-down'
 
-	export default defineComponent<IconProps & {size?: sizes; icon: Icon}>({
-		name: ComponentNames.Icon,
-		components: {IconifyIcon},
-		props: {
-			size: {
-				type: String as PropType<sizes>,
-				default: '10'
-			},
-			icon: {
-				type: String as PropType<Icon>,
-				required: true
-			}
-		}
+	defineOptions({
+		name: ComponentNames.Icon
 	})
+
+	const props = defineProps<IconProps & {size?: sizes; icon: Icon}>()
 </script>
 
 <style lang="scss" scoped></style>

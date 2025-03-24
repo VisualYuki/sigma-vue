@@ -1,150 +1,148 @@
 <template>
-	<UiCollapseTransition>
-		<!-- TODO -->
-		<div v-if="modelValue" class="transition-collapse-target">
-			<div :class="[ui.root({class: $props.overrideUi?.root}), ns.e('root'), ns.m($props.color as string)]">
-				<div :class="ui.wrapper({class: $props.overrideUi?.wrapper})">
-					<Icon
-						v-if="$props.withIcon && colorIcon"
-						:class="[
-							ui.withIcon({
-								class: $props.overrideUi?.withIcon
-							}),
-							ns.e('with-icon')
-						]"
-						size="20"
-						:icon="colorIcon"
-					></Icon>
-					<div :class="ui.content({class: $props.overrideUi?.content})">
-						<div v-if="$props.title || $slots.title" :class="[ui.title({class: $props.overrideUi?.title}), ns.e('title')]">
-							<slot name="title">
-								{{ $props.title }}
-							</slot>
-						</div>
-						<div
-							v-if="$props.description || $slots.description"
+	<UiCollapseRoot>
+		<UiCollapseContent>
+			<div class="transition-collapse-target">
+				<div :class="[ui.root({class: props.overrideUi?.root}), ns.e('root'), ns.m(props.color as string)]">
+					<div :class="ui.wrapper({class: props.overrideUi?.wrapper})">
+						<Icon
+							v-if="props.withIcon && _computed.colorIcon.value"
 							:class="[
-								ui.description({
-									class: $props.overrideUi?.description
+								ui.withIcon({
+									class: props.overrideUi?.withIcon
 								}),
-								ns.e('description')
+								ns.e('with-icon')
 							]"
-						>
-							<slot name="description">
-								{{ $props.description }}
-							</slot>
+							size="20"
+							:icon="_computed.colorIcon.value"
+						></Icon>
+						<div :class="ui.content({class: props.overrideUi?.content})">
+							<div v-if="props.title || $slots.title" :class="[ui.title({class: props.overrideUi?.title}), ns.e('title')]">
+								<slot name="title">
+									{{ props.title }}
+								</slot>
+							</div>
+							<div
+								v-if="props.description || $slots.description"
+								:class="[
+									ui.description({
+										class: props.overrideUi?.description
+									}),
+									ns.e('description')
+								]"
+							>
+								<slot name="description">
+									{{ props.description }}
+								</slot>
+							</div>
 						</div>
-					</div>
 
-					<UiCancelIcon
-						v-if="$props.closable"
-						:class="[ui.close({class: $props.overrideUi?.close}), ns.e('close')]"
-						@click="handleClose"
-					></UiCancelIcon>
+						<UiCollapseTrigger>
+							<UiCancelIcon
+								v-if="props.closable"
+								:class="[ui.close({class: props.overrideUi?.close}), ns.e('close')]"
+								@click="methods.handleClose"
+							></UiCancelIcon>
+						</UiCollapseTrigger>
+					</div>
 				</div>
 			</div>
-		</div>
-	</UiCollapseTransition>
+		</UiCollapseContent>
+	</UiCollapseRoot>
 </template>
 
-<script lang="ts">
+<script lang="ts" setup>
 	import {ComponentNames} from '@/types/configuration'
-	import {computed, defineComponent, type PropType} from 'vue'
+	import {computed, type PropType} from 'vue'
 	import {tvInstance} from './theme'
-	import {UiCollapseTransition} from '../transition'
 	import {useNamespace} from '@/utils/use-namespace'
 	import {UiCancelIcon} from '../icons'
 
-	export default defineComponent({
-		name: ComponentNames.Alert,
-		components: {UiCollapseTransition, UiCancelIcon},
-		props: {
-			variant: {
-				type: String as PropType<keyof (typeof tvInstance)['variants']['variant']>,
-				default: 'solid'
-			},
-			color: {
-				type: String as PropType<keyof (typeof tvInstance)['variants']['color']>,
-				default: 'primary'
-			},
-			overrideUi: {
-				type: Object as PropType<Partial<(typeof tvInstance)['slots']>>,
-				default: () => ({})
-			},
-			title: {
-				type: String,
-				default: ''
-			},
-			description: {
-				type: String,
-				default: ''
-			},
-			as: {
-				type: String as PropType<keyof HTMLElementTagNameMap>,
-				default: 'div'
-			},
-			closable: {
-				type: Boolean,
-				default: false
-			},
-			modelValue: {
-				type: Boolean,
-				default: true
-			},
-			center: {
-				type: Boolean,
-				default: false
-			},
-			withIcon: {
-				type: Boolean,
-				default: false
-			}
-		},
-		emits: ['update:modelValue', 'close'],
-		setup(props) {
-			const ui = computed(() =>
-				tvInstance({
-					color: props.color,
-					variant: props.variant,
-					center: props.center
-				})
-			)
-			const ns = useNamespace('alert')
+	defineOptions({
+		name: ComponentNames.Alert
+	})
 
-			return {ui, ns}
+	const props = defineProps({
+		variant: {
+			type: String as PropType<keyof (typeof tvInstance)['variants']['variant']>,
+			default: 'solid'
 		},
-		computed: {
-			colorIcon() {
-				let result: 'mdi:error' | 'mdi:information' | 'mdi:alert' | 'mdi:success-circle' | '' = ''
-
-				switch (this.color) {
-					case 'error':
-						result = 'mdi:error'
-						break
-					case 'info':
-						result = 'mdi:information'
-						break
-					case 'warning':
-						result = 'mdi:alert'
-						break
-					case 'success':
-						result = 'mdi:success-circle'
-						break
-				}
-
-				return result
-			}
-			// multiline() {
-			// 	return !!this.title && !!this.description
-			// }
+		color: {
+			type: String as PropType<keyof (typeof tvInstance)['variants']['color']>,
+			default: 'primary'
 		},
-		methods: {
-			handleClose() {
-				this.$emit('update:modelValue', false)
-				this.$emit('close')
-			}
+		overrideUi: {
+			type: Object as PropType<Partial<(typeof tvInstance)['slots']>>,
+			default: () => ({})
+		},
+		title: {
+			type: String,
+			default: ''
+		},
+		description: {
+			type: String,
+			default: ''
+		},
+		as: {
+			type: String as PropType<keyof HTMLElementTagNameMap>,
+			default: 'div'
+		},
+		closable: {
+			type: Boolean,
+			default: false
+		},
+		modelValue: {
+			type: Boolean,
+			default: true
+		},
+		center: {
+			type: Boolean,
+			default: false
+		},
+		withIcon: {
+			type: Boolean,
+			default: false
 		}
 	})
+
+	const emit = defineEmits(['update:modelValue', 'close'])
+	const ui = computed(() =>
+		tvInstance({
+			color: props.color,
+			variant: props.variant,
+			center: props.center
+		})
+	)
+	const ns = useNamespace('alert')
+
+	const _computed = {
+		colorIcon: computed(() => {
+			let result: 'mdi:error' | 'mdi:information' | 'mdi:alert' | 'mdi:success-circle' | '' = ''
+
+			switch (props.color) {
+				case 'error':
+					result = 'mdi:error'
+					break
+				case 'info':
+					result = 'mdi:information'
+					break
+				case 'warning':
+					result = 'mdi:alert'
+					break
+				case 'success':
+					result = 'mdi:success-circle'
+					break
+			}
+
+			return result
+		})
+	}
+
+	const methods = {
+		handleClose() {
+			emit('update:modelValue', false)
+			emit('close')
+		}
+	}
 </script>
 
 <style lang="scss" scoped></style>
