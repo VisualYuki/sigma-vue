@@ -1,6 +1,7 @@
 import type {Preview} from '@storybook/vue3'
-
+import {setup} from '@storybook/vue3'
 import '../src/main.css'
+import {install} from '../src/index'
 
 const preview: Preview = {
 	parameters: {
@@ -12,5 +13,9 @@ const preview: Preview = {
 		}
 	}
 }
+
+setup((app) => {
+	app.use(install)
+})
 
 export default preview

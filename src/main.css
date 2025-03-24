@@ -7,18 +7,26 @@ body {
 	padding: 10px;
 }
 
-.default-transition {
-	transition: all 0.2s linear;
-}
-
 .transition-collapse-target {
 	transition: all 0.2s linear;
 	overflow: hidden;
 }
 
+.fade-out {
+	opacity: 0;
+}
+
+.fade-in {
+	opacity: 1;
+}
+
 @layer base {
 	body {
 		@apply antialiased text-(--ui-text) bg-(--ui-bg) scheme-light dark:scheme-dark;
+	}
+
+	.default-transition {
+		@apply duration-100 ease-linear transition-[background_color];
 	}
 
 	:root,

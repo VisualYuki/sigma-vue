@@ -2,6 +2,7 @@
 
 exports[`closable prop 1`] = `
 "<transition-stub appear="false" persisted="false" css="true">
+  <!-- TODO -->
   <div class="transition-collapse-target">
     <div class="relative overflow-hidden w-full rounded-(--ui-radius) p-4 items-center bg-(--ui-primary) text-(--ui-text-contrast) ui-alert__root ui-alert_primary">
       <div class="flex items-center">
@@ -9,7 +10,8 @@ exports[`closable prop 1`] = `
         <div class="flex flex-col gap-1">
           <!--v-if-->
           <!--v-if-->
-        </div><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" role="img" size="20" class="absolute top-3 right-3 cursor-pointer ui-alert__close" style="font-size: 20px;" width="1em" height="1em" viewBox="0 0 16 16"></svg>
+        </div>
+        <uiicon icon="iconoir:cancel" class="hover:text-red-500 default-transition absolute top-3 right-3 cursor-pointer ui-alert__close" size="20"></uiicon>
       </div>
     </div>
   </div>
@@ -18,6 +20,7 @@ exports[`closable prop 1`] = `
 
 exports[`color: error 1`] = `
 "<transition-stub appear="false" persisted="false" css="true">
+  <!-- TODO -->
   <div class="transition-collapse-target">
     <div class="relative overflow-hidden w-full rounded-(--ui-radius) p-4 items-center bg-(--ui-error) text-(--ui-text-contrast) ui-alert__root ui-alert_error">
       <div class="flex items-center">
@@ -35,6 +38,7 @@ exports[`color: error 1`] = `
 
 exports[`color: info 1`] = `
 "<transition-stub appear="false" persisted="false" css="true">
+  <!-- TODO -->
   <div class="transition-collapse-target">
     <div class="relative overflow-hidden w-full rounded-(--ui-radius) p-4 items-center bg-(--ui-info) text-(--ui-text-contrast) ui-alert__root ui-alert_info">
       <div class="flex items-center">
@@ -52,6 +56,7 @@ exports[`color: info 1`] = `
 
 exports[`color: primary 1`] = `
 "<transition-stub appear="false" persisted="false" css="true">
+  <!-- TODO -->
   <div class="transition-collapse-target">
     <div class="relative overflow-hidden w-full rounded-(--ui-radius) p-4 items-center bg-(--ui-primary) text-(--ui-text-contrast) ui-alert__root ui-alert_primary">
       <div class="flex items-center">
@@ -69,6 +74,7 @@ exports[`color: primary 1`] = `
 
 exports[`color: secondary 1`] = `
 "<transition-stub appear="false" persisted="false" css="true">
+  <!-- TODO -->
   <div class="transition-collapse-target">
     <div class="relative overflow-hidden w-full rounded-(--ui-radius) p-4 items-center bg-(--ui-secondary) text-(--ui-text-contrast) ui-alert__root ui-alert_secondary">
       <div class="flex items-center">
@@ -86,6 +92,7 @@ exports[`color: secondary 1`] = `
 
 exports[`color: success 1`] = `
 "<transition-stub appear="false" persisted="false" css="true">
+  <!-- TODO -->
   <div class="transition-collapse-target">
     <div class="relative overflow-hidden w-full rounded-(--ui-radius) p-4 items-center bg-(--ui-success) text-(--ui-text-contrast) ui-alert__root ui-alert_success">
       <div class="flex items-center">
@@ -103,6 +110,7 @@ exports[`color: success 1`] = `
 
 exports[`color: warning 1`] = `
 "<transition-stub appear="false" persisted="false" css="true">
+  <!-- TODO -->
   <div class="transition-collapse-target">
     <div class="relative overflow-hidden w-full rounded-(--ui-radius) p-4 items-center bg-(--ui-warning) text-(--ui-text-contrast) ui-alert__root ui-alert_warning">
       <div class="flex items-center">
@@ -120,6 +128,7 @@ exports[`color: warning 1`] = `
 
 exports[`overrideUi prop 1`] = `
 "<transition-stub appear="false" persisted="false" css="true">
+  <!-- TODO -->
   <div class="transition-collapse-target">
     <div class="relative overflow-hidden w-full rounded-(--ui-radius) p-4 items-center bg-(--ui-primary) text-(--ui-text-contrast) override-root ui-alert__root ui-alert_primary">
       <div class="flex items-center override-wrapper">
@@ -137,6 +146,7 @@ exports[`overrideUi prop 1`] = `
 
 exports[`variant: outline 1`] = `
 "<transition-stub appear="false" persisted="false" css="true">
+  <!-- TODO -->
   <div class="transition-collapse-target">
     <div class="relative overflow-hidden w-full rounded-(--ui-radius) p-4 items-center text-(--ui-primary) ring ring-inset ring-(--ui-primary)/25 ui-alert__root ui-alert_primary">
       <div class="flex items-center">
@@ -154,6 +164,7 @@ exports[`variant: outline 1`] = `
 
 exports[`variant: soft 1`] = `
 "<transition-stub appear="false" persisted="false" css="true">
+  <!-- TODO -->
   <div class="transition-collapse-target">
     <div class="relative overflow-hidden w-full rounded-(--ui-radius) p-4 items-center bg-(--ui-primary)/10 text-(--ui-primary) ui-alert__root ui-alert_primary">
       <div class="flex items-center">
@@ -171,6 +182,7 @@ exports[`variant: soft 1`] = `
 
 exports[`variant: solid 1`] = `
 "<transition-stub appear="false" persisted="false" css="true">
+  <!-- TODO -->
   <div class="transition-collapse-target">
     <div class="relative overflow-hidden w-full rounded-(--ui-radius) p-4 items-center bg-(--ui-primary) text-(--ui-text-contrast) ui-alert__root ui-alert_primary">
       <div class="flex items-center">
@@ -188,6 +200,7 @@ exports[`variant: solid 1`] = `
 
 exports[`variant: subtle 1`] = `
 "<transition-stub appear="false" persisted="false" css="true">
+  <!-- TODO -->
   <div class="transition-collapse-target">
     <div class="relative overflow-hidden w-full rounded-(--ui-radius) p-4 items-center bg-(--ui-primary)/10 text-(--ui-primary) ring ring-inset ring-(--ui-primary)/25 ui-alert__root ui-alert_primary">
       <div class="flex items-center">
@@ -205,6 +218,7 @@ exports[`variant: subtle 1`] = `
 
 exports[`with description 1`] = `
 "<transition-stub appear="false" persisted="false" css="true">
+  <!-- TODO -->
   <div class="transition-collapse-target">
     <div class="relative overflow-hidden w-full rounded-(--ui-radius) p-4 items-center bg-(--ui-primary) text-(--ui-text-contrast) ui-alert__root ui-alert_primary">
       <div class="flex items-center">
@@ -222,6 +236,7 @@ exports[`with description 1`] = `
 
 exports[`with title 1`] = `
 "<transition-stub appear="false" persisted="false" css="true">
+  <!-- TODO -->
   <div class="transition-collapse-target">
     <div class="relative overflow-hidden w-full rounded-(--ui-radius) p-4 items-center bg-(--ui-primary) text-(--ui-text-contrast) ui-alert__root ui-alert_primary">
       <div class="flex items-center">

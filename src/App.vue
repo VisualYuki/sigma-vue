@@ -18,6 +18,10 @@
 		</UiAccordionItem>
 	</UiAccordion>
 
+	<UiModal v-model="open">content</UiModal>
+
+	<button @click="open = !open">toggle</button>
+
 	<!-- <div ref="accordion-ref" v-loading="isLoading" ui-text="my custom text">df df</div>
 	<button @click="isLoading = !isLoading">toggle</button> -->
 </template>
@@ -35,6 +39,8 @@
 	const customClass = ref('custom-class')
 
 	const isLoading = ref(false)
+
+	const open = ref(false)
 
 	// setInterval(() => {
 	// 	isLoading.value = false

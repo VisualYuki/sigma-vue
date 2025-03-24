@@ -1,5 +1,6 @@
 <template>
 	<UiCollapseTransition>
+		<!-- TODO -->
 		<div v-if="modelValue" class="transition-collapse-target">
 			<div :class="[ui.root({class: $props.overrideUi?.root}), ns.e('root'), ns.m($props.color as string)]">
 				<div :class="ui.wrapper({class: $props.overrideUi?.wrapper})">
@@ -35,13 +36,11 @@
 						</div>
 					</div>
 
-					<UiIcon
+					<UiCancelIcon
 						v-if="$props.closable"
 						:class="[ui.close({class: $props.overrideUi?.close}), ns.e('close')]"
-						size="20"
-						icon="iconoir:cancel"
 						@click="handleClose"
-					></UiIcon>
+					></UiCancelIcon>
 				</div>
 			</div>
 		</div>
@@ -52,13 +51,13 @@
 	import {ComponentNames} from '@/types/configuration'
 	import {computed, defineComponent, type PropType} from 'vue'
 	import {tvInstance} from './theme'
-	import {UiIcon} from '../icon/'
 	import {UiCollapseTransition} from '../transition'
 	import {useNamespace} from '@/utils/use-namespace'
+	import {UiCancelIcon} from '../icons'
 
 	export default defineComponent({
 		name: ComponentNames.Alert,
-		components: {UiIcon, UiCollapseTransition},
+		components: {UiCollapseTransition, UiCancelIcon},
 		props: {
 			variant: {
 				type: String as PropType<keyof (typeof tvInstance)['variants']['variant']>,

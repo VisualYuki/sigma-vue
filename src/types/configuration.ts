@@ -5,7 +5,13 @@ export enum ComponentNames {
 	Checkbox = 'UiCheckbox',
 	Button = 'UiButton',
 	Accordion = 'UiAccordion',
-	AccordionItem = 'UiAccordionItem'
+	AccordionItem = 'UiAccordionItem',
+	Overlay = 'UiOverlay',
+	Teleport = 'UiTeleport',
+	Modal = 'UiModal',
+	CollapseContent = 'UiCollapseContent',
+	CollapseRoot = 'UiCollapseRoot',
+	CollapseTrigger = 'UiCollapseTrigger'
 }
 
 export const colors = ['primary', 'secondary', 'success', 'error', 'warning', 'info'] as const

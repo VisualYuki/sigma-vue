@@ -37,7 +37,8 @@ export default defineConfigWithVueTs(
 	{
 		rules: {
 			'vue/multi-word-component-names': 'off',
-			'@typescript-eslint/ban-ts-comment': 'off'
+			'@typescript-eslint/ban-ts-comment': 'off',
+			'vue/prefer-import-from-vue': 'off'
 		}
 	},
 	skipFormatting

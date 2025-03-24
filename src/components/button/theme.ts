@@ -6,7 +6,7 @@ export const tvInstance = tv({
 	slots: {
 		base: [
 			`rounded-(--ui-radius) font-medium inline-flex items-center
-			focus:outline-hidden disabled:cursor-not-allowed disabled:opacity-75 transition-colors`
+			focus:outline-hidden disabled:cursor-not-allowed disabled:opacity-75 transition-colors cursor-pointer`
 		]
 	},
 	variants: {

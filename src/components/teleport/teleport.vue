@@ -1,14 +1,15 @@
 <template>
 	<Teleport :to="$props.to" :disabled="$props.disabled">
-		<slot name="default"></slot>
+		<slot name="default">default</slot>
 	</Teleport>
 </template>
 
 <script lang="ts">
+	import {ComponentNames} from '@/types/configuration'
 	import {defineComponent} from 'vue'
 
 	export default defineComponent({
-		name: '',
+		name: ComponentNames.Teleport,
 		props: {
 			to: {
 				type: String,
