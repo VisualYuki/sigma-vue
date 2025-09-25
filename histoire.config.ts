@@ -6,6 +6,7 @@ export default defineConfig({
 	plugins: [HstVue()],
 	setupFile: './histoire.setup.ts',
 	vite: {
-		plugins: [tailwindcss()]
+		plugins: [tailwindcss()],
+		base: '/sigma-vue/'
 	}
 })
