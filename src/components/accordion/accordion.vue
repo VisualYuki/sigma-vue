@@ -1,34 +1,23 @@
 <template>
-	<div :class="[ui.root(), ns.b()]">
+	<div :class="[accordionStyles.root()]" :data-name="ns.b()">
 		<slot></slot>
 	</div>
 </template>
 
 <script lang="ts" setup>
-	import {ComponentNames} from '@/types/configuration'
-	import {computed, provide} from 'vue'
-	import {tvInstance} from './theme'
+	import {provide} from 'vue'
+	import {accordionStyles} from './theme'
 	import {useNamespace} from '@/utils/use-namespace'
-	import {accordionSymbol} from './utils'
+	import {mainContextKey, type AccordionProps} from './utils'
 
-	defineOptions({
-		name: ComponentNames.Accordion
-	})
-
-	const props = defineProps({
-		accordion: {
-			type: Boolean,
-			default: false
-		}
-	})
+	const props = withDefaults(defineProps<AccordionProps>(), {accordion: false})
 
 	const modelValue = defineModel<string[]>({default: ['']})
-	const ui = computed(() => tvInstance({}))
+
 	const ns = useNamespace('accordion')
 
-	provide(accordionSymbol, {
-		props,
-		model: modelValue,
+	provide(mainContextKey, {
+		modelValue,
 		toggle: (name: string) => {
 			if (props.accordion) {
 				modelValue.value = [name]
@@ -42,5 +31,3 @@
 		}
 	})
 </script>
-
-<style lang="scss" scoped></style>

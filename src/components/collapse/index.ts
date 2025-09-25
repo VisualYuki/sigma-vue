@@ -1,7 +1,6 @@
-import collapseRoot from './collapse-root.vue'
-import collapseContent from './collapse-content.vue'
-import collapseTrigger from './collapse-trigger.vue'
+import CollapseRoot from './collapse-root.vue'
+import CollapseContent from './collapse-content.vue'
+import CollapseTrigger from './collapse-trigger.vue'
+export {type MainContext as Injection, MainContextKey as InjectionSymbol} from './utils'
 
-export const UiCollapseRoot = collapseRoot
-export const UiCollapseTrigger = collapseTrigger
-export const UiCollapseContent = collapseContent
+export {CollapseRoot, CollapseContent, CollapseTrigger}

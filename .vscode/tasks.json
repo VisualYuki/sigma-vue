@@ -10,16 +10,6 @@
 			"runOptions": {
 				"runOn": "folderOpen"
 			}
-		},
-		{
-			"type": "npm",
-			"script": "storybook",
-			"problemMatcher": [],
-			"label": "npm: storybook",
-			"detail": "vite",
-			"runOptions": {
-				"runOn": "folderOpen"
-			}
 		}
 	]
 }

@@ -15,7 +15,7 @@
 	import {ComponentNames, type TSizes} from '@/types/configuration'
 	import {computed, defineComponent, type PropType} from 'vue'
 	import {tvInstance} from './theme'
-	import {UiIcon} from '../icon/'
+	import {UiIcon} from '../icon'
 
 	export default defineComponent({
 		name: ComponentNames.Checkbox,

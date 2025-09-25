@@ -1,8 +1,8 @@
 import type {Ref} from 'vue'
 
-export const collapseSymbol = Symbol('collapseSymbol')
+export const MainContextKey = Symbol('MainContextKey')
 
-export type collapseRootContext = {
+export type MainContext = {
 	opened: Ref<boolean>
 	toggleValue: () => void
 }

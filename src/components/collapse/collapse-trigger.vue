@@ -1,19 +1,15 @@
 <template>
-	<div @click="methods.handle()">
+	<div data-name="collapse-trigger" :class="collapseTriggerStyles.root()" @click="methods.handle()">
 		<slot></slot>
 	</div>
 </template>
 
 <script lang="ts" setup>
 	import {inject} from 'vue'
-	import {collapseSymbol, type collapseRootContext} from './utils'
-	import {ComponentNames} from '@/types/configuration'
+	import {MainContextKey, type MainContext} from './utils'
+	import {collapseTriggerStyles} from './theme'
 
-	defineOptions({
-		name: ComponentNames.CollapseTrigger
-	})
-
-	const injected = inject<collapseRootContext>(collapseSymbol)
+	const injected = inject<MainContext>(MainContextKey)
 
 	const methods = {
 		handle() {
@@ -21,5 +17,3 @@
 		}
 	}
 </script>
-
-<style lang="scss" scoped></style>

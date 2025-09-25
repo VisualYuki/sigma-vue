@@ -20,10 +20,7 @@ export default defineConfigWithVueTs(
 		name: 'app/files-to-ignore',
 		ignores: ['**/dist/**', '**/dist-ssr/**', '**/coverage/**', '**/temp/**', '**/src/App.vue']
 	},
-	{
-		name: 'ignore storybook',
-		ignores: ['**/src/stories/**']
-	},
+
 	pluginVue.configs['flat/recommended'],
 	vueTsConfigs.recommended,
 	{

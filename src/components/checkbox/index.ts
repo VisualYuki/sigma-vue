@@ -1,5 +1,5 @@
-import {defineAsyncComponent} from 'vue'
-import Checkbox from './checkbox.vue'
+//import {defineAsyncComponent} from 'vue'
+//import Checkbox from './_checkbox.vue'
+export {default as CheckboxRoot} from './CheckboxRoot.vue'
 
-export const UiCheckbox = Checkbox
-export const UiAsyncCheckbox = defineAsyncComponent(() => import('./checkbox.vue'))
+//export const UiAsyncCheckbox = defineAsyncComponent(() => import('./_checkbox.vue'))

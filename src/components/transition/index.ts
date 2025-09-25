@@ -1,3 +1,1 @@
-import CollapseTransition from './collapse-transition.vue'
-
-export const UiCollapseTransition = CollapseTransition
+export {default as CollapseTransition} from './collapse-transition.vue'

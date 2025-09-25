@@ -1,12 +1,16 @@
 import type {Ref} from 'vue'
 
-export const accordionSymbol = Symbol('accordion-symbol')
+export const mainContextKey = Symbol('accordion-symbol')
 
-export type accordionProvideContext = {
-	model: Ref<string[]>
-	props: {
-		accordion: boolean
-		modelValue: string[]
-	}
+export type MainContext = {
+	modelValue: Ref<string[]>
 	toggle(name: string): void
+}
+
+export interface AccordionProps {
+	accordion?: boolean
+}
+
+export interface AccordionItemProps {
+	name: string
 }

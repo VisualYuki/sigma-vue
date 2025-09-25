@@ -1,22 +1,18 @@
 <template>
-	<UiCollapseTransition>
-		<div v-if="injected?.opened.value" class="transition-collapse-target">
-			<slot></slot>
+	<CollapseTransition>
+		<div v-show="injected?.opened.value" data-name="collapse-content" :class="collapseContentStyles.root()">
+			<div :class="collapseContentStyles.inner()">
+				<slot></slot>
+			</div>
 		</div>
-	</UiCollapseTransition>
+	</CollapseTransition>
 </template>
 
 <script lang="ts" setup>
 	import {inject} from 'vue'
-	import {UiCollapseTransition} from '../transition'
-	import {collapseSymbol, type collapseRootContext} from './utils'
-	import {ComponentNames} from '@/types/configuration'
+	import {CollapseTransition} from '../transition'
+	import {MainContextKey, type MainContext} from './utils'
+	import {collapseContentStyles} from './theme'
 
-	defineOptions({
-		name: ComponentNames.CollapseContent
-	})
-
-	const injected = inject<collapseRootContext>(collapseSymbol)
+	const injected = inject<MainContext>(MainContextKey)
 </script>
-
-<style lang="scss" scoped></style>
