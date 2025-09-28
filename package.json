@@ -35,9 +35,11 @@
 		}
 	},
 	"scripts": {
-		"dev": "npm run story:dev",
 		"build": "vite build",
-		"_dev": "vite dev",
+		"dev": "vite dev",
+		"docs:dev": "vitepress dev docs",
+		"docs:build": "vitepress build docs",
+		"docs:preview": "vitepress preview docs",
 		"check": "npm run format && npm run type-check && npm run test:unit && npm run lint",
 		"play": "vite dev --base ./playground",
 		"preview": "vite preview",
@@ -95,6 +97,7 @@
 		"vite": "^7.1.4",
 		"vite-plugin-dts": "^4.5.4",
 		"vite-plugin-vue-devtools": "^8.0.1",
+		"vitepress": "^2.0.0-alpha.12",
 		"vitest": "^3.2.4",
 		"vue-tsc": "^3.0.6"
 	},

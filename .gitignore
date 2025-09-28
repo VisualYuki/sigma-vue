@@ -31,4 +31,5 @@ coverage
 
 #custom
 /temp
-/storybook-static
+docs/.vitepress/cache
+docs/.vitepress/dist
