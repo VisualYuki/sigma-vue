@@ -1,3 +1,5 @@
+@layer base, components, utilities;
+
 @import 'tailwindcss';
 
 .transition-collapse-target {
