@@ -1,10 +1,5 @@
 <template>
-	<div
-		:class="[accordionItemStyles.root({disabled: props.disabled})]"
-		:name="props.name"
-		:data-name="ns.b()"
-		:data-state="modelValue ? 'active' : 'unactive'"
-	>
+	<div :class="[accordionItemStyles.root()]" :name="props.name" :data-name="ns.b()" :data-state="modelValue ? 'active' : 'unactive'">
 		<CollapseRoot v-model="modelValue" :disabled="props.disabled">
 			<CollapseTrigger :data-name="ns.e('trigger')" @click="handleClick()">
 				<div :class="accordionItemStyles.trigger()">

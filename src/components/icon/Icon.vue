@@ -3,27 +3,20 @@
 </template>
 
 <script lang="ts" setup>
-	import {ComponentNames} from '@/types/configuration'
 	import {Icon as IconifyIcon, type IconProps} from '@iconify/vue'
 
-	type sizes = '10' | '15' | '20' | '30' | '40' | '50' | ''
 	type Icon =
 		| 'iconoir:cancel'
-		| 'svg-spinners:90-ring-with-bg'
+		| 'line-md:chevron-down'
 		| 'mdi:alert'
-		| 'mdi:information'
+		| 'mdi:check'
+		| 'mdi:close'
 		| 'mdi:error'
+		| 'mdi:information'
 		| 'mdi:success-circle'
 		| 'ph:image-duotone'
-		| 'mdi:check'
-		| 'line-md:chevron-down'
-		| 'mdi:close'
+		| 'svg-spinners:90-ring-with-bg'
+	type sizes = '' | '10' | '15' | '20' | '30' | '40' | '50'
 
-	defineOptions({
-		name: ComponentNames.Icon
-	})
-
-	const props = defineProps<IconProps & {size?: sizes; icon: Icon}>()
+	const props = defineProps<{icon: Icon; size?: sizes} & IconProps>()
 </script>
-
-<style lang="scss" scoped></style>

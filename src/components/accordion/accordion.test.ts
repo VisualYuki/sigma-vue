@@ -1,8 +1,10 @@
 import {mount, VueWrapper} from '@vue/test-utils'
 import {beforeEach, describe, expect, it} from 'vitest'
-import {Accordion, AccordionItem} from './'
-import {useNamespace} from '@/utils/use-namespace'
 import {h} from 'vue'
+
+import {useNamespace} from '@/utils/use-namespace'
+
+import {Accordion, AccordionItem} from './'
 
 const ns = useNamespace('accordion-item')
 
@@ -13,7 +15,7 @@ describe('multiply', () => {
 		const modelValue = ['1', '2']
 
 		wrapper = mount(Accordion, {
-			props: {multiply: true, modelValue: modelValue, 'onUpdate:modelValue': (e) => wrapper.setProps({modelValue: e})},
+			props: {modelValue: modelValue, multiply: true, 'onUpdate:modelValue': (e) => wrapper.setProps({modelValue: e})},
 			slots: {
 				default: [h(AccordionItem, {name: '1'}), h(AccordionItem, {name: '2'}), h(AccordionItem, {name: '3'})]
 			}
@@ -76,7 +78,7 @@ describe('default', () => {
 		const modelValue = ['1']
 
 		wrapper = mount(Accordion, {
-			props: {multiply: false, modelValue: modelValue, 'onUpdate:modelValue': (e) => wrapper.setProps({modelValue: e})},
+			props: {modelValue: modelValue, multiply: false, 'onUpdate:modelValue': (e) => wrapper.setProps({modelValue: e})},
 			slots: {
 				default: [h(AccordionItem, {name: '1'}), h(AccordionItem, {name: '2'}), h(AccordionItem, {name: '3'})]
 			}

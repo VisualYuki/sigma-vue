@@ -1,11 +1,11 @@
 <template>
-	<div data-name="collapse-root" :class="collapseStyles.root()">
+	<div data-name="collapse-root" :class="collapseStyles.root({disabled: props.disabled})">
 		<slot></slot>
 	</div>
 </template>
 
 <script lang="ts" setup>
-	import {provide} from 'vue'
+	import {computed, provide} from 'vue'
 
 	import {collapseStyles} from './theme'
 	import {type MainContext} from './types'
@@ -23,6 +23,7 @@
 	)
 
 	provide<MainContext>(MainContextKey, {
+		disabled: computed(() => props.disabled),
 		opened: modelValue,
 		toggleValue: () => {
 			if (props.disabled) return

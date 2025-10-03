@@ -7,13 +7,7 @@ export const accordionStyles = {
 }
 
 export const accordionItemStyles = {
-	root: cva(['group'], {
-		variants: {
-			disabled: {
-				true: ['cursor-not-allowed opacity-50']
-			}
-		}
-	}),
+	root: cva(['group']),
 	trigger: cva(['flex items-center grow-1 gap-1.5']),
 	content: cva([]),
 	label: cva(['text-start break-words']),

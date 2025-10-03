@@ -1,7 +1,7 @@
 <template>
 	<div
 		data-name="collapse-trigger"
-		:class="collapseTriggerStyles.root()"
+		:class="collapseTriggerStyles.root({disabled: injected?.disabled.value})"
 		class="flex"
 		tabindex="0"
 		@click="methods.handle()"

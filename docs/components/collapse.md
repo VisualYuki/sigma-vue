@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import Base from "../examples/collapse/Base.vue"
+import Disabled from "../examples/collapse/Disabled.vue"
 </script>
 
 # Collapse
@@ -13,6 +14,16 @@ import Base from "../examples/collapse/Base.vue"
 :::
 
 <<< ../examples/collapse/Base.vue
+
+## Disabled
+
+::: raw
+<div class="preview">
+  <Disabled />
+</div>
+:::
+
+<<< ../examples/collapse/Disabled.vue
 
 ## Keyboard support
 
