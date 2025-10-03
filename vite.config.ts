@@ -1,27 +1,14 @@
-import {fileURLToPath, URL} from 'node:url'
-import dts from 'vite-plugin-dts'
-import {defineConfig} from 'vite'
 import vue from '@vitejs/plugin-vue'
 import vueJsx from '@vitejs/plugin-vue-jsx'
+import {fileURLToPath, URL} from 'node:url'
+import {defineConfig} from 'vite'
+import dts from 'vite-plugin-dts'
 //import vueDevTools from 'vite-plugin-vue-devtools'
 //import path from 'node:path'
 //import tailwindcss from '@tailwindcss/vite'
 
 // https://vite.dev/config/
 export default defineConfig({
-	plugins: [
-		vue(),
-		vueJsx(),
-		//vueDevTools(),
-		dts({
-			insertTypesEntry: true
-		})
-	],
-	resolve: {
-		alias: {
-			'@': fileURLToPath(new URL('./src', import.meta.url))
-		}
-	},
 	build: {
 		minify: false
 		// lib: {
@@ -40,6 +27,19 @@ export default defineConfig({
 		// 		}
 		// 	}
 		// }
+	},
+	plugins: [
+		vue(),
+		vueJsx(),
+		//vueDevTools(),
+		dts({
+			insertTypesEntry: true
+		})
+	],
+	resolve: {
+		alias: {
+			'@': fileURLToPath(new URL('./src', import.meta.url))
+		}
 	},
 	server: {
 		port: 7949
