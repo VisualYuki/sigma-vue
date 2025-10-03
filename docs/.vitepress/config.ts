@@ -29,6 +29,7 @@ export default defineConfig({
 	},
 	title: 'Vue3 UI Kit',
 	vite: {
+		base: '/sigma-vue/',
 		plugins: [
 			// Initialize core plugin
 			whyframe({
