@@ -6,6 +6,7 @@ import {defineConfig} from 'vitepress'
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
 	//description: "A VitePress Site",
+	base: '/sigma-vue/',
 	themeConfig: {
 		// https://vitepress.dev/reference/default-theme-config
 		// nav: [
@@ -29,7 +30,6 @@ export default defineConfig({
 	},
 	title: 'Vue3 UI Kit',
 	vite: {
-		base: '/sigma-vue/',
 		plugins: [
 			// Initialize core plugin
 			whyframe({
