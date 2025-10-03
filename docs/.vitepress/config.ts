@@ -17,9 +17,9 @@ export default defineConfig({
 		sidebar: [
 			{
 				items: [
-					{link: '/components/Accordion', text: 'Accordion'},
-					{link: '/components/Button', text: 'Button'},
-					{link: '/components/Collapse', text: 'Collapse'}
+					{link: '/components/accordion', text: 'Accordion'},
+					{link: '/components/button', text: 'Button'},
+					{link: '/components/collapse', text: 'Collapse'}
 					//{text: 'Dialog', link: '/components/Dialog'}
 				],
 				text: 'Compoenents'
