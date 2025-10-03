@@ -1,3 +1,3 @@
 import {defineAsyncComponent} from 'vue'
 
-export const UiIcon = defineAsyncComponent(() => import('./Icon.vue'))
+export const Icon = defineAsyncComponent(() => import('./Icon.vue'))

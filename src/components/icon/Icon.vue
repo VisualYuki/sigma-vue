@@ -17,6 +17,7 @@
 		| 'ph:image-duotone'
 		| 'mdi:check'
 		| 'line-md:chevron-down'
+		| 'mdi:close'
 
 	defineOptions({
 		name: ComponentNames.Icon

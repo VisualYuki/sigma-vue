@@ -4,7 +4,7 @@
 			<div class="transition-collapse-target">
 				<div :class="[ui.root({class: props.overrideUi?.root}), ns.e('root'), ns.m(props.color as string)]">
 					<div :class="ui.wrapper({class: props.overrideUi?.wrapper})">
-						<UiIcon
+						<Icon
 							v-if="props.withIcon && _computed.colorIcon.value"
 							:class="[
 								ui.withIcon({
@@ -14,7 +14,7 @@
 							]"
 							size="20"
 							:icon="_computed.colorIcon.value"
-						></UiIcon>
+						></Icon>
 						<div :class="ui.content({class: props.overrideUi?.content})">
 							<div v-if="props.title || $slots.title" :class="[ui.title({class: props.overrideUi?.title}), ns.e('title')]">
 								<slot name="title">
@@ -59,7 +59,7 @@
 	import {useNamespace} from '@/utils/use-namespace'
 	import {UiCancelIcon} from '../icons'
 	import {UiCollapseContent, UiCollapseRoot, UiCollapseTrigger} from '../collapse'
-	import {UiIcon} from '../icon'
+	import {Icon} from '../icon'
 	import {UiButton} from '../button'
 
 	defineOptions({

@@ -1,6 +1,7 @@
-import {describe, expect, it} from 'vitest'
-import {Primitive} from './'
 import {mount} from '@vue/test-utils'
+import {describe, expect, it} from 'vitest'
+
+import {Primitive} from '.'
 
 describe('Primitive', () => {
 	it('render default div element', () => {
@@ -42,11 +43,11 @@ describe('Primitive', () => {
 
 	it('with comment node in default slot', () => {
 		const wrapper = mount(Primitive, {
-			props: {
-				asChild: true
-			},
 			attrs: {
 				'data-parent-attr': 'parent'
+			},
+			props: {
+				asChild: true
 			},
 			slots: {
 				default: `

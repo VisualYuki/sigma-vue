@@ -1,12 +1,17 @@
 <template>
-	<div :class="[accordionItemStyles.root()]" :name="props.name" :data-name="ns.b()" :data-state="modelValue ? 'active' : 'unactive'">
-		<CollapseRoot v-model="modelValue">
-			<CollapseTrigger :data-name="ns.e('trigger')" @click="injected.toggle(props.name)">
+	<div
+		:class="[accordionItemStyles.root({disabled: props.disabled})]"
+		:name="props.name"
+		:data-name="ns.b()"
+		:data-state="modelValue ? 'active' : 'unactive'"
+	>
+		<CollapseRoot v-model="modelValue" :disabled="props.disabled">
+			<CollapseTrigger :data-name="ns.e('trigger')" @click="handleClick()">
 				<div :class="accordionItemStyles.trigger()">
 					<slot name="trigger"></slot>
 
-					<div :class="accordionItemStyles.trailingIcon()">
-						<UiIcon width="100%" icon="line-md:chevron-down" style="color: var(--color-neutral-500)"></UiIcon>
+					<div :class="accordionItemStyles.trailingIcon({active: modelValue})">
+						<Icon width="100%" icon="line-md:chevron-down" style="color: var(--color-neutral-500)"></Icon>
 					</div>
 				</div>
 			</CollapseTrigger>
@@ -19,27 +24,37 @@
 
 <script lang="ts" setup>
 	import {inject, watch} from 'vue'
-	import {accordionItemStyles} from './theme'
-	import {CollapseContent, CollapseRoot, CollapseTrigger} from '../collapse'
-	import {UiIcon} from '../icon'
+
 	import {useNamespace} from '@/utils/use-namespace'
-	import {mainContextKey, type AccordionItemProps, type MainContext} from './utils'
+
+	import {CollapseContent, CollapseRoot, CollapseTrigger} from '../collapse'
+	import {Icon} from '../icon'
+	import {accordionItemStyles} from './theme'
+	import {type AccordionItemProps, type MainContext} from './types'
+	import {mainContextKey} from './utils'
 
 	defineSlots<{
-		'trigger'(): void
 		'content'(): void
+		'trigger'(): void
 	}>()
 
 	const injected = inject<MainContext>(mainContextKey) as MainContext
 
-	const props = withDefaults(defineProps<AccordionItemProps>(), {})
+	const props = withDefaults(defineProps<AccordionItemProps>(), {
+		disabled: false
+	})
 
 	const ns = useNamespace('accordion-item')
 
 	const modelValue = defineModel({
-		type: Boolean,
-		default: false
+		default: false,
+		type: Boolean
 	})
+
+	function handleClick() {
+		if (props.disabled) return
+		injected.toggle(props.name)
+	}
 
 	watch(
 		() => injected.modelValue,
@@ -47,8 +62,8 @@
 			modelValue.value = newValue?.value.includes(props.name) || false
 		},
 		{
-			immediate: true,
-			deep: true
+			deep: true,
+			immediate: true
 		}
 	)
 </script>

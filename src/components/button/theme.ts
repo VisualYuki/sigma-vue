@@ -1,49 +1,116 @@
-import {colors, type TColorTheme, type TThemeSizes} from '@/types/configuration'
-import {tv} from 'tailwind-variants'
-export const buttonVariants = ['solid', 'outline', 'soft'] as const
+import {cva} from 'class-variance-authority'
 
-export const tvInstance = tv({
-	slots: {
-		base: [
-			`rounded-(--ui-radius) font-medium inline-flex items-center
-			focus:outline-hidden disabled:cursor-not-allowed disabled:opacity-75 transition-colors cursor-pointer`
-		]
-	},
-	variants: {
-		color: Object.fromEntries(
-			colors.map((colorName) => {
-				return [colorName, '']
-			})
-		) as TColorTheme,
-		variant: {
-			solid: '',
-			outline: '',
-			soft: ''
-		} satisfies {[prop in (typeof buttonVariants)[number]]: ''},
-		size: {
-			small: 'px-2.5 py-1.5 text-xs gap-1.5',
-			default: 'px-2.5 py-1.5 text-sm gap-1.5',
-			large: 'px-3 py-2 text-sm gap-2'
-		} satisfies TThemeSizes,
-		loading: {
-			true: ''
+/* eslint-disable perfectionist/sort-objects */
+
+export const buttonStyles = {
+	root: cva(
+		[
+			'rounded-md font-medium inline-flex items-center justify-around cursor-pointer select-none',
+			'disabled:cursor-not-allowed disabled:opacity-75',
+			'focus:outline-2 focus:outline-offset-2 focus:outline-yellow-500 h-8'
+		],
+		{
+			variants: {
+				variant: {
+					solid: '',
+					outline: '',
+					transparent: ''
+				},
+				color: {
+					primary: '',
+					success: '',
+					error: '',
+					warning: '',
+					info: ''
+				},
+				size: {
+					small: 'p-1 text-sm',
+					default: 'p-3 text-base',
+					large: 'p-4 text-lg'
+				}
+			},
+			compoundVariants: [
+				{
+					variant: 'solid',
+					color: 'primary',
+					class: 'bg-blue-500 text-white'
+				},
+				{
+					variant: 'outline',
+					color: 'primary',
+					class: 'border border-blue-500 text-blue-500'
+				},
+				{
+					variant: 'solid',
+					color: 'error',
+					class: 'bg-red-500 text-white'
+				},
+				{
+					variant: 'outline',
+					color: 'error',
+					class: 'border border-red-500 text-red-500'
+				},
+				{
+					variant: 'solid',
+					color: 'warning',
+					class: 'bg-yellow-500 text-white'
+				},
+				{
+					variant: 'outline',
+					color: 'warning',
+					class: 'border border-yellow-500 text-yellow-500'
+				},
+				{
+					variant: 'solid',
+					color: 'info',
+					class: 'bg-gray-500 text-white'
+				},
+				{
+					variant: 'outline',
+					color: 'info',
+					class: 'border border-gray-500 text-gray-500'
+				},
+				{
+					variant: 'solid',
+					color: 'success',
+					class: 'bg-green-500 text-white'
+				},
+				{
+					variant: 'outline',
+					color: 'success',
+					class: 'border border-green-500 text-green-500'
+				},
+				{
+					variant: 'transparent',
+					color: 'primary',
+					class: 'text-blue-500'
+				},
+				{
+					variant: 'transparent',
+					color: 'success',
+					class: 'text-green-500'
+				},
+				{
+					variant: 'transparent',
+					color: 'error',
+					class: 'text-red-500'
+				},
+				{
+					variant: 'transparent',
+					color: 'warning',
+					class: 'text-yellow-500'
+				},
+				{
+					variant: 'transparent',
+					color: 'info',
+					class: 'text-gray-500'
+				},
+				{
+					variant: 'transparent',
+					color: 'info',
+					class: 'text-gray-500'
+				}
+			]
 		}
-	},
-	compoundVariants: [
-		{
-			color: 'primary',
-			variant: 'solid',
-			class: `text-(--ui-text-contrast) bg-(--ui-primary) hover:bg-(--ui-primary)/75 disabled:bg-(--ui-primary) focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-(--ui-primary)`
-		},
-		{
-			color: 'primary',
-			variant: 'outline',
-			class: `ring ring-inset ring-(--ui-primary)/50 text-(--ui-primary) hover:bg-(--ui-primary)/10 disabled:bg-transparent dark:disabled:bg-transparent focus-visible:ring-2 focus-visible:ring-(--ui-primary)`
-		},
-		{
-			color: 'primary',
-			variant: 'soft',
-			class: `text-(--ui-primary) bg-(--ui-primary)/10 hover:bg-(--ui-primary)/15 focus-visible:bg-(--ui-primary)/15 disabled:bg-(--ui-primary)/10`
-		}
-	]
-})
+	)
+}

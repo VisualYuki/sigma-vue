@@ -1,3 +1,5 @@
+/* eslint-disable perfectionist/sort-objects */
+
 import {cva} from 'class-variance-authority'
 
 export const collapseStyles = {

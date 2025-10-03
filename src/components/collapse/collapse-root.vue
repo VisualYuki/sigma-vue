@@ -6,14 +6,26 @@
 
 <script lang="ts" setup>
 	import {provide} from 'vue'
-	import {MainContextKey, type MainContext} from './utils'
-	import {collapseStyles} from './theme'
 
-	const modelValue = defineModel({type: Boolean, default: false})
+	import {collapseStyles} from './theme'
+	import {type MainContext} from './types'
+	import {MainContextKey} from './utils'
+
+	const modelValue = defineModel({default: false, type: Boolean})
+
+	const props = withDefaults(
+		defineProps<{
+			disabled?: boolean
+		}>(),
+		{
+			disabled: false
+		}
+	)
 
 	provide<MainContext>(MainContextKey, {
 		opened: modelValue,
 		toggleValue: () => {
+			if (props.disabled) return
 			modelValue.value = !modelValue.value
 		}
 	})

@@ -10,9 +10,11 @@
 
 <script lang="ts" setup>
 	import {inject} from 'vue'
+
 	import {CollapseTransition} from '../transition'
-	import {MainContextKey, type MainContext} from './utils'
 	import {collapseContentStyles} from './theme'
+	import {type MainContext} from './types'
+	import {MainContextKey} from './utils'
 
 	const injected = inject<MainContext>(MainContextKey)
 </script>

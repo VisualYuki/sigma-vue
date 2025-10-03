@@ -1,10 +1,10 @@
-import pluginVue from 'eslint-plugin-vue'
-import {defineConfigWithVueTs, vueTsConfigs} from '@vue/eslint-config-typescript'
 import pluginVitest from '@vitest/eslint-plugin'
-
+import skipFormatting from '@vue/eslint-config-prettier/skip-formatting'
+import {defineConfigWithVueTs, vueTsConfigs} from '@vue/eslint-config-typescript'
 // @ts-ignore
 import pluginCypress from 'eslint-plugin-cypress/flat'
-import skipFormatting from '@vue/eslint-config-prettier/skip-formatting'
+import perfectionist from 'eslint-plugin-perfectionist'
+import pluginVue from 'eslint-plugin-vue'
 
 // To allow more languages other than `ts` in `.vue` files, uncomment the following lines:
 // import { configureVueProject } from '@vue/eslint-config-typescript'
@@ -13,12 +13,12 @@ import skipFormatting from '@vue/eslint-config-prettier/skip-formatting'
 
 export default defineConfigWithVueTs(
 	{
-		name: 'app/files-to-lint',
-		files: ['**/*.{ts,mts,tsx,vue}']
+		files: ['**/*.{ts,mts,tsx,vue}'],
+		name: 'app/files-to-lint'
 	},
 	{
-		name: 'app/files-to-ignore',
-		ignores: ['**/dist/**', '**/dist-ssr/**', '**/coverage/**', '**/temp/**', '**/src/App.vue']
+		ignores: ['**/dist/**', '**/dist-ssr/**', '**/coverage/**', '**/temp/**', '**/src/App.vue'],
+		name: 'app/files-to-ignore'
 	},
 
 	pluginVue.configs['flat/recommended'],
@@ -33,10 +33,21 @@ export default defineConfigWithVueTs(
 	},
 	{
 		rules: {
-			'vue/multi-word-component-names': 'off',
 			'@typescript-eslint/ban-ts-comment': 'off',
+			'vue/multi-word-component-names': 'off',
 			'vue/prefer-import-from-vue': 'off'
 		}
 	},
+	perfectionist.configs['recommended-alphabetical'],
+	// {
+	// 	rules: {
+	// 		'perfectionist/sort-objects': [
+	// 			'error',
+	// 			{
+	// 				type: 'alphabetical'
+	// 			}
+	// 		]
+	// 	}
+	// },
 	skipFormatting
 )

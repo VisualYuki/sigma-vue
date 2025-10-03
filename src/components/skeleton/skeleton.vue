@@ -2,7 +2,7 @@
 	<div :class="[ui.root({class: $props.overrideUi?.root})]">
 		<slot name="default">
 			<template v-if="$props.type === 'image'">
-				<UiIcon icon="ph:image-duotone" color="var(--color-neutral-400)" size="40"></UiIcon>
+				<Icon icon="ph:image-duotone" color="var(--color-neutral-400)" size="40"></Icon>
 			</template>
 		</slot>
 	</div>
@@ -13,7 +13,7 @@
 	import {computed, type PropType} from 'vue'
 	import {tvInstance} from './theme'
 	import type {Types} from './utils'
-	import {UiIcon} from '../icon'
+	import {Icon} from '../icon'
 
 	defineOptions({
 		name: ComponentNames.Skeleton

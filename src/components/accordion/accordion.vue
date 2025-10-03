@@ -6,11 +6,17 @@
 
 <script lang="ts" setup>
 	import {provide} from 'vue'
-	import {accordionStyles} from './theme'
-	import {useNamespace} from '@/utils/use-namespace'
-	import {mainContextKey, type AccordionProps} from './utils'
 
-	const props = withDefaults(defineProps<AccordionProps>(), {accordion: false})
+	import {toggleArrayItem} from '@/utils'
+	import {useNamespace} from '@/utils/use-namespace'
+
+	import {accordionStyles} from './theme'
+	import {type AccordionProps} from './types'
+	import {mainContextKey} from './utils'
+
+	const props = withDefaults(defineProps<AccordionProps>(), {
+		multiply: false
+	})
 
 	const modelValue = defineModel<string[]>({default: ['']})
 
@@ -19,14 +25,12 @@
 	provide(mainContextKey, {
 		modelValue,
 		toggle: (name: string) => {
-			if (props.accordion) {
-				modelValue.value = [name]
+			if (props.multiply) {
+				toggleArrayItem(modelValue.value, name)
 			} else {
 				if (modelValue.value.includes(name)) {
-					modelValue.value.splice(modelValue.value.indexOf(name), 1)
-				} else {
-					modelValue.value.push(name)
-				}
+					modelValue.value = []
+				} else modelValue.value = [name]
 			}
 		}
 	})

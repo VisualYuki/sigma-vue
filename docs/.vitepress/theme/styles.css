@@ -1,0 +1,5 @@
+@import '@/assets/styles/index.css';
+
+.preview {
+	@apply border border-gray-200 rounded-md p-5;
+}

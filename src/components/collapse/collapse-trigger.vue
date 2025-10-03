@@ -1,13 +1,23 @@
 <template>
-	<div data-name="collapse-trigger" :class="collapseTriggerStyles.root()" @click="methods.handle()">
+	<div
+		data-name="collapse-trigger"
+		:class="collapseTriggerStyles.root()"
+		class="flex"
+		tabindex="0"
+		@click="methods.handle()"
+		@keydown.space.prevent="methods.handle()"
+		@keydown.enter.prevent="methods.handle()"
+	>
 		<slot></slot>
 	</div>
 </template>
 
 <script lang="ts" setup>
 	import {inject} from 'vue'
-	import {MainContextKey, type MainContext} from './utils'
+
 	import {collapseTriggerStyles} from './theme'
+	import {type MainContext} from './types'
+	import {MainContextKey} from './utils'
 
 	const injected = inject<MainContext>(MainContextKey)
 

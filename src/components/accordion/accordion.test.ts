@@ -1,52 +1,124 @@
-import {mount} from '@vue/test-utils'
-import {describe, expect, it} from 'vitest'
-import {UiAccordion, UiAccordionItem} from './'
+import {mount, VueWrapper} from '@vue/test-utils'
+import {beforeEach, describe, expect, it} from 'vitest'
+import {Accordion, AccordionItem} from './'
 import {useNamespace} from '@/utils/use-namespace'
 import {h} from 'vue'
 
-describe('', () => {
-	const ns = useNamespace('accordion-item')
+const ns = useNamespace('accordion-item')
 
-	it('without accordion', async () => {
+describe('multiply', () => {
+	let wrapper: VueWrapper<InstanceType<typeof Accordion>>
+
+	beforeEach(() => {
 		const modelValue = ['1', '2']
 
-		const wrapper = mount(UiAccordion, {
-			props: {accordion: false, modelValue: modelValue, 'onUpdate:modelValue': (e) => wrapper.setProps({modelValue: e})},
+		wrapper = mount(Accordion, {
+			props: {multiply: true, modelValue: modelValue, 'onUpdate:modelValue': (e) => wrapper.setProps({modelValue: e})},
 			slots: {
-				default: [h(UiAccordionItem, {name: '1'}), h(UiAccordionItem, {name: '2'}), h(UiAccordionItem, {name: '3'})]
+				default: [h(AccordionItem, {name: '1'}), h(AccordionItem, {name: '2'}), h(AccordionItem, {name: '3'})]
 			}
 		})
-
-		expect(wrapper.find("[name='1']").classes()).toContain(ns.m('active'))
-		expect(wrapper.find("[name='2']").classes()).toContain(ns.m('active'))
-		expect(wrapper.find("[name='3']").classes()).not.toContain(ns.m('active'))
-
-		await wrapper.find("[name='1'] " + '.' + ns.e('trigger')).trigger('click')
-		await wrapper.find("[name='3'] " + '.' + ns.e('trigger')).trigger('click')
-
-		expect(wrapper.find("[name='1']").classes()).not.toContain(ns.m('active'))
-		expect(wrapper.find("[name='2']").classes()).toContain(ns.m('active'))
-		expect(wrapper.find("[name='3']").classes()).toContain(ns.m('active'))
 	})
 
-	it('with accordion', async () => {
-		const modelValue = ['1']
+	it('first and second items should be active', () => {
+		expect(wrapper.find("[name='1']").attributes('data-state')).toBe('active')
+		expect(wrapper.find("[name='2']").attributes('data-state')).toBe('active')
+	})
 
-		const wrapper = mount(UiAccordion, {
-			props: {accordion: true, modelValue: modelValue, 'onUpdate:modelValue': (e) => wrapper.setProps({modelValue: e})},
-			slots: {
-				default: [h(UiAccordionItem, {name: '1'}), h(UiAccordionItem, {name: '2'}), h(UiAccordionItem, {name: '3'})]
-			}
+	it('third item should be unactive', () => {
+		expect(wrapper.find("[name='3']").attributes('data-state')).toBe('unactive')
+	})
+
+	describe('the third item trigger is clicked', () => {
+		beforeEach(async () => {
+			await wrapper.find("[name='3'] " + `[data-name="${ns.e('trigger')}"`).trigger('click')
 		})
 
-		expect(wrapper.find("[name='1']").classes()).toContain(ns.m('active'))
-		expect(wrapper.find("[name='2']").classes()).not.toContain(ns.m('active'))
-		expect(wrapper.find("[name='3']").classes()).not.toContain(ns.m('active'))
+		it('each item should be active', () => {
+			expect(wrapper.find("[name='1']").attributes('data-state')).toBe('active')
+			expect(wrapper.find("[name='2']").attributes('data-state')).toBe('active')
+			expect(wrapper.find("[name='3']").attributes('data-state')).toBe('active')
+		})
+	})
 
-		await wrapper.find("[name='3'] " + '.' + ns.e('trigger')).trigger('click')
+	describe('then the first item trigger is clicked', () => {
+		beforeEach(async () => {
+			await wrapper.find("[name='1'] " + `[data-name="${ns.e('trigger')}"`).trigger('click')
+		})
 
-		expect(wrapper.find("[name='1']").classes()).not.toContain(ns.m('active'))
-		expect(wrapper.find("[name='2']").classes()).not.toContain(ns.m('active'))
-		expect(wrapper.find("[name='3']").classes()).toContain(ns.m('active'))
+		it('first item and third item should be unactive', () => {
+			expect(wrapper.find("[name='1']").attributes('data-state')).toBe('unactive')
+			expect(wrapper.find("[name='3']").attributes('data-state')).toBe('unactive')
+		})
+
+		it('second item should be active', () => {
+			expect(wrapper.find("[name='2']").attributes('data-state')).toBe('active')
+		})
+
+		describe('then the second item trigger is clicked', () => {
+			beforeEach(async () => {
+				await wrapper.find("[name='2'] " + `[data-name="${ns.e('trigger')}"`).trigger('click')
+			})
+
+			it('each item should be unactive', () => {
+				expect(wrapper.find("[name='1']").attributes('data-state')).toBe('unactive')
+				expect(wrapper.find("[name='2']").attributes('data-state')).toBe('unactive')
+				expect(wrapper.find("[name='3']").attributes('data-state')).toBe('unactive')
+			})
+		})
+	})
+})
+
+describe('default', () => {
+	let wrapper: VueWrapper<InstanceType<typeof Accordion>>
+
+	beforeEach(() => {
+		const modelValue = ['1']
+
+		wrapper = mount(Accordion, {
+			props: {multiply: false, modelValue: modelValue, 'onUpdate:modelValue': (e) => wrapper.setProps({modelValue: e})},
+			slots: {
+				default: [h(AccordionItem, {name: '1'}), h(AccordionItem, {name: '2'}), h(AccordionItem, {name: '3'})]
+			}
+		})
+	})
+
+	it('first item should be active', () => {
+		expect(wrapper.find("[name='1']").attributes('data-state')).toBe('active')
+	})
+
+	it('second and third item should be unactive', () => {
+		expect(wrapper.find("[name='2']").attributes('data-state')).toBe('unactive')
+		expect(wrapper.find("[name='3']").attributes('data-state')).toBe('unactive')
+	})
+
+	describe('then the first item trigger is clicked', () => {
+		beforeEach(async () => {
+			await wrapper.find("[name='1'] " + `[data-name="${ns.e('trigger')}"`).trigger('click')
+		})
+	})
+
+	it('second and third item should be active', () => {
+		expect(wrapper.find("[name='2']").attributes('data-state')).toBe('unactive')
+		expect(wrapper.find("[name='3']").attributes('data-state')).toBe('unactive')
+	})
+
+	it('first item should be active', () => {
+		expect(wrapper.find("[name='1']").attributes('data-state')).toBe('active')
+	})
+
+	describe('then the second item trigger is clicked', () => {
+		beforeEach(async () => {
+			await wrapper.find("[name='2'] " + `[data-name="${ns.e('trigger')}"`).trigger('click')
+		})
+
+		it('third item and first item should be unactive', () => {
+			expect(wrapper.find("[name='1']").attributes('data-state')).toBe('unactive')
+			expect(wrapper.find("[name='3']").attributes('data-state')).toBe('unactive')
+		})
+
+		it('second item should be active', () => {
+			expect(wrapper.find("[name='2']").attributes('data-state')).toBe('active')
+		})
 	})
 })

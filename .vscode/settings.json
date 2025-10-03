@@ -1,0 +1,9 @@
+{
+	"tailwindCSS.classFunctions": ["cva", "cx"],
+	"files.associations": {
+		"*.css": "tailwindcss"
+	},
+	"editor.codeActionsOnSave": {
+		"source.fixAll": "always"
+	}
+}
