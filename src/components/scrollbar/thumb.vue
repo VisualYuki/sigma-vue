@@ -1,8 +1,7 @@
 <template>
 	<div
-		v-if="showThumb"
 		ref="bar"
-		:class="thumbStyles.root({orientation: props.direction, hidden: isHidden})"
+		:class="thumbStyles.root({orientation: props.direction, hidden: !hasScroll})"
 		tabindex="0"
 		:style="props.thumbStyles"
 		@mousedown="onMouseDown"
@@ -10,7 +9,7 @@
 </template>
 
 <script lang="ts" setup>
-	import {nextTick, onMounted, ref, useTemplateRef, watch} from 'vue'
+	import {nextTick, onMounted, ref, useTemplateRef} from 'vue'
 
 	import {useDocumentMouseListener} from './composables/useDocumentMouseListener'
 	import {useDocumentResizeListener} from './composables/useDocumentResizeListener'
@@ -20,7 +19,6 @@
 	const props = withDefaults(defineProps<ScrollbarThumbProps>(), {
 		content: null,
 		direction: 'vertical',
-		onHover: false,
 		thumbStyles: ''
 	})
 
@@ -33,7 +31,7 @@
 	const isBarClicked = ref(false)
 	const barRatio = ref<null | number>(null)
 	const barHeight = ref<null | number>(null)
-	const isHidden = ref<boolean>(false)
+	const hasScroll = ref<boolean>(false)
 
 	function moveBar() {
 		if (props.content === null) return
@@ -47,10 +45,10 @@
 		}
 
 		if (barRatio.value === 1 || barHeight.value === 0) {
-			isHidden.value = true
+			hasScroll.value = false
 			return
 		} else {
-			isHidden.value = false
+			hasScroll.value = true
 		}
 
 		requestAnimationFrame(() => {
@@ -87,10 +85,6 @@
 	}
 
 	function onMouseUp() {
-		if (props.onHover) {
-			showThumb.value = false
-		}
-
 		isBarClicked.value = false
 	}
 
@@ -126,32 +120,9 @@
 		})
 	}
 
-	const showThumb = ref(true)
-
-	watch(
-		() => props.onHover,
-		(newVal) => {
-			if (newVal) {
-				showThumb.value = false
-			}
-		},
-		{
-			immediate: true
-		}
-	)
-
-	function onMouseEnter() {
-		if (props.onHover) {
-			debugger
-			showThumb.value = true
-		}
-	}
-
 	onMounted(() => {
 		nextTick(() => {
 			moveBar()
-
-			props.content?.addEventListener('mouseenter', onMouseEnter)
 		})
 	})
 

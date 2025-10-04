@@ -39,14 +39,3 @@ A customizable thumb for browser scrollbar.
 
 <<< ../examples/scrollbar/Styling.vue
 
-## On hover
-
-::: raw
-<div class="preview">
-  <OnHover />
-</div>
-:::
-
-<<< ../examples/scrollbar/OnHover.vue
-
-

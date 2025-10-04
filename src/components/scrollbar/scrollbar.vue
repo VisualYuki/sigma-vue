@@ -1,24 +1,10 @@
 <template>
 	<div :class="scrollbarStyles.root()" :style="{height: props.height, width: props.width}" :data-name="ns.b()">
-		<div ref="content" :class="[scrollbarStyles.content(), 'scroll-width-none']" :data-name="ns.e('content')" @scroll="onScroll($event)">
+		<div ref="content" :class="[scrollbarStyles.content(), 'scroll-width-none']" :data-name="ns.e('content')" @scroll="onScroll()">
 			<slot></slot>
 		</div>
-		<Thumb
-			ref="xBar"
-			:data-name="ns.e('x-thumb')"
-			direction="horizontal"
-			:content="content"
-			:thumb-styles="props.thumbStyles"
-			:on-hover="props.onHover"
-		/>
-		<Thumb
-			ref="yBar"
-			:data-name="ns.e('y-thumb')"
-			direction="vertical"
-			:content="content"
-			:thumb-styles="props.thumbStyles"
-			:on-hover="props.onHover"
-		/>
+		<Thumb ref="xBar" :data-name="ns.e('x-thumb')" direction="horizontal" :content="content" :thumb-styles="props.thumbStyles" />
+		<Thumb ref="yBar" :data-name="ns.e('y-thumb')" direction="vertical" :content="content" :thumb-styles="props.thumbStyles" />
 	</div>
 </template>
 
@@ -34,7 +20,7 @@
 
 	const props = withDefaults(defineProps<ScrollbarProps>(), {
 		height: '100%',
-		onHover: false,
+
 		thumbStyles: '',
 		width: '100%'
 	})
@@ -44,8 +30,7 @@
 	const content = useTemplateRef<HTMLElement | null>('content')
 	const ns = useNamespace('scrollbar')
 
-	function onScroll(event: Event) {
-		console.log('onScroll', event)
+	function onScroll() {
 		xBar.value?.moveBar()
 		yBar.value?.moveBar()
 	}
