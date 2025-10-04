@@ -1,9 +1,9 @@
 <template>
 	<div
 		ref="bar"
-		:class="thumbStyles.root({orientation: props.direction, hidden: !hasScroll})"
+		:class="thumbStyles.root({orientation: props.direction, hidden: !hasScroll, hiddenOpacity: !showThumb})"
 		tabindex="0"
-		:style="props.thumbStyles"
+		:style="[props.thumbStyles, props.direction === 'horizontal' ? props.xThumbStyles : props.yThumbStyles]"
 		@mousedown="onMouseDown"
 	></div>
 </template>
@@ -19,6 +19,8 @@
 	const props = withDefaults(defineProps<ScrollbarThumbProps>(), {
 		content: null,
 		direction: 'vertical',
+		onHover: false,
+		root: null,
 		thumbStyles: ''
 	})
 
@@ -32,6 +34,11 @@
 	const barRatio = ref<null | number>(null)
 	const barHeight = ref<null | number>(null)
 	const hasScroll = ref<boolean>(false)
+	const showThumb = ref<boolean>(true)
+
+	if (props.onHover) {
+		showThumb.value = false
+	}
 
 	function moveBar() {
 		if (props.content === null) return
@@ -44,7 +51,7 @@
 			barHeight.value = barRatio.value * props.content.clientHeight
 		}
 
-		if (barRatio.value === 1 || barHeight.value === 0) {
+		if (barRatio.value === 1) {
 			hasScroll.value = false
 			return
 		} else {
@@ -84,8 +91,14 @@
 		moveBar()
 	}
 
-	function onMouseUp() {
+	function onMouseUp(event: MouseEvent) {
 		isBarClicked.value = false
+
+		if (props.onHover) {
+			if (!props.root?.contains(event.target as Node)) {
+				showThumb.value = false
+			}
+		}
 	}
 
 	function requestAnimationFrame(fn: () => void) {
@@ -123,6 +136,16 @@
 	onMounted(() => {
 		nextTick(() => {
 			moveBar()
+			if (props.onHover) {
+				props.root?.addEventListener('mouseenter', () => {
+					showThumb.value = true
+				})
+				props.root?.addEventListener('mouseleave', () => {
+					if (!isBarClicked.value) {
+						showThumb.value = false
+					}
+				})
+			}
 		})
 	})
 

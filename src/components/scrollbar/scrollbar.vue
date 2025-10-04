@@ -1,10 +1,26 @@
 <template>
-	<div :class="scrollbarStyles.root()" :style="{height: props.height, width: props.width}" :data-name="ns.b()">
+	<div ref="root" :class="scrollbarStyles.root()" :style="{height: props.height, width: props.width}" :data-name="ns.b()">
 		<div ref="content" :class="[scrollbarStyles.content(), 'scroll-width-none']" :data-name="ns.e('content')" @scroll="onScroll()">
 			<slot></slot>
 		</div>
-		<Thumb ref="xBar" :data-name="ns.e('x-thumb')" direction="horizontal" :content="content" :thumb-styles="props.thumbStyles" />
-		<Thumb ref="yBar" :data-name="ns.e('y-thumb')" direction="vertical" :content="content" :thumb-styles="props.thumbStyles" />
+		<Thumb
+			ref="xBar"
+			:data-name="ns.e('x-thumb')"
+			direction="horizontal"
+			:content="content"
+			:thumb-styles="props.thumbStyles"
+			:on-hover="props.onHover"
+			:root="root"
+		/>
+		<Thumb
+			ref="yBar"
+			:data-name="ns.e('y-thumb')"
+			direction="vertical"
+			:content="content"
+			:thumb-styles="props.thumbStyles"
+			:on-hover="props.onHover"
+			:root="root"
+		/>
 	</div>
 </template>
 
@@ -20,11 +36,12 @@
 
 	const props = withDefaults(defineProps<ScrollbarProps>(), {
 		height: '100%',
-
+		onHover: false,
 		thumbStyles: '',
 		width: '100%'
 	})
 
+	const root = useTemplateRef('root')
 	const xBar = useTemplateRef('xBar')
 	const yBar = useTemplateRef('yBar')
 	const content = useTemplateRef<HTMLElement | null>('content')

@@ -15,6 +15,10 @@ export const thumbStyles = {
 				false: '',
 				true: 'hidden'
 			},
+			hiddenOpacity: {
+				false: '',
+				true: 'opacity-0'
+			},
 			orientation: {
 				horizontal: 'left-0 bottom-0 h-2',
 				vertical: 'top-0 right-0 w-2'
