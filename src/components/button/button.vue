@@ -11,15 +11,17 @@
 
 <script lang="ts" setup>
 	import {useNamespace} from '@/utils/use-namespace'
-	import {buttonStyles} from './theme'
+
 	import type {ButtonProps} from './types'
 
+	import {buttonStyles} from './styles'
+
 	const props = withDefaults(defineProps<ButtonProps>(), {
-		variant: 'solid',
 		color: 'primary',
+		disabled: false,
 		size: 'default',
 		tag: 'button',
-		disabled: false
+		variant: 'solid'
 	})
 
 	const ns = useNamespace('button')

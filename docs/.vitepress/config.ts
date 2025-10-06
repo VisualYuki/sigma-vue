@@ -18,7 +18,9 @@ export default defineConfig({
 			{
 				items: [
 					{link: '/components/accordion', text: 'Accordion'},
+					{link: '/components/alert', text: 'Alert'},
 					{link: '/components/button', text: 'Button'},
+					{link: '/components/checkbox', text: 'Checkbox'},
 					{link: '/components/collapse', text: 'Collapse'},
 					{link: '/components/scrollbar', text: 'Scrollbar'}
 					//{text: 'Dialog', link: '/components/Dialog'}

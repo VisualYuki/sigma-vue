@@ -1,12 +1,12 @@
 <template>
 	<div :class="[accordionItemStyles.root()]" :name="props.name" :data-name="ns.b()" :data-state="modelValue ? 'active' : 'unactive'">
 		<CollapseRoot v-model="modelValue" :disabled="props.disabled">
-			<CollapseTrigger :data-name="ns.e('trigger')" @click="handleClick()">
-				<div :class="accordionItemStyles.trigger()">
+			<CollapseTrigger :data-name="ns.e('trigger')" :class="accordionItemStyles.trigger()" @click="handleClick()">
+				<div :class="accordionItemStyles.triggerInner()">
 					<slot name="trigger"></slot>
 
 					<div :class="accordionItemStyles.trailingIcon({active: modelValue})">
-						<Icon width="100%" icon="line-md:chevron-down" style="color: var(--color-neutral-500)"></Icon>
+						<Icon width="100%" icon="line-md:chevron-down"></Icon>
 					</div>
 				</div>
 			</CollapseTrigger>
@@ -24,7 +24,7 @@
 
 	import {CollapseContent, CollapseRoot, CollapseTrigger} from '../collapse'
 	import {Icon} from '../icon'
-	import {accordionItemStyles} from './theme'
+	import {accordionItemStyles} from './styles'
 	import {type AccordionItemProps, type MainContext} from './types'
 	import {mainContextKey} from './utils'
 

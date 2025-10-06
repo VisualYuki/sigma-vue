@@ -1,62 +1,54 @@
 <template>
-	<div :class="ui.root({class: $props.overrideUi?.root})" @click="toggleState()">
-		<div :class="ui.checkbox({class: $props.overrideUi?.checkbox})">
-			<template v-if="$props.modelValue">
-				<UiIcon icon="mdi:check" color="var(--color-white)" size="20"></UiIcon>
+	<label :class="checkboxStyles.root()" :data-name="ns.b()">
+		<input
+			v-model="modelValue"
+			:class="checkboxStyles.originalInput()"
+			:data-name="ns.e('original-input')"
+			type="checkbox"
+			:disabled="props.disabled"
+			:indeterminate="isIndeterminate()"
+			@click="handleClick($event)"
+		/>
+		<div :class="checkboxStyles.fakeInput({checked: modelValue === true})" :data-name="ns.e('fake-input')">
+			<template v-if="isIndeterminate()">
+				<Icon icon="mdi:minus" :class="[checkboxStyles.icon({isMinusIcon: true})]" />
+			</template>
+			<template v-else-if="modelValue">
+				<Icon icon="mdi:check" :class="[checkboxStyles.icon({isCheckedIcon: true})]" />
 			</template>
 		</div>
-		<div v-if="$props.label || $slots.label" :class="ui.label({class: $props.overrideUi?.label})">
-			<slot name="label">{{ $props.label }}</slot>
-		</div>
-	</div>
+	</label>
 </template>
 
-<script lang="ts">
-	import {ComponentNames, type TSizes} from '@/types/configuration'
-	import {computed, defineComponent, type PropType} from 'vue'
-	import {tvInstance} from './theme'
+<script lang="ts" setup>
+	import {useNamespace} from '@/utils/use-namespace'
+
+	import type {CheckboxEmits, CheckboxModelValue, CheckboxProps} from './types'
+
 	import {Icon} from '../icon'
+	import {checkboxStyles} from './styles'
 
-	export default defineComponent({
-		name: ComponentNames.Checkbox,
-		components: {
-			UiIcon: Icon
-		},
-		props: {
-			modelValue: {
-				type: Boolean,
-				default: false
-			},
-			overrideUi: {
-				type: Object as PropType<Partial<typeof tvInstance>['slots']>,
-				default: () => ({})
-			},
-			size: {
-				type: String as PropType<TSizes>,
-				default: 'default'
-			},
-			label: {
-				type: String,
-				default: ''
-			},
-			disabled: {
-				type: Boolean,
-				default: false
-			}
-		},
-		emits: ['update:modelValue', 'change'],
-		setup(props) {
-			const ui = computed(() => tvInstance({checked: props.modelValue, size: props.size, disabled: props.disabled}))
+	const emit = defineEmits<CheckboxEmits>()
+	const props = withDefaults(defineProps<CheckboxProps>(), {disabled: false})
 
-			return {ui}
-		},
-		methods: {
-			toggleState() {
-				this.$emit('change', !this.modelValue)
-				this.$emit('update:modelValue', !this.modelValue)
+	const modelValue = defineModel<CheckboxModelValue>({
+		default: false,
+		get: (v) => {
+			if (v === 'indeterminate') {
+				return false
 			}
+
+			return v
 		}
 	})
-</script>
 
-<style lang="scss" scoped></style>
+	const ns = useNamespace('checkbox')
+
+	function handleClick(event: MouseEvent) {
+		emit('click', event)
+	}
+
+	function isIndeterminate() {
+		return (props as unknown as {modelValue: CheckboxModelValue}).modelValue === 'indeterminate'
+	}
+</script>

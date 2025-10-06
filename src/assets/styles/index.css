@@ -4,3 +4,14 @@
 	transition: all 0.2s linear;
 	overflow: hidden;
 }
+
+.focus-primary {
+	@apply outline-2 outline-offset-0 outline-transparent outline-solid;
+	@apply peer-focus-visible:outline-orange-500;
+	@apply focus-visible:outline-orange-500;
+}
+
+.disabled {
+	@apply disabled:cursor-not-allowed disabled:opacity-25;
+	@apply peer-disabled:cursor-not-allowed peer-disabled:opacity-25;
+}

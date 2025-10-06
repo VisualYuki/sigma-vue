@@ -13,7 +13,7 @@ export const collapseStyles = {
 }
 
 export const collapseTriggerStyles = {
-	root: cva('p-2 border border-gray-300 ', {
+	root: cva('focus-primary', {
 		variants: {
 			disabled: {
 				false: 'cursor-pointer'
@@ -23,6 +23,6 @@ export const collapseTriggerStyles = {
 }
 
 export const collapseContentStyles = {
-	root: cva('transition-collapse-target border border-red-300'),
-	inner: cva('p-2')
+	root: cva('transition-collapse-target'),
+	inner: cva('')
 }

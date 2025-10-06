@@ -1,18 +1,6 @@
 const namespace = 'ui'
 const conditionPrefix = 'is'
 
-/**
- * @example
- * bem("block", "element", "modifier", true) => .block__element_modifier
- * bem("block", "element", "modifier", false) => block__element_modifier
- * bem("block", "element", "", true) => .block__element
- * bem("block", "", "", true) => .block
- * bem("block", "", "", false) => block
- */
-function bem(block: string, element?: string, modifier?: string, isSelector: boolean = false) {
-	return `${isSelector ? '.' : ''}` + `${namespace}-${block}` + `${element ? '__' + element : ''}` + `${modifier ? '_' + modifier : ''}`
-}
-
 export function useNamespace(blockName: string, isSelector: boolean = false) {
 	function is(name: string, condition: boolean = true) {
 		return condition ? `${isSelector ? '.' : ''}` + conditionPrefix + '-' + name : ''
@@ -35,11 +23,23 @@ export function useNamespace(blockName: string, isSelector: boolean = false) {
 	}
 
 	return {
-		is,
-		bem,
-		m,
 		b,
+		bem,
 		e,
-		em
+		em,
+		is,
+		m
 	}
+}
+
+/**
+ * @example
+ * bem("block", "element", "modifier", true) => .block__element_modifier
+ * bem("block", "element", "modifier", false) => block__element_modifier
+ * bem("block", "element", "", true) => .block__element
+ * bem("block", "", "", true) => .block
+ * bem("block", "", "", false) => block
+ */
+function bem(block: string, element?: string, modifier?: string, isSelector: boolean = false) {
+	return `${isSelector ? '.' : ''}` + `${namespace}-${block}` + `${element ? '__' + element : ''}` + `${modifier ? '_' + modifier : ''}`
 }

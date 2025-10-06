@@ -1,5 +1,4 @@
-- modal
-- checkbox
 - radio group
+- modal
 - table
 - context menu

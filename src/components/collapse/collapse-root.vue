@@ -7,7 +7,7 @@
 <script lang="ts" setup>
 	import {computed, provide} from 'vue'
 
-	import {collapseStyles} from './theme'
+	import {collapseStyles} from './styles'
 	import {type MainContext} from './types'
 	import {MainContextKey} from './utils'
 

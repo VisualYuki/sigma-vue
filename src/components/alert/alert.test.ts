@@ -2,7 +2,7 @@ import {describe, expect, it} from 'vitest'
 import {UiAlert} from './'
 import {mount} from '@vue/test-utils'
 import {colors} from '@/types/configuration'
-import {alertVariants} from '@/components/alert/theme'
+import {alertVariants} from '@/components/alert/styles'
 import {useNamespace} from '@/utils/use-namespace'
 
 const ns = useNamespace('alert', true)

@@ -13,6 +13,7 @@
 		| 'mdi:close'
 		| 'mdi:error'
 		| 'mdi:information'
+		| 'mdi:minus'
 		| 'mdi:success-circle'
 		| 'ph:image-duotone'
 		| 'svg-spinners:90-ring-with-bg'

@@ -15,7 +15,7 @@
 <script lang="ts" setup>
 	import {inject} from 'vue'
 
-	import {collapseTriggerStyles} from './theme'
+	import {collapseTriggerStyles} from './styles'
 	import {type MainContext} from './types'
 	import {MainContextKey} from './utils'
 

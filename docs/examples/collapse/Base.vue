@@ -1,9 +1,9 @@
 <template>
 	<UiCollapseRoot v-model="value">
-		<UiCollapseTrigger>
+		<UiCollapseTrigger class="p-2 bg-red-500">
 			<div>trigger</div>
 		</UiCollapseTrigger>
-		<UiCollapseContent>
+		<UiCollapseContent class="p-2 bg-blue-500">
 			<div>content</div>
 		</UiCollapseContent>
 	</UiCollapseRoot>

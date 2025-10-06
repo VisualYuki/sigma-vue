@@ -10,7 +10,7 @@
 	import {toggleArrayItem} from '@/utils'
 	import {useNamespace} from '@/utils/use-namespace'
 
-	import {accordionStyles} from './theme'
+	import {accordionStyles} from './styles'
 	import {type AccordionProps} from './types'
 	import {mainContextKey} from './utils'
 
