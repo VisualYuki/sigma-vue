@@ -14,6 +14,8 @@ import Inner from "../examples/dialog/Inner.vue"
 </div>
 :::
 
+<<< ../examples/dialog/Base.vue
+
 ## Fullscreen
 
 ::: raw
@@ -22,6 +24,7 @@ import Inner from "../examples/dialog/Inner.vue"
 </div>
 :::
 
+<<< ../examples/dialog/Fullscreen.vue
 
 ## Inner
 
@@ -30,5 +33,7 @@ import Inner from "../examples/dialog/Inner.vue"
   <Inner />
 </div>
 :::
+
+<<< ../examples/dialog/Inner.vue
 
 
