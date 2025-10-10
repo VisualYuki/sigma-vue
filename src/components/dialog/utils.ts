@@ -1,4 +1,5 @@
 import {ref} from 'vue'
+
 const counter = ref(0)
 
 export function useDialogCounter() {
@@ -11,8 +12,8 @@ export function useDialogCounter() {
 	}
 
 	return {
-		counter,
 		add,
+		counter,
 		subtract
 	}
 }
