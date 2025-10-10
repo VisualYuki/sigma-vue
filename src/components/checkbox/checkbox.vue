@@ -17,6 +17,9 @@
 				<Icon icon="mdi:check" :class="[checkboxStyles.icon({isCheckedIcon: true})]" />
 			</template>
 		</div>
+		<Label v-if="props.label" :class="checkboxStyles.label()" dark>
+			{{ props.label }}
+		</Label>
 	</label>
 </template>
 
@@ -26,10 +29,11 @@
 	import type {CheckboxEmits, CheckboxModelValue, CheckboxProps} from './types'
 
 	import {Icon} from '../icon'
+	import {Label} from '../label'
 	import {checkboxStyles} from './styles'
 
 	const emit = defineEmits<CheckboxEmits>()
-	const props = withDefaults(defineProps<CheckboxProps>(), {disabled: false})
+	const props = withDefaults(defineProps<CheckboxProps>(), {disabled: false, label: ''})
 
 	const modelValue = defineModel<CheckboxModelValue>({
 		default: false,

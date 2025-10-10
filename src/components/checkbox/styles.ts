@@ -1,7 +1,8 @@
 import {cva} from 'class-variance-authority'
 
 export const checkboxStyles = {
-	fakeInput: cva(['relative w-4 h-4 border-2 rounded-sm flex-shrink-0 focus-utility cursor-pointer disabled-utility'], {
+	root: cva('inline-flex items-center cursor-pointer disabled-utility'),
+	fakeInput: cva(['relative w-4 h-4 border-2 rounded-sm flex-shrink-0 focus-utility '], {
 		defaultVariants: {
 			checked: false
 		},
@@ -25,5 +26,5 @@ export const checkboxStyles = {
 		}
 	}),
 	originalInput: cva(['sr-only peer']),
-	root: cva('inline-flex')
+	label: cva('ms-1.5')
 }

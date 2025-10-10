@@ -2,6 +2,7 @@
 	import Base from "../examples/checkbox/Base.vue"
 	import Indeterminate from "../examples/checkbox/Indeterminate.vue"
 	import Disabled from "../examples/checkbox/Disabled.vue"
+	import Label from "../examples/checkbox/Label.vue"
 </script>
 
 # Checkbox
@@ -35,3 +36,13 @@
 :::
 
 <<< ../examples/checkbox/Disabled.vue
+
+## Label
+
+::: raw
+<div class="preview">
+  <Label />
+</div>
+:::
+
+<<< ../examples/checkbox/Label.vue

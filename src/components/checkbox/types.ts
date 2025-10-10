@@ -6,4 +6,5 @@ export type CheckboxModelValue = 'indeterminate' | boolean
 
 export interface CheckboxProps {
 	disabled?: boolean
+	label?: string
 }
