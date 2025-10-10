@@ -1,0 +1,58 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`radio-group > when items is object > when clicking on first > render snapshot 1`] = `
+"<fieldset class="inline-flex gap-3 p-4 pe-12 relative border border-stone-500 rounded-md">
+  <legend class="px-2 text-xs"></legend><label class="flex items-center select-none group leading-none flex-wrap disabled-utility"><input class="sr-only peer" type="radio" value="1">
+    <div class="relative w-4 h-4 rounded-full border-2 focus-utility border-green-500"><span class="absolute top-[50%] left-[50%] translate-[-50%] w-1.5 h-1.5 rounded-full bg-green-500"></span></div>
+    <p class="ms-1.5 text-stone-500">1</p>
+  </label><label class="flex items-center select-none group leading-none flex-wrap disabled-utility"><input class="sr-only peer" type="radio" value="2">
+    <div class="relative w-4 h-4 rounded-full border-2 focus-utility border-stone-500">
+      <!--v-if-->
+    </div>
+    <p class="ms-1.5 text-stone-500">2</p>
+  </label><label class="flex items-center select-none group leading-none flex-wrap disabled-utility"><input class="sr-only peer" type="radio" value="3">
+    <div class="relative w-4 h-4 rounded-full border-2 focus-utility border-stone-500">
+      <!--v-if-->
+    </div>
+    <p class="ms-1.5 text-stone-500">3</p>
+  </label>
+</fieldset>"
+`;
+
+exports[`radio-group > when items is object > when clicking on first > then clicking on second radio > render snapshot 1`] = `
+"<fieldset class="inline-flex gap-3 p-4 pe-12 relative border border-stone-500 rounded-md">
+  <legend class="px-2 text-xs"></legend><label class="flex items-center select-none group leading-none flex-wrap disabled-utility"><input class="sr-only peer" type="radio" value="1">
+    <div class="relative w-4 h-4 rounded-full border-2 focus-utility border-green-500"><span class="absolute top-[50%] left-[50%] translate-[-50%] w-1.5 h-1.5 rounded-full bg-green-500"></span></div>
+    <p class="ms-1.5 text-stone-500">1</p>
+  </label><label class="flex items-center select-none group leading-none flex-wrap disabled-utility"><input class="sr-only peer" type="radio" value="2">
+    <div class="relative w-4 h-4 rounded-full border-2 focus-utility border-stone-500">
+      <!--v-if-->
+    </div>
+    <p class="ms-1.5 text-stone-500">2</p>
+  </label><label class="flex items-center select-none group leading-none flex-wrap disabled-utility"><input class="sr-only peer" type="radio" value="3">
+    <div class="relative w-4 h-4 rounded-full border-2 focus-utility border-stone-500">
+      <!--v-if-->
+    </div>
+    <p class="ms-1.5 text-stone-500">3</p>
+  </label>
+</fieldset>"
+`;
+
+exports[`radio-group > when items is string > render snapshot 1`] = `
+"<fieldset class="inline-flex gap-3 p-4 pe-12 relative border border-stone-500 rounded-md">
+  <legend class="px-2 text-xs"></legend><label class="flex items-center select-none group leading-none flex-wrap disabled-utility"><input class="sr-only peer" type="radio" value="1">
+    <div class="relative w-4 h-4 rounded-full border-2 focus-utility border-green-500"><span class="absolute top-[50%] left-[50%] translate-[-50%] w-1.5 h-1.5 rounded-full bg-green-500"></span></div>
+    <p class="ms-1.5 text-stone-500">1</p>
+  </label><label class="flex items-center select-none group leading-none flex-wrap disabled-utility"><input class="sr-only peer" type="radio" value="2">
+    <div class="relative w-4 h-4 rounded-full border-2 focus-utility border-stone-500">
+      <!--v-if-->
+    </div>
+    <p class="ms-1.5 text-stone-500">2</p>
+  </label><label class="flex items-center select-none group leading-none flex-wrap disabled-utility"><input class="sr-only peer" type="radio" value="3">
+    <div class="relative w-4 h-4 rounded-full border-2 focus-utility border-stone-500">
+      <!--v-if-->
+    </div>
+    <p class="ms-1.5 text-stone-500">3</p>
+  </label>
+</fieldset>"
+`;

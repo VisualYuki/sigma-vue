@@ -13,7 +13,7 @@ export const collapseStyles = {
 }
 
 export const collapseTriggerStyles = {
-	root: cva('focus-primary', {
+	root: cva('focus-utility', {
 		variants: {
 			disabled: {
 				false: 'cursor-pointer'

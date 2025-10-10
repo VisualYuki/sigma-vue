@@ -3,7 +3,7 @@
 import {cva} from 'class-variance-authority'
 
 export const alertStyles = {
-	root: cva('relative overflow-hidden w-full rounded-md p-4 disabled', {
+	root: cva('relative overflow-hidden w-full rounded-md p-4 disabled-utility', {
 		variants: {
 			color: {
 				error: '',

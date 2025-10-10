@@ -22,6 +22,7 @@ export default defineConfig({
 					{link: '/components/button', text: 'Button'},
 					{link: '/components/checkbox', text: 'Checkbox'},
 					{link: '/components/collapse', text: 'Collapse'},
+					{link: '/components/radio-group', text: 'RadioGroup'},
 					{link: '/components/scrollbar', text: 'Scrollbar'}
 					//{text: 'Dialog', link: '/components/Dialog'}
 				],

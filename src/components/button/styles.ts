@@ -1,7 +1,7 @@
 import {cva} from 'class-variance-authority'
 
 export const buttonStyles = {
-	root: cva(['rounded-md font-medium inline-flex items-center justify-around cursor-pointer select-none', 'disabled h-8 focus-primary'], {
+	root: cva(['rounded-md font-medium inline-flex items-center justify-around cursor-pointer select-none', 'disabled-utility h-8 focus-utility'], {
 		compoundVariants: [
 			{
 				class: 'bg-blue-500 text-white',
