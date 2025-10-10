@@ -16,3 +16,5 @@
 	@apply peer-disabled:cursor-not-allowed peer-disabled:opacity-25;
 	@apply has-disabled:cursor-not-allowed has-disabled:opacity-25;
 }
+
+@custom-variant dark (&:where(.dark, .dark *));

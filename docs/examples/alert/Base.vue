@@ -1,7 +1,11 @@
 <template>
 	<UiAlert>
-		<template #title>title</template>
-		<template #description>description</template>
+		<template #title>
+			<UiLabel color="white">title</UiLabel>
+		</template>
+		<template #description>
+			<UiLabel color="white">description</UiLabel>
+		</template>
 	</UiAlert>
 </template>
 

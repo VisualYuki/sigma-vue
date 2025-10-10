@@ -7,16 +7,28 @@
 
 	<UiAccordion v-model="value">
 		<UiAccordionItem name="1">
-			<template #trigger>trigger 1</template>
-			<template #content>content 1</template>
+			<template #trigger>
+				<UiLabel color="white">trigger 1</UiLabel>
+			</template>
+			<template #content>
+				<UiLabel color="white">content 1</UiLabel>
+			</template>
 		</UiAccordionItem>
 		<UiAccordionItem name="2">
-			<template #trigger>trigger 2</template>
-			<template #content>content 2</template>
+			<template #trigger>
+				<UiLabel color="white">trigger 2</UiLabel>
+			</template>
+			<template #content>
+				<UiLabel color="white">content 2</UiLabel>
+			</template>
 		</UiAccordionItem>
 		<UiAccordionItem name="3">
-			<template #trigger>trigger 3</template>
-			<template #content>content 3</template>
+			<template #trigger>
+				<UiLabel color="white">trigger 3</UiLabel>
+			</template>
+			<template #content>
+				<UiLabel color="white">content 3</UiLabel>
+			</template>
 		</UiAccordionItem>
 	</UiAccordion>
 </template>

@@ -1,10 +1,10 @@
 <template>
 	<UiCollapseRoot v-model="value" disabled>
 		<UiCollapseTrigger class="p-2 bg-red-500">
-			<div>trigger</div>
+			<UiLabel>trigger</UiLabel>
 		</UiCollapseTrigger>
 		<UiCollapseContent class="p-2 bg-blue-500">
-			<div>content</div>
+			<UiLabel>content</UiLabel>
 		</UiCollapseContent>
 	</UiCollapseRoot>
 </template>

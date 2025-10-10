@@ -11,21 +11,21 @@
 </template>
 
 <script lang="ts" setup>
-	import {useNamespace} from '@/utils/use-namespace'
 	import Icon from '@/components/icon/Icon.vue'
+	import {useNamespace} from '@/utils/use-namespace'
 
 	const props = defineProps({
-		text: {
-			type: String,
-			default: 'Loading...'
-		},
 		background: {
-			type: String,
-			default: ''
+			default: '',
+			type: String
 		},
 		customClass: {
-			type: String,
-			default: ''
+			default: '',
+			type: String
+		},
+		text: {
+			default: 'Loading...',
+			type: String
 		}
 	})
 

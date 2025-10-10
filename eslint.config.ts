@@ -39,15 +39,20 @@ export default defineConfigWithVueTs(
 		}
 	},
 	perfectionist.configs['recommended-alphabetical'],
-	// {
-	// 	rules: {
-	// 		'perfectionist/sort-objects': [
-	// 			'error',
-	// 			{
-	// 				type: 'alphabetical'
-	// 			}
-	// 		]
-	// 	}
-	// },
+	{
+		files: ['**/styles.ts'],
+		name: 'app/disable-perfectionist-for-styles',
+		rules: {
+			'perfectionist/sort-classes': 'off',
+			'perfectionist/sort-exports': 'off',
+			'perfectionist/sort-imports': 'off',
+			'perfectionist/sort-interfaces': 'off',
+			'perfectionist/sort-named-exports': 'off',
+			'perfectionist/sort-named-imports': 'off',
+			'perfectionist/sort-object-types': 'off',
+			'perfectionist/sort-objects': 'off'
+		}
+	},
+
 	skipFormatting
 )

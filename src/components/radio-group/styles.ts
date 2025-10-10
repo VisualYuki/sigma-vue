@@ -1,5 +1,3 @@
-/* eslint-disable perfectionist/sort-objects */
-
 import {cva} from 'class-variance-authority'
 
 export const radioStyles = {
@@ -8,18 +6,18 @@ export const radioStyles = {
 	fakeInput: cva(['relative w-4 h-4 rounded-full border-2 focus-utility'], {
 		variants: {
 			checked: {
-				false: 'border-stone-500',
+				false: 'border-black dark:border-white',
 				true: 'border-green-500'
 			}
 		}
 	}),
 	icon: cva('absolute top-[50%] left-[50%] translate-[-50%] w-1.5 h-1.5 rounded-full bg-green-500'),
-	label: cva('ms-1.5 text-stone-500')
+	label: cva('ms-1.5')
 }
 
 export const radioGroupStyles = {
 	legend: cva('px-2 text-xs'),
-	root: cva('inline-flex gap-3 p-4 pe-12 relative border border-stone-500 rounded-md', {
+	root: cva('inline-flex gap-3 p-4 pe-12 relative border border-black dark:border-white rounded-md', {
 		defaultVariants: {
 			direction: 'horizontal'
 		},

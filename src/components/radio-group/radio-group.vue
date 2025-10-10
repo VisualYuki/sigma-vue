@@ -1,6 +1,10 @@
 <template>
 	<fieldset :class="radioGroupStyles.root({direction: props.direction})">
-		<legend :class="radioGroupStyles.legend()">{{ props.legend }}</legend>
+		<legend :class="radioGroupStyles.legend()">
+			<Label dark>
+				{{ props.legend }}
+			</Label>
+		</legend>
 		<template v-for="radioData in props.items" :key="radioData?.value || radioData">
 			<Radio v-model="modelValue" :value="getValue(radioData)" :disabled="getDisabled(radioData)" :label="getLabel(radioData)" />
 		</template>
@@ -10,6 +14,7 @@
 <script lang="ts" setup>
 	import type {RadioGroupItem, RadioGroupProps, RadioGroupValue} from './types'
 
+	import {Label} from '../label'
 	import Radio from './radio.vue'
 	import {radioGroupStyles} from './styles'
 

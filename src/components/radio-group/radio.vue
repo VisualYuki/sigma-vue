@@ -5,15 +5,16 @@
 			<span v-if="model == props.value" :class="radioStyles.icon()" />
 		</div>
 
-		<p v-if="props.label" :class="radioStyles.label()">
+		<Label v-if="props.label" :class="radioStyles.label()" dark>
 			{{ props.label }}
-		</p>
+		</Label>
 	</label>
 </template>
 
 <script lang="ts" setup>
 	import type {ObjectRadioGroupItem, RadioGroupValue} from './types'
 
+	import {Label} from '../label'
 	import {radioStyles} from './styles'
 
 	const props = defineProps<ObjectRadioGroupItem>()

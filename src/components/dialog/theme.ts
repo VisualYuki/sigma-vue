@@ -1,7 +1,5 @@
 import {cva} from 'class-variance-authority'
 
-/* eslint-disable perfectionist/sort-objects */
-
 export const dialogStyles = {
 	root: cva(['left-1/2 top-1/2 -translate-1/2 backdrop:bg-gray-400/20 min-w-60 p-5'], {
 		variants: {
