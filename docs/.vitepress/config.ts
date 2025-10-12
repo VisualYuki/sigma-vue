@@ -22,6 +22,7 @@ export default defineConfig({
 					{link: '/components/button', text: 'Button'},
 					{link: '/components/checkbox', text: 'Checkbox'},
 					{link: '/components/collapse', text: 'Collapse'},
+					{link: '/components/context-menu', text: 'ContextMenu'},
 					{link: '/components/dialog', text: 'Dialog'},
 					{link: '/components/label', text: 'Label'},
 					{link: '/components/radio-group', text: 'RadioGroup'},

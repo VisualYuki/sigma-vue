@@ -4,6 +4,7 @@ import Weight from "../examples/label/Weight.vue"
 import Size from "../examples/label/Size.vue"
 import Color from "../examples/label/Color.vue"
 import Dark from "../examples/label/Dark.vue"
+import Truncate from "../examples/label/Truncate.vue"
 </script>
 
 # Label
@@ -58,4 +59,12 @@ import Dark from "../examples/label/Dark.vue"
 
 <<< ../examples/label/Dark.vue
 
+## Truncate
 
+::: raw
+<div class="preview">
+  <Truncate />
+</div>
+:::
+
+<<< ../examples/label/Truncate.vue

@@ -1,7 +1,8 @@
 <template>
 	<component
 		:is="props.as"
-		:class="labelStyles.root({size: props.size, weight: props.weight, color: props.color, dark: props.dark})"
+		ref="root"
+		:class="labelStyles.root({size: props.size, weight: props.weight, color: props.color, dark: props.dark, truncate: props.truncate !== ''})"
 		:data-name="ns.b()"
 	>
 		<slot />
@@ -14,8 +15,20 @@
 	import type {LabelProps} from './types'
 
 	import {labelStyles} from './styles'
+	import {onMounted, useTemplateRef} from 'vue'
+	import {isTextTruncated} from './utils'
 
-	const props = withDefaults(defineProps<LabelProps>(), {as: 'span', color: 'black', dark: false, size: 'md', weight: 'normal'})
+	const rootRef = useTemplateRef<HTMLElement>('root')
+
+	const props = withDefaults(defineProps<LabelProps>(), {as: 'span', color: 'black', dark: false, size: 'md', weight: 'normal', truncate: ''})
 
 	const ns = useNamespace('label')
+
+	onMounted(() => {
+		if (props.truncate && rootRef.value) {
+			if (isTextTruncated(rootRef.value)) {
+				rootRef.value.setAttribute('title', props.truncate)
+			}
+		}
+	})
 </script>

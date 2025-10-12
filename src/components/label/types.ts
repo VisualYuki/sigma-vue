@@ -4,4 +4,5 @@ export interface LabelProps {
 	dark?: boolean
 	size?: 'lg' | 'md' | 'sm'
 	weight?: 'bold' | 'medium' | 'normal'
+	truncate?: string
 }

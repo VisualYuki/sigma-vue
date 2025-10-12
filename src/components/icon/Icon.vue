@@ -8,6 +8,7 @@
 	type Icon =
 		| 'iconoir:cancel'
 		| 'line-md:chevron-down'
+		| 'mdi:chevron-right'
 		| 'mdi:alert'
 		| 'mdi:check'
 		| 'mdi:close'

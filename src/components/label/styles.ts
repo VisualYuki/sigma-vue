@@ -25,6 +25,10 @@ export const labelStyles = {
 				success: 'text-green-500',
 				warning: 'text-yellow-500',
 				info: 'text-gray-500'
+			},
+			truncate: {
+				true: 'truncate',
+				false: ''
 			}
 		},
 		compoundVariants: [

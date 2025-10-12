@@ -38,21 +38,21 @@ export default defineConfigWithVueTs(
 			'vue/prefer-import-from-vue': 'off'
 		}
 	},
-	perfectionist.configs['recommended-alphabetical'],
-	{
-		files: ['**/styles.ts'],
-		name: 'app/disable-perfectionist-for-styles',
-		rules: {
-			'perfectionist/sort-classes': 'off',
-			'perfectionist/sort-exports': 'off',
-			'perfectionist/sort-imports': 'off',
-			'perfectionist/sort-interfaces': 'off',
-			'perfectionist/sort-named-exports': 'off',
-			'perfectionist/sort-named-imports': 'off',
-			'perfectionist/sort-object-types': 'off',
-			'perfectionist/sort-objects': 'off'
-		}
-	},
+	// perfectionist.configs['recommended-alphabetical'],
+	// {
+	// 	files: ['**/styles.ts'],
+	// 	name: 'app/disable-perfectionist-for-styles',
+	// 	rules: {
+	// 		'perfectionist/sort-classes': 'off',
+	// 		'perfectionist/sort-exports': 'off',
+	// 		'perfectionist/sort-imports': 'off',
+	// 		'perfectionist/sort-interfaces': 'off',
+	// 		'perfectionist/sort-named-exports': 'off',
+	// 		'perfectionist/sort-named-imports': 'off',
+	// 		'perfectionist/sort-object-types': 'off',
+	// 		'perfectionist/sort-objects': 'off'
+	// 	}
+	// },
 
 	skipFormatting
 )

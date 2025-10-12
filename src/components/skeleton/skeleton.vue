@@ -11,7 +11,7 @@
 <script lang="ts" setup>
 	import {ComponentNames} from '@/types/configuration'
 	import {computed, type PropType} from 'vue'
-	import {tvInstance} from './theme'
+	import {tvInstance} from './styles'
 	import type {Types} from './utils'
 	import {Icon} from '../icon'
 
