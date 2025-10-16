@@ -11,6 +11,7 @@ import {Dialog} from '@/components/dialog'
 import {Label} from '@/components/label'
 import {RadioGroup} from '@/components/radio-group'
 import {Scrollbar} from '@/components/scrollbar'
+import {Skeleton} from '@/components/skeleton'
 
 import './styles.css'
 
@@ -30,6 +31,7 @@ export default {
 		app.component('UiLabel', Label)
 		app.component('UiRadioGroup', RadioGroup)
 		app.component('UiScrollbar', Scrollbar)
+		app.component('UiSkeleton', Skeleton)
 	},
 	Layout: () => {
 		return h(DefaultTheme.Layout, null, {

@@ -26,7 +26,8 @@ export default defineConfig({
 					{link: '/components/dialog', text: 'Dialog'},
 					{link: '/components/label', text: 'Label'},
 					{link: '/components/radio-group', text: 'RadioGroup'},
-					{link: '/components/scrollbar', text: 'Scrollbar'}
+					{link: '/components/scrollbar', text: 'Scrollbar'},
+					{link: '/components/skeleton', text: 'Skeleton'}
 				],
 				text: 'Compoenents'
 			}
