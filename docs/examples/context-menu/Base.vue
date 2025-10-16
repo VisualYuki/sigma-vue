@@ -8,7 +8,7 @@
 </template>
 
 <script lang="ts" setup>
-	import type {ContextMenuItem, ContextMenu as UiContextMenu} from '@/components/contextmenu'
+	import type {ContextMenuItem, ContextMenu as UiContextMenu} from '@/components/context-menu'
 
 	import {ref, useTemplateRef} from 'vue'
 
