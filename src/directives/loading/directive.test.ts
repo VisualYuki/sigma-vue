@@ -2,7 +2,7 @@ import {describe, expect, test} from 'vitest'
 import {mount} from '@vue/test-utils'
 import {defineComponent} from 'vue'
 import {loadingDirective} from './index'
-import {useNamespace} from '@/utils/use-namespace'
+import {useNamespace} from '@/utils'
 
 const ns = useNamespace('loading-directive', true)
 

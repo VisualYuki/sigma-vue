@@ -8,7 +8,7 @@
 	import {provide} from 'vue'
 
 	import {toggleArrayItem} from '@/utils'
-	import {useNamespace} from '@/utils/use-namespace'
+	import {useNamespace} from '@/utils'
 
 	import {accordionStyles} from './styles'
 	import {type AccordionProps} from './types'

@@ -1,7 +1,7 @@
 import {mount} from '@vue/test-utils'
 import {describe, expect, it, vi} from 'vitest'
-import ContextMenu from './ContextMenu.vue'
-import {useNamespace} from '@/utils/use-namespace'
+import ContextMenu from './context-menu.vue'
+import {useNamespace} from '@/utils'
 
 // vi.mock('@vueuse/core', async () => {
 //   const actual = await vi.importActual('@vueuse/core');

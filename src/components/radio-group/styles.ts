@@ -6,7 +6,7 @@ export const radioStyles = {
 	fakeInput: cva(['relative w-4 h-4 rounded-full border-2 focus-utility'], {
 		variants: {
 			checked: {
-				false: 'border-black dark:border-white',
+				false: 'border-black',
 				true: 'border-green-500'
 			}
 		}
@@ -17,7 +17,7 @@ export const radioStyles = {
 
 export const radioGroupStyles = {
 	legend: cva('px-2 text-xs'),
-	root: cva('inline-flex gap-3 p-4 pe-12 relative border border-black dark:border-white rounded-md', {
+	root: cva('inline-flex gap-3 p-4 pe-12 relative border border-black rounded-md', {
 		defaultVariants: {
 			direction: 'horizontal'
 		},

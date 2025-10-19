@@ -20,7 +20,7 @@
 <script lang="ts" setup>
 	import {inject, watch} from 'vue'
 
-	import {useNamespace} from '@/utils/use-namespace'
+	import {useNamespace} from '@/utils'
 
 	import {CollapseContent, CollapseRoot, CollapseTrigger} from '../collapse'
 	import {Icon} from '../icon'

@@ -2,7 +2,7 @@ import {mount, VueWrapper} from '@vue/test-utils'
 import {beforeEach, describe, expect, it} from 'vitest'
 import {h} from 'vue'
 
-import {useNamespace} from '@/utils/use-namespace'
+import {useNamespace} from '@/utils'
 
 import {Accordion, AccordionItem} from './'
 

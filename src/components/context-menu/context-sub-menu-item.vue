@@ -25,7 +25,7 @@
 <script lang="ts" setup>
 	import {Icon} from '../icon'
 	import {Label} from '../label'
-	import ContextSubMenu from './ContextSubMenu.vue'
+	import ContextSubMenu from './context-sub-menu.vue'
 	import {contextSubMenuItemStyles} from './styles'
 	import type {ContextMenuItem} from './types'
 

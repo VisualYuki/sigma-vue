@@ -2,7 +2,7 @@
 	<component
 		:is="props.as"
 		ref="root"
-		:class="labelStyles.root({size: props.size, weight: props.weight, color: props.color, dark: props.dark, truncate: props.truncate !== ''})"
+		:class="labelStyles.root({size: props.size, weight: props.weight, color: props.color, truncate: props.truncate !== ''})"
 		:data-name="ns.b()"
 	>
 		<slot />
@@ -10,7 +10,7 @@
 </template>
 
 <script lang="ts" setup>
-	import {useNamespace} from '@/utils/use-namespace'
+	import {useNamespace} from '@/utils'
 
 	import type {LabelProps} from './types'
 
@@ -20,7 +20,7 @@
 
 	const rootRef = useTemplateRef<HTMLElement>('root')
 
-	const props = withDefaults(defineProps<LabelProps>(), {as: 'span', color: 'black', dark: false, size: 'md', weight: 'normal', truncate: ''})
+	const props = withDefaults(defineProps<LabelProps>(), {as: 'span', color: 'black', size: 'md', weight: 'normal', truncate: ''})
 
 	const ns = useNamespace('label')
 

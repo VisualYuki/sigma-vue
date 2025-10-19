@@ -3,10 +3,6 @@ import {cva} from 'class-variance-authority'
 export const labelStyles = {
 	root: cva([''], {
 		variants: {
-			dark: {
-				true: null,
-				false: null
-			},
 			size: {
 				sm: 'text-sm',
 				md: 'text-md',
@@ -30,18 +26,6 @@ export const labelStyles = {
 				true: 'truncate',
 				false: ''
 			}
-		},
-		compoundVariants: [
-			{
-				class: 'dark:text-white',
-				color: 'black',
-				dark: true
-			},
-			{
-				class: 'dark:text-black',
-				color: 'white',
-				dark: true
-			}
-		]
+		}
 	})
 }

@@ -28,7 +28,7 @@
 </template>
 
 <script lang="ts" setup>
-	import {useNamespace} from '@/utils/use-namespace'
+	import {useNamespace} from '@/utils'
 
 	import {Button} from '../button'
 	import {CollapseContent, CollapseRoot, CollapseTrigger} from '../collapse'

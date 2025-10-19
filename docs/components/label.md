@@ -49,16 +49,6 @@ import Truncate from "../examples/label/Truncate.vue"
 
 <<< ../examples/label/Color.vue
 
-## Dark
-
-::: raw
-<div class="preview">
-  <Dark />
-</div>
-:::
-
-<<< ../examples/label/Dark.vue
-
 ## Truncate
 
 ::: raw

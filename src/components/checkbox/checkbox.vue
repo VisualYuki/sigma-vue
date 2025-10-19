@@ -24,7 +24,7 @@
 </template>
 
 <script lang="ts" setup>
-	import {useNamespace} from '@/utils/use-namespace'
+	import {useNamespace} from '@/utils'
 
 	import type {CheckboxEmits, CheckboxModelValue, CheckboxProps} from './types'
 

@@ -12,7 +12,7 @@
 
 <script lang="ts" setup>
 	import Icon from '@/components/icon/Icon.vue'
-	import {useNamespace} from '@/utils/use-namespace'
+	import {useNamespace} from '@/utils'
 
 	const props = defineProps({
 		background: {

@@ -24,7 +24,7 @@
 	import {useElementBounding} from '@vueuse/core'
 
 	import {getViewport} from './utils'
-	import ContextSubMenuItem from './ContextSubMenuItem.vue'
+	import ContextSubMenuItem from './context-sub-menu-item.vue'
 	import {contextSubMenuStyles} from './styles'
 	import type {ContextMenuItem} from './types'
 

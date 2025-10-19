@@ -8,7 +8,6 @@
 	type Icon =
 		| 'iconoir:cancel'
 		| 'line-md:chevron-down'
-		| 'mdi:chevron-right'
 		| 'mdi:alert'
 		| 'mdi:check'
 		| 'mdi:close'
@@ -18,6 +17,9 @@
 		| 'mdi:success-circle'
 		| 'ph:image-duotone'
 		| 'svg-spinners:90-ring-with-bg'
+		| 'mdi:chevron-left'
+		| 'mdi:chevron-right'
+		| 'mdi:calendar-outline'
 	type sizes = '' | '10' | '15' | '20' | '30' | '40' | '50'
 
 	const props = defineProps<{icon: Icon; size?: sizes} & IconProps>()

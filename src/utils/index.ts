@@ -9,3 +9,6 @@ export function toggleArrayItem(array: string[], value: string) {
 		array.push(value)
 	}
 }
+
+export {getViewport} from './browser'
+export {useNamespace} from './use-namespace'

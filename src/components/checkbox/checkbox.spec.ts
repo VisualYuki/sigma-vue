@@ -1,7 +1,7 @@
 import {mount, VueWrapper} from '@vue/test-utils'
 import {beforeEach, describe, expect, it} from 'vitest'
 
-import {useNamespace} from '@/utils/use-namespace'
+import {useNamespace} from '@/utils'
 
 import Checkbox from './checkbox.vue'
 

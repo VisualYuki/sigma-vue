@@ -5,6 +5,7 @@
 		<UiButton color="error" disabled>Button</UiButton>
 		<UiButton color="warning" disabled>Button</UiButton>
 		<UiButton color="info" disabled>Button</UiButton>
+		<UiButton color="black" disabled>Button</UiButton>
 	</div>
 	<div class="flex gap-2 mb-2">
 		<UiButton color="primary" variant="outline" disabled>Button</UiButton>
@@ -12,5 +13,6 @@
 		<UiButton color="error" variant="outline" disabled>Button</UiButton>
 		<UiButton color="warning" variant="outline" disabled>Button</UiButton>
 		<UiButton color="info" variant="outline" disabled>Button</UiButton>
+		<UiButton color="black" variant="outline" disabled>Button</UiButton>
 	</div>
 </template>

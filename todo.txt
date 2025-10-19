@@ -1,4 +1,3 @@
-- date picker
-- table
 - input
+- slider
 

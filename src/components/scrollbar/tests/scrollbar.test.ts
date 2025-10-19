@@ -1,7 +1,7 @@
 import {mount} from '@vue/test-utils'
 import {describe, it} from 'vitest'
 
-import {useNamespace} from '@/utils/use-namespace'
+import {useNamespace} from '@/utils'
 
 import Template from './template.vue'
 

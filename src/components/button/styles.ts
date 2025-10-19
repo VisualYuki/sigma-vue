@@ -14,6 +14,11 @@ export const buttonStyles = {
 				variant: 'outline'
 			},
 			{
+				class: 'text-blue-500',
+				color: 'primary',
+				variant: 'transparent'
+			},
+			{
 				class: 'bg-red-500 text-white',
 				color: 'error',
 				variant: 'solid'
@@ -22,6 +27,11 @@ export const buttonStyles = {
 				class: 'border border-red-500 text-red-500',
 				color: 'error',
 				variant: 'outline'
+			},
+			{
+				class: 'text-red-500',
+				color: 'error',
+				variant: 'transparent'
 			},
 			{
 				class: 'bg-yellow-500 text-white',
@@ -34,6 +44,11 @@ export const buttonStyles = {
 				variant: 'outline'
 			},
 			{
+				class: 'text-yellow-500',
+				color: 'warning',
+				variant: 'transparent'
+			},
+			{
 				class: 'bg-gray-500 text-white',
 				color: 'info',
 				variant: 'solid'
@@ -42,6 +57,16 @@ export const buttonStyles = {
 				class: 'border border-gray-500 text-gray-500',
 				color: 'info',
 				variant: 'outline'
+			},
+			{
+				class: 'text-gray-500',
+				color: 'info',
+				variant: 'transparent'
+			},
+			{
+				class: 'text-gray-500',
+				color: 'info',
+				variant: 'transparent'
 			},
 			{
 				class: 'bg-green-500 text-white',
@@ -53,35 +78,26 @@ export const buttonStyles = {
 				color: 'success',
 				variant: 'outline'
 			},
-			{
-				class: 'text-blue-500',
-				color: 'primary',
-				variant: 'transparent'
-			},
+
 			{
 				class: 'text-green-500',
 				color: 'success',
 				variant: 'transparent'
 			},
 			{
-				class: 'text-red-500',
-				color: 'error',
+				class: 'text-black',
+				color: 'black',
 				variant: 'transparent'
 			},
 			{
-				class: 'text-yellow-500',
-				color: 'warning',
-				variant: 'transparent'
+				class: 'text-white bg-black',
+				color: 'black',
+				variant: 'solid'
 			},
 			{
-				class: 'text-gray-500',
-				color: 'info',
-				variant: 'transparent'
-			},
-			{
-				class: 'text-gray-500',
-				color: 'info',
-				variant: 'transparent'
+				class: 'text-black border border-black',
+				color: 'black',
+				variant: 'outline'
 			}
 		],
 		variants: {
@@ -90,7 +106,8 @@ export const buttonStyles = {
 				info: '',
 				primary: '',
 				success: '',
-				warning: ''
+				warning: '',
+				black: ''
 			},
 			size: {
 				default: 'p-3 text-base',

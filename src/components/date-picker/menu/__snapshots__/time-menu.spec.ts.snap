@@ -1,0 +1,160 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`TimeMenu > render snapshot 1`] = `
+"<div class="p-5">
+  <p class="mb-2 text-center font-semibold text-base text-blue-500">чч : мм : сс</p>
+  <div class="flex mb-3.5">
+    <div class="h-52 overflow-y-auto w-max pe-1.5" data-name="hours-column-v-0">
+      <div class="mb-1 w-7.5 h-7.5 flex justify-center items-center rounded-full select-none cursor-pointer hover:bg-gray-100" data-hours="0" data-state="unselected">00</div>
+      <div class="mb-1 w-7.5 h-7.5 flex justify-center items-center rounded-full select-none cursor-pointer hover:bg-gray-100" data-hours="1" data-state="unselected">01</div>
+      <div class="mb-1 w-7.5 h-7.5 flex justify-center items-center rounded-full select-none cursor-pointer hover:bg-gray-100" data-hours="2" data-state="unselected">02</div>
+      <div class="mb-1 w-7.5 h-7.5 flex justify-center items-center rounded-full select-none cursor-pointer hover:bg-gray-100" data-hours="3" data-state="unselected">03</div>
+      <div class="mb-1 w-7.5 h-7.5 flex justify-center items-center rounded-full select-none cursor-pointer hover:bg-gray-100" data-hours="4" data-state="unselected">04</div>
+      <div class="mb-1 w-7.5 h-7.5 flex justify-center items-center rounded-full select-none cursor-pointer hover:bg-gray-100" data-hours="5" data-state="unselected">05</div>
+      <div class="mb-1 w-7.5 h-7.5 flex justify-center items-center rounded-full select-none cursor-pointer hover:bg-gray-100" data-hours="6" data-state="unselected">06</div>
+      <div class="mb-1 w-7.5 h-7.5 flex justify-center items-center rounded-full select-none cursor-pointer hover:bg-gray-100" data-hours="7" data-state="unselected">07</div>
+      <div class="mb-1 w-7.5 h-7.5 flex justify-center items-center rounded-full select-none cursor-pointer hover:bg-gray-100" data-hours="8" data-state="unselected">08</div>
+      <div class="mb-1 w-7.5 h-7.5 flex justify-center items-center rounded-full select-none cursor-pointer hover:bg-gray-100" data-hours="9" data-state="unselected">09</div>
+      <div class="mb-1 w-7.5 h-7.5 flex justify-center items-center rounded-full select-none cursor-pointer hover:bg-gray-100" data-hours="10" data-state="unselected">10</div>
+      <div class="mb-1 w-7.5 h-7.5 flex justify-center items-center rounded-full select-none cursor-pointer hover:bg-gray-100" data-hours="11" data-state="unselected">11</div>
+      <div class="mb-1 w-7.5 h-7.5 flex justify-center items-center rounded-full select-none cursor-pointer hover:bg-gray-100" data-hours="12" data-state="unselected">12</div>
+      <div class="mb-1 w-7.5 h-7.5 flex justify-center items-center rounded-full select-none cursor-pointer hover:bg-gray-100" data-hours="13" data-state="unselected">13</div>
+      <div class="mb-1 w-7.5 h-7.5 flex justify-center items-center rounded-full select-none cursor-pointer hover:bg-gray-100" data-hours="14" data-state="unselected">14</div>
+      <div class="mb-1 w-7.5 h-7.5 flex justify-center items-center rounded-full select-none cursor-pointer hover:bg-gray-100" data-hours="15" data-state="unselected">15</div>
+      <div class="mb-1 w-7.5 h-7.5 flex justify-center items-center rounded-full select-none cursor-pointer hover:bg-gray-100" data-hours="16" data-state="unselected">16</div>
+      <div class="mb-1 w-7.5 h-7.5 flex justify-center items-center rounded-full select-none cursor-pointer hover:bg-gray-100" data-hours="17" data-state="unselected">17</div>
+      <div class="mb-1 w-7.5 h-7.5 flex justify-center items-center rounded-full select-none cursor-pointer hover:bg-gray-100" data-hours="18" data-state="unselected">18</div>
+      <div class="mb-1 w-7.5 h-7.5 flex justify-center items-center rounded-full select-none cursor-pointer hover:bg-gray-100" data-hours="19" data-state="unselected">19</div>
+      <div class="mb-1 w-7.5 h-7.5 flex justify-center items-center rounded-full select-none cursor-pointer hover:bg-gray-100" data-hours="20" data-state="unselected">20</div>
+      <div class="mb-1 w-7.5 h-7.5 flex justify-center items-center rounded-full select-none cursor-pointer hover:bg-gray-100" data-hours="21" data-state="unselected">21</div>
+      <div class="mb-1 w-7.5 h-7.5 flex justify-center items-center rounded-full select-none cursor-pointer hover:bg-gray-100" data-hours="22" data-state="unselected">22</div>
+      <div class="mb-1 w-7.5 h-7.5 flex justify-center items-center rounded-full select-none cursor-pointer hover:bg-gray-100" data-hours="23" data-state="unselected">23</div>
+    </div>
+    <div class="h-52 overflow-y-auto w-max pe-1.5" data-name="minutes-column-v-0">
+      <div class="mb-1 w-7.5 h-7.5 flex justify-center items-center rounded-full select-none cursor-pointer hover:bg-gray-100" data-minutes="0" data-state="unselected">00</div>
+      <div class="mb-1 w-7.5 h-7.5 flex justify-center items-center rounded-full select-none cursor-pointer hover:bg-gray-100" data-minutes="1" data-state="unselected">01</div>
+      <div class="mb-1 w-7.5 h-7.5 flex justify-center items-center rounded-full select-none cursor-pointer hover:bg-gray-100" data-minutes="2" data-state="unselected">02</div>
+      <div class="mb-1 w-7.5 h-7.5 flex justify-center items-center rounded-full select-none cursor-pointer hover:bg-gray-100" data-minutes="3" data-state="unselected">03</div>
+      <div class="mb-1 w-7.5 h-7.5 flex justify-center items-center rounded-full select-none cursor-pointer hover:bg-gray-100" data-minutes="4" data-state="unselected">04</div>
+      <div class="mb-1 w-7.5 h-7.5 flex justify-center items-center rounded-full select-none cursor-pointer hover:bg-gray-100" data-minutes="5" data-state="unselected">05</div>
+      <div class="mb-1 w-7.5 h-7.5 flex justify-center items-center rounded-full select-none cursor-pointer hover:bg-gray-100" data-minutes="6" data-state="unselected">06</div>
+      <div class="mb-1 w-7.5 h-7.5 flex justify-center items-center rounded-full select-none cursor-pointer hover:bg-gray-100" data-minutes="7" data-state="unselected">07</div>
+      <div class="mb-1 w-7.5 h-7.5 flex justify-center items-center rounded-full select-none cursor-pointer hover:bg-gray-100" data-minutes="8" data-state="unselected">08</div>
+      <div class="mb-1 w-7.5 h-7.5 flex justify-center items-center rounded-full select-none cursor-pointer hover:bg-gray-100" data-minutes="9" data-state="unselected">09</div>
+      <div class="mb-1 w-7.5 h-7.5 flex justify-center items-center rounded-full select-none cursor-pointer hover:bg-gray-100" data-minutes="10" data-state="unselected">10</div>
+      <div class="mb-1 w-7.5 h-7.5 flex justify-center items-center rounded-full select-none cursor-pointer hover:bg-gray-100" data-minutes="11" data-state="unselected">11</div>
+      <div class="mb-1 w-7.5 h-7.5 flex justify-center items-center rounded-full select-none cursor-pointer hover:bg-gray-100" data-minutes="12" data-state="unselected">12</div>
+      <div class="mb-1 w-7.5 h-7.5 flex justify-center items-center rounded-full select-none cursor-pointer hover:bg-gray-100" data-minutes="13" data-state="unselected">13</div>
+      <div class="mb-1 w-7.5 h-7.5 flex justify-center items-center rounded-full select-none cursor-pointer hover:bg-gray-100" data-minutes="14" data-state="unselected">14</div>
+      <div class="mb-1 w-7.5 h-7.5 flex justify-center items-center rounded-full select-none cursor-pointer hover:bg-gray-100" data-minutes="15" data-state="unselected">15</div>
+      <div class="mb-1 w-7.5 h-7.5 flex justify-center items-center rounded-full select-none cursor-pointer hover:bg-gray-100" data-minutes="16" data-state="unselected">16</div>
+      <div class="mb-1 w-7.5 h-7.5 flex justify-center items-center rounded-full select-none cursor-pointer hover:bg-gray-100" data-minutes="17" data-state="unselected">17</div>
+      <div class="mb-1 w-7.5 h-7.5 flex justify-center items-center rounded-full select-none cursor-pointer hover:bg-gray-100" data-minutes="18" data-state="unselected">18</div>
+      <div class="mb-1 w-7.5 h-7.5 flex justify-center items-center rounded-full select-none cursor-pointer hover:bg-gray-100" data-minutes="19" data-state="unselected">19</div>
+      <div class="mb-1 w-7.5 h-7.5 flex justify-center items-center rounded-full select-none cursor-pointer hover:bg-gray-100" data-minutes="20" data-state="unselected">20</div>
+      <div class="mb-1 w-7.5 h-7.5 flex justify-center items-center rounded-full select-none cursor-pointer hover:bg-gray-100" data-minutes="21" data-state="unselected">21</div>
+      <div class="mb-1 w-7.5 h-7.5 flex justify-center items-center rounded-full select-none cursor-pointer hover:bg-gray-100" data-minutes="22" data-state="unselected">22</div>
+      <div class="mb-1 w-7.5 h-7.5 flex justify-center items-center rounded-full select-none cursor-pointer hover:bg-gray-100" data-minutes="23" data-state="unselected">23</div>
+      <div class="mb-1 w-7.5 h-7.5 flex justify-center items-center rounded-full select-none cursor-pointer hover:bg-gray-100" data-minutes="24" data-state="unselected">24</div>
+      <div class="mb-1 w-7.5 h-7.5 flex justify-center items-center rounded-full select-none cursor-pointer hover:bg-gray-100" data-minutes="25" data-state="unselected">25</div>
+      <div class="mb-1 w-7.5 h-7.5 flex justify-center items-center rounded-full select-none cursor-pointer hover:bg-gray-100" data-minutes="26" data-state="unselected">26</div>
+      <div class="mb-1 w-7.5 h-7.5 flex justify-center items-center rounded-full select-none cursor-pointer hover:bg-gray-100" data-minutes="27" data-state="unselected">27</div>
+      <div class="mb-1 w-7.5 h-7.5 flex justify-center items-center rounded-full select-none cursor-pointer hover:bg-gray-100" data-minutes="28" data-state="unselected">28</div>
+      <div class="mb-1 w-7.5 h-7.5 flex justify-center items-center rounded-full select-none cursor-pointer hover:bg-gray-100" data-minutes="29" data-state="unselected">29</div>
+      <div class="mb-1 w-7.5 h-7.5 flex justify-center items-center rounded-full select-none cursor-pointer hover:bg-gray-100" data-minutes="30" data-state="unselected">30</div>
+      <div class="mb-1 w-7.5 h-7.5 flex justify-center items-center rounded-full select-none cursor-pointer hover:bg-gray-100" data-minutes="31" data-state="unselected">31</div>
+      <div class="mb-1 w-7.5 h-7.5 flex justify-center items-center rounded-full select-none cursor-pointer hover:bg-gray-100" data-minutes="32" data-state="unselected">32</div>
+      <div class="mb-1 w-7.5 h-7.5 flex justify-center items-center rounded-full select-none cursor-pointer hover:bg-gray-100" data-minutes="33" data-state="unselected">33</div>
+      <div class="mb-1 w-7.5 h-7.5 flex justify-center items-center rounded-full select-none cursor-pointer hover:bg-gray-100" data-minutes="34" data-state="unselected">34</div>
+      <div class="mb-1 w-7.5 h-7.5 flex justify-center items-center rounded-full select-none cursor-pointer hover:bg-gray-100" data-minutes="35" data-state="unselected">35</div>
+      <div class="mb-1 w-7.5 h-7.5 flex justify-center items-center rounded-full select-none cursor-pointer hover:bg-gray-100" data-minutes="36" data-state="unselected">36</div>
+      <div class="mb-1 w-7.5 h-7.5 flex justify-center items-center rounded-full select-none cursor-pointer hover:bg-gray-100" data-minutes="37" data-state="unselected">37</div>
+      <div class="mb-1 w-7.5 h-7.5 flex justify-center items-center rounded-full select-none cursor-pointer hover:bg-gray-100" data-minutes="38" data-state="unselected">38</div>
+      <div class="mb-1 w-7.5 h-7.5 flex justify-center items-center rounded-full select-none cursor-pointer hover:bg-gray-100" data-minutes="39" data-state="unselected">39</div>
+      <div class="mb-1 w-7.5 h-7.5 flex justify-center items-center rounded-full select-none cursor-pointer hover:bg-gray-100" data-minutes="40" data-state="unselected">40</div>
+      <div class="mb-1 w-7.5 h-7.5 flex justify-center items-center rounded-full select-none cursor-pointer hover:bg-gray-100" data-minutes="41" data-state="unselected">41</div>
+      <div class="mb-1 w-7.5 h-7.5 flex justify-center items-center rounded-full select-none cursor-pointer hover:bg-gray-100" data-minutes="42" data-state="unselected">42</div>
+      <div class="mb-1 w-7.5 h-7.5 flex justify-center items-center rounded-full select-none cursor-pointer hover:bg-gray-100" data-minutes="43" data-state="unselected">43</div>
+      <div class="mb-1 w-7.5 h-7.5 flex justify-center items-center rounded-full select-none cursor-pointer hover:bg-gray-100" data-minutes="44" data-state="unselected">44</div>
+      <div class="mb-1 w-7.5 h-7.5 flex justify-center items-center rounded-full select-none cursor-pointer hover:bg-gray-100" data-minutes="45" data-state="unselected">45</div>
+      <div class="mb-1 w-7.5 h-7.5 flex justify-center items-center rounded-full select-none cursor-pointer hover:bg-gray-100" data-minutes="46" data-state="unselected">46</div>
+      <div class="mb-1 w-7.5 h-7.5 flex justify-center items-center rounded-full select-none cursor-pointer hover:bg-gray-100" data-minutes="47" data-state="unselected">47</div>
+      <div class="mb-1 w-7.5 h-7.5 flex justify-center items-center rounded-full select-none cursor-pointer hover:bg-gray-100" data-minutes="48" data-state="unselected">48</div>
+      <div class="mb-1 w-7.5 h-7.5 flex justify-center items-center rounded-full select-none cursor-pointer hover:bg-gray-100" data-minutes="49" data-state="unselected">49</div>
+      <div class="mb-1 w-7.5 h-7.5 flex justify-center items-center rounded-full select-none cursor-pointer hover:bg-gray-100" data-minutes="50" data-state="unselected">50</div>
+      <div class="mb-1 w-7.5 h-7.5 flex justify-center items-center rounded-full select-none cursor-pointer hover:bg-gray-100" data-minutes="51" data-state="unselected">51</div>
+      <div class="mb-1 w-7.5 h-7.5 flex justify-center items-center rounded-full select-none cursor-pointer hover:bg-gray-100" data-minutes="52" data-state="unselected">52</div>
+      <div class="mb-1 w-7.5 h-7.5 flex justify-center items-center rounded-full select-none cursor-pointer hover:bg-gray-100" data-minutes="53" data-state="unselected">53</div>
+      <div class="mb-1 w-7.5 h-7.5 flex justify-center items-center rounded-full select-none cursor-pointer hover:bg-gray-100" data-minutes="54" data-state="unselected">54</div>
+      <div class="mb-1 w-7.5 h-7.5 flex justify-center items-center rounded-full select-none cursor-pointer hover:bg-gray-100" data-minutes="55" data-state="unselected">55</div>
+      <div class="mb-1 w-7.5 h-7.5 flex justify-center items-center rounded-full select-none cursor-pointer hover:bg-gray-100" data-minutes="56" data-state="unselected">56</div>
+      <div class="mb-1 w-7.5 h-7.5 flex justify-center items-center rounded-full select-none cursor-pointer hover:bg-gray-100" data-minutes="57" data-state="unselected">57</div>
+      <div class="mb-1 w-7.5 h-7.5 flex justify-center items-center rounded-full select-none cursor-pointer hover:bg-gray-100" data-minutes="58" data-state="unselected">58</div>
+      <div class="mb-1 w-7.5 h-7.5 flex justify-center items-center rounded-full select-none cursor-pointer hover:bg-gray-100" data-minutes="59" data-state="unselected">59</div>
+    </div>
+    <div class="h-52 overflow-y-auto w-max pe-1.5" data-name="seconds-column-v-0">
+      <div class="mb-1 w-7.5 h-7.5 flex justify-center items-center rounded-full select-none cursor-pointer hover:bg-gray-100" data-seconds="0" data-state="unselected">00</div>
+      <div class="mb-1 w-7.5 h-7.5 flex justify-center items-center rounded-full select-none cursor-pointer hover:bg-gray-100" data-seconds="1" data-state="unselected">01</div>
+      <div class="mb-1 w-7.5 h-7.5 flex justify-center items-center rounded-full select-none cursor-pointer hover:bg-gray-100" data-seconds="2" data-state="unselected">02</div>
+      <div class="mb-1 w-7.5 h-7.5 flex justify-center items-center rounded-full select-none cursor-pointer hover:bg-gray-100" data-seconds="3" data-state="unselected">03</div>
+      <div class="mb-1 w-7.5 h-7.5 flex justify-center items-center rounded-full select-none cursor-pointer hover:bg-gray-100" data-seconds="4" data-state="unselected">04</div>
+      <div class="mb-1 w-7.5 h-7.5 flex justify-center items-center rounded-full select-none cursor-pointer hover:bg-gray-100" data-seconds="5" data-state="unselected">05</div>
+      <div class="mb-1 w-7.5 h-7.5 flex justify-center items-center rounded-full select-none cursor-pointer hover:bg-gray-100" data-seconds="6" data-state="unselected">06</div>
+      <div class="mb-1 w-7.5 h-7.5 flex justify-center items-center rounded-full select-none cursor-pointer hover:bg-gray-100" data-seconds="7" data-state="unselected">07</div>
+      <div class="mb-1 w-7.5 h-7.5 flex justify-center items-center rounded-full select-none cursor-pointer hover:bg-gray-100" data-seconds="8" data-state="unselected">08</div>
+      <div class="mb-1 w-7.5 h-7.5 flex justify-center items-center rounded-full select-none cursor-pointer hover:bg-gray-100" data-seconds="9" data-state="unselected">09</div>
+      <div class="mb-1 w-7.5 h-7.5 flex justify-center items-center rounded-full select-none cursor-pointer hover:bg-gray-100" data-seconds="10" data-state="unselected">10</div>
+      <div class="mb-1 w-7.5 h-7.5 flex justify-center items-center rounded-full select-none cursor-pointer hover:bg-gray-100" data-seconds="11" data-state="unselected">11</div>
+      <div class="mb-1 w-7.5 h-7.5 flex justify-center items-center rounded-full select-none cursor-pointer hover:bg-gray-100" data-seconds="12" data-state="unselected">12</div>
+      <div class="mb-1 w-7.5 h-7.5 flex justify-center items-center rounded-full select-none cursor-pointer hover:bg-gray-100" data-seconds="13" data-state="unselected">13</div>
+      <div class="mb-1 w-7.5 h-7.5 flex justify-center items-center rounded-full select-none cursor-pointer hover:bg-gray-100" data-seconds="14" data-state="unselected">14</div>
+      <div class="mb-1 w-7.5 h-7.5 flex justify-center items-center rounded-full select-none cursor-pointer hover:bg-gray-100" data-seconds="15" data-state="unselected">15</div>
+      <div class="mb-1 w-7.5 h-7.5 flex justify-center items-center rounded-full select-none cursor-pointer hover:bg-gray-100" data-seconds="16" data-state="unselected">16</div>
+      <div class="mb-1 w-7.5 h-7.5 flex justify-center items-center rounded-full select-none cursor-pointer hover:bg-gray-100" data-seconds="17" data-state="unselected">17</div>
+      <div class="mb-1 w-7.5 h-7.5 flex justify-center items-center rounded-full select-none cursor-pointer hover:bg-gray-100" data-seconds="18" data-state="unselected">18</div>
+      <div class="mb-1 w-7.5 h-7.5 flex justify-center items-center rounded-full select-none cursor-pointer hover:bg-gray-100" data-seconds="19" data-state="unselected">19</div>
+      <div class="mb-1 w-7.5 h-7.5 flex justify-center items-center rounded-full select-none cursor-pointer hover:bg-gray-100" data-seconds="20" data-state="unselected">20</div>
+      <div class="mb-1 w-7.5 h-7.5 flex justify-center items-center rounded-full select-none cursor-pointer hover:bg-gray-100" data-seconds="21" data-state="unselected">21</div>
+      <div class="mb-1 w-7.5 h-7.5 flex justify-center items-center rounded-full select-none cursor-pointer hover:bg-gray-100" data-seconds="22" data-state="unselected">22</div>
+      <div class="mb-1 w-7.5 h-7.5 flex justify-center items-center rounded-full select-none cursor-pointer hover:bg-gray-100" data-seconds="23" data-state="unselected">23</div>
+      <div class="mb-1 w-7.5 h-7.5 flex justify-center items-center rounded-full select-none cursor-pointer hover:bg-gray-100" data-seconds="24" data-state="unselected">24</div>
+      <div class="mb-1 w-7.5 h-7.5 flex justify-center items-center rounded-full select-none cursor-pointer hover:bg-gray-100" data-seconds="25" data-state="unselected">25</div>
+      <div class="mb-1 w-7.5 h-7.5 flex justify-center items-center rounded-full select-none cursor-pointer hover:bg-gray-100" data-seconds="26" data-state="unselected">26</div>
+      <div class="mb-1 w-7.5 h-7.5 flex justify-center items-center rounded-full select-none cursor-pointer hover:bg-gray-100" data-seconds="27" data-state="unselected">27</div>
+      <div class="mb-1 w-7.5 h-7.5 flex justify-center items-center rounded-full select-none cursor-pointer hover:bg-gray-100" data-seconds="28" data-state="unselected">28</div>
+      <div class="mb-1 w-7.5 h-7.5 flex justify-center items-center rounded-full select-none cursor-pointer hover:bg-gray-100" data-seconds="29" data-state="unselected">29</div>
+      <div class="mb-1 w-7.5 h-7.5 flex justify-center items-center rounded-full select-none cursor-pointer hover:bg-gray-100" data-seconds="30" data-state="unselected">30</div>
+      <div class="mb-1 w-7.5 h-7.5 flex justify-center items-center rounded-full select-none cursor-pointer hover:bg-gray-100" data-seconds="31" data-state="unselected">31</div>
+      <div class="mb-1 w-7.5 h-7.5 flex justify-center items-center rounded-full select-none cursor-pointer hover:bg-gray-100" data-seconds="32" data-state="unselected">32</div>
+      <div class="mb-1 w-7.5 h-7.5 flex justify-center items-center rounded-full select-none cursor-pointer hover:bg-gray-100" data-seconds="33" data-state="unselected">33</div>
+      <div class="mb-1 w-7.5 h-7.5 flex justify-center items-center rounded-full select-none cursor-pointer hover:bg-gray-100" data-seconds="34" data-state="unselected">34</div>
+      <div class="mb-1 w-7.5 h-7.5 flex justify-center items-center rounded-full select-none cursor-pointer hover:bg-gray-100" data-seconds="35" data-state="unselected">35</div>
+      <div class="mb-1 w-7.5 h-7.5 flex justify-center items-center rounded-full select-none cursor-pointer hover:bg-gray-100" data-seconds="36" data-state="unselected">36</div>
+      <div class="mb-1 w-7.5 h-7.5 flex justify-center items-center rounded-full select-none cursor-pointer hover:bg-gray-100" data-seconds="37" data-state="unselected">37</div>
+      <div class="mb-1 w-7.5 h-7.5 flex justify-center items-center rounded-full select-none cursor-pointer hover:bg-gray-100" data-seconds="38" data-state="unselected">38</div>
+      <div class="mb-1 w-7.5 h-7.5 flex justify-center items-center rounded-full select-none cursor-pointer hover:bg-gray-100" data-seconds="39" data-state="unselected">39</div>
+      <div class="mb-1 w-7.5 h-7.5 flex justify-center items-center rounded-full select-none cursor-pointer hover:bg-gray-100" data-seconds="40" data-state="unselected">40</div>
+      <div class="mb-1 w-7.5 h-7.5 flex justify-center items-center rounded-full select-none cursor-pointer hover:bg-gray-100" data-seconds="41" data-state="unselected">41</div>
+      <div class="mb-1 w-7.5 h-7.5 flex justify-center items-center rounded-full select-none cursor-pointer hover:bg-gray-100" data-seconds="42" data-state="unselected">42</div>
+      <div class="mb-1 w-7.5 h-7.5 flex justify-center items-center rounded-full select-none cursor-pointer hover:bg-gray-100" data-seconds="43" data-state="unselected">43</div>
+      <div class="mb-1 w-7.5 h-7.5 flex justify-center items-center rounded-full select-none cursor-pointer hover:bg-gray-100" data-seconds="44" data-state="unselected">44</div>
+      <div class="mb-1 w-7.5 h-7.5 flex justify-center items-center rounded-full select-none cursor-pointer hover:bg-gray-100" data-seconds="45" data-state="unselected">45</div>
+      <div class="mb-1 w-7.5 h-7.5 flex justify-center items-center rounded-full select-none cursor-pointer hover:bg-gray-100" data-seconds="46" data-state="unselected">46</div>
+      <div class="mb-1 w-7.5 h-7.5 flex justify-center items-center rounded-full select-none cursor-pointer hover:bg-gray-100" data-seconds="47" data-state="unselected">47</div>
+      <div class="mb-1 w-7.5 h-7.5 flex justify-center items-center rounded-full select-none cursor-pointer hover:bg-gray-100" data-seconds="48" data-state="unselected">48</div>
+      <div class="mb-1 w-7.5 h-7.5 flex justify-center items-center rounded-full select-none cursor-pointer hover:bg-gray-100" data-seconds="49" data-state="unselected">49</div>
+      <div class="mb-1 w-7.5 h-7.5 flex justify-center items-center rounded-full select-none cursor-pointer hover:bg-gray-100" data-seconds="50" data-state="unselected">50</div>
+      <div class="mb-1 w-7.5 h-7.5 flex justify-center items-center rounded-full select-none cursor-pointer hover:bg-gray-100" data-seconds="51" data-state="unselected">51</div>
+      <div class="mb-1 w-7.5 h-7.5 flex justify-center items-center rounded-full select-none cursor-pointer hover:bg-gray-100" data-seconds="52" data-state="unselected">52</div>
+      <div class="mb-1 w-7.5 h-7.5 flex justify-center items-center rounded-full select-none cursor-pointer hover:bg-gray-100" data-seconds="53" data-state="unselected">53</div>
+      <div class="mb-1 w-7.5 h-7.5 flex justify-center items-center rounded-full select-none cursor-pointer hover:bg-gray-100" data-seconds="54" data-state="unselected">54</div>
+      <div class="mb-1 w-7.5 h-7.5 flex justify-center items-center rounded-full select-none cursor-pointer hover:bg-gray-100" data-seconds="55" data-state="unselected">55</div>
+      <div class="mb-1 w-7.5 h-7.5 flex justify-center items-center rounded-full select-none cursor-pointer hover:bg-gray-100" data-seconds="56" data-state="unselected">56</div>
+      <div class="mb-1 w-7.5 h-7.5 flex justify-center items-center rounded-full select-none cursor-pointer hover:bg-gray-100" data-seconds="57" data-state="unselected">57</div>
+      <div class="mb-1 w-7.5 h-7.5 flex justify-center items-center rounded-full select-none cursor-pointer hover:bg-gray-100" data-seconds="58" data-state="unselected">58</div>
+      <div class="mb-1 w-7.5 h-7.5 flex justify-center items-center rounded-full select-none cursor-pointer hover:bg-gray-100" data-seconds="59" data-state="unselected">59</div>
+    </div>
+  </div>
+  <div class="flex gap-3.5"><button class="rounded-md font-medium inline-flex items-center justify-around cursor-pointer select-none disabled-utility h-8 focus-utility p-1 text-sm border border-blue-500 text-blue-500" data-name="ui-button">Today</button></div>
+</div>"
+`;

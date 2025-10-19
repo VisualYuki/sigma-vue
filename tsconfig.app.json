@@ -1,6 +1,16 @@
 {
 	"extends": "@vue/tsconfig/tsconfig.dom.json",
-	"include": ["env.d.ts", "src/**/*", "src/**/*.vue", "./global.d.ts", "docs/**/*", "docs/.vitepress/**/*", "temp/checkbox"],
+	"include": [
+		"env.d.ts",
+		"src/**/*",
+		"src/**/*.vue",
+		"./global.d.ts",
+		"docs/**/*",
+		"docs/.vitepress/**/*",
+		"temp/checkbox",
+		"temp/use-same-target.ts",
+		"temp/overlay"
+	],
 	"exclude": ["src/**/__tests__/*", "src/App.vue", "temp/**", "src/directives/**/*", "src/components/primitive", "src/components/skeleton"],
 	"compilerOptions": {
 		"baseUrl": "./",

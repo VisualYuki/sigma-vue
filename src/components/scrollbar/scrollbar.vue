@@ -27,7 +27,7 @@
 <script lang="ts" setup>
 	import {useTemplateRef} from 'vue'
 
-	import {useNamespace} from '@/utils/use-namespace'
+	import {useNamespace} from '@/utils'
 
 	import type {ScrollbarProps} from './types'
 

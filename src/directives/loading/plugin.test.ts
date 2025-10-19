@@ -1,5 +1,5 @@
 import {describe, expect, test} from 'vitest'
-import {useNamespace} from '@/utils/use-namespace'
+import {useNamespace} from '@/utils'
 import {loadingPlugin} from './plugin'
 
 const ns = useNamespace('loading-directive', true)

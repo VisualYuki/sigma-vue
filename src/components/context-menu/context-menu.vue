@@ -13,10 +13,10 @@
 	import {type Fn, onClickOutside, useWindowScroll, useWindowSize} from '@vueuse/core'
 	import {computed, nextTick, ref, useTemplateRef, watch} from 'vue'
 	import type {ContextMenuItem, ContextMenuProps} from './types'
-	import ContextSubMenu from './ContextSubMenu.vue'
+	import ContextSubMenu from './context-sub-menu.vue'
 	import {contextmenuStyles} from './styles'
 	import {filterItems, getViewport} from './utils'
-	import {useNamespace} from '@/utils/use-namespace'
+	import {useNamespace} from '@/utils'
 
 	defineOptions({
 		inheritAttrs: false

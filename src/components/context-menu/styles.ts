@@ -5,7 +5,7 @@ export const contextmenuStyles = {
 }
 
 export const contextSubMenuStyles = {
-	root: cva('max-w-max min-w-[130px] bg-white dark:bg-black border-black dark:border-white border-1 rounded-sm shadow-lg', {
+	root: cva('max-w-max min-w-[130px] bg-white border-black border-1 rounded-sm shadow-lg', {
 		variants: {
 			isMainMenu: {
 				true: 'relative',
@@ -18,7 +18,7 @@ export const contextSubMenuStyles = {
 
 export const contextSubMenuItemStyles = {
 	root: cva(
-		'relative rounded-sm px-2 py-1 hover:bg-gray-100 dark:hover:bg-gray-900 text-black dark:text-white focus:border-primary' //[&:hover>:not(ul)]:text-red-500
+		'relative rounded-sm px-2 py-1 hover:bg-gray-100 text-black focus:border-primary' //[&:hover>:not(ul)]:text-red-500
 	),
 	content: cva(['text-nowrap gap-2 flex items-center justify-between']),
 	label: cva('grow text-left'),

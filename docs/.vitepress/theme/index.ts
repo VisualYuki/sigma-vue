@@ -7,6 +7,7 @@ import {Button} from '@/components/button'
 import {Checkbox} from '@/components/checkbox'
 import {CollapseContent, CollapseRoot, CollapseTrigger} from '@/components/collapse'
 import {ContextMenu} from '@/components/context-menu'
+import {DatePicker} from '@/components/date-picker'
 import {Dialog} from '@/components/dialog'
 import {Label} from '@/components/label'
 import {RadioGroup} from '@/components/radio-group'
@@ -27,6 +28,7 @@ export default {
 		app.component('UiCollapseContent', CollapseContent)
 		app.component('UiCollapseTrigger', CollapseTrigger)
 		app.component('UiContextMenu', ContextMenu)
+		app.component('UiDatePicker', DatePicker)
 		app.component('UiDialog', Dialog)
 		app.component('UiLabel', Label)
 		app.component('UiRadioGroup', RadioGroup)
