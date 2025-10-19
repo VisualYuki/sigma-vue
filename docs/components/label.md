@@ -3,7 +3,6 @@ import Base from "../examples/label/Base.vue"
 import Weight from "../examples/label/Weight.vue"
 import Size from "../examples/label/Size.vue"
 import Color from "../examples/label/Color.vue"
-import Dark from "../examples/label/Dark.vue"
 import Truncate from "../examples/label/Truncate.vue"
 </script>
 
